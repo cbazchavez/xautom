@@ -1,0 +1,7 @@
+node_modules/
+.env
+.env.local
+
+# Borradores generados (no se versionan; son efímeros)
+out/
+*.local.md

@@ -1,0 +1,183 @@
+# =============================================================
+# Ficha de identidad — Perfil de X de Luis (CEO, CIMIENTO)
+# Versión: v2
+#   - Esquema bilingüe EN/ES (inglés primario, redacción nativa)
+#   - Tema activo temporal: viaje por Asia rumbo a Seúl
+#   - Estructura de promoción orgánica de productos (PENDIENTE de datos)
+# Voz: sigue PROVISIONAL, a calibrar con la reacción de Luis.
+# =============================================================
+
+perfil:
+  id: luis
+  nombre: "Luis — CEO de CIMIENTO"
+  handle: "@PENDIENTE"            # <-- falta el handle real
+  tope_tweets_por_hilo: 7         # rango 3–7
+
+# -------------------------------------------------------------
+# IDIOMA  (bilingüe, redacción nativa — NO traducción)
+# -------------------------------------------------------------
+idioma:
+  primario: "en"                 # inglés: el nicho (IA, mercados, negocios) es global
+  secundario: "es"               # español: para posts con foco LATAM
+  modo: "redaccion_nativa"       # generar cada versión pensada en su idioma, no traducir
+  decision_por_post: >
+    El motor genera ambas versiones (EN y ES) para cada borrador y las muestra
+    lado a lado. Luis decide por post: solo EN, solo ES, o ambas como posts
+    separados. NO se publican como traducción automática.
+  default_publicacion: >
+    Salvo que el tema sea netamente LATAM, el inglés es la versión principal.
+
+# -------------------------------------------------------------
+# POSICIONAMIENTO
+# -------------------------------------------------------------
+posicionamiento:
+  frase: >
+    Un constructor de negocios digitales que lee el mundo y enseña a ejecutar.
+    Lanza apps, software y herramientas con IA, desarma modelos de negocio en
+    minutos, y comenta lo que pasa en IA, mercados y economía global desde el
+    lente de quien está construyendo algo.
+  credencial: >
+    CEO de un venture studio en Querétaro, México, con operación internacional.
+
+# -------------------------------------------------------------
+# AUDIENCIA  (más internacional)
+# -------------------------------------------------------------
+audiencia:
+  descripcion: >
+    Jóvenes tech-savvy GLOBALES: fundadores aspiracionales, indie hackers,
+    builders y jóvenes profesionales —en EE. UU., Europa, Asia y LATAM— que
+    quieren construir negocios digitales con IA y entender hacia dónde va el
+    mundo. Curiosos, ambiciosos, alérgicos al humo motivacional.
+  les_importa:
+    - "Cómo lanzar algo real con IA sin ser ingeniero senior"
+    - "Cómo se gana dinero de verdad con un producto digital"
+    - "Qué está pasando en IA / mercados / geopolítica y qué significa para builders"
+    - "Cómo distintas culturas usan la tecnología (ángulo internacional)"
+    - "Procesos y herramientas para ejecutar más rápido"
+
+# -------------------------------------------------------------
+# VOZ  (PROVISIONAL — calibrar con Luis)
+# -------------------------------------------------------------
+voz:
+  adjetivos:
+    - directo            # va al punto, sin relleno
+    - pragmático         # ejecución y modelos reales sobre teoría
+    - generoso           # regala conocimiento e ideas sin miedo
+    - con criterio       # tiene opiniones, no es tibio
+    - observador         # conecta el mundo con la práctica
+  registro: >
+    Conversacional pero preciso. Frases cortas. Cero corporate-speak, cero
+    emojis de cohete, cero humo de gurú. Tips accionables; opiniones que se mojan.
+    En inglés, el mismo tono: directo y sin floritura, NO un inglés acartonado.
+
+  ejemplos_si_suena:
+    - "Vi un SaaS que cobra $9 al mes y factura millones. No venden el software, venden no tener que pensar en el problema. Ese es todo el modelo."
+    - "Idea gratis para quien la quiera ejecutar: [idea concreta]. Yo no voy a llegar a esta, tengo veinte en la fila. Ahí les va."
+    - "No necesitas saber programar para lanzar tu primera herramienta con IA. Necesitas una idea fea pero específica y un fin de semana."
+    - "Everyone's reading this [market/AI] news as [the obvious take]. If you're building something, it means something else: [concrete implication]."
+
+  ejemplos_no_suena:
+    - "El éxito no llega a quienes esperan. Levántate y construye tu imperio hoy. 🚀💪"
+    - "10 herramientas de IA que NADIE conoce y que cambiarán tu vida para siempre (hilo 🧵👇)"
+    - "En nuestra empresa creemos en el poder de la innovación para transformar el futuro de los negocios."
+    - "AI is very important nowadays and everyone should learn how to use it."
+
+# -------------------------------------------------------------
+# PILARES DE CONTENIDO  (jerarquizados)
+# -------------------------------------------------------------
+pilares:
+  - id: construir_con_ia
+    peso: alto                    # ancla
+    nombre: "Construir con IA / vibecoding"
+    cubre: >
+      Tips accionables para lanzar apps, software y herramientas con IA: de la
+      idea fea al lanzamiento. Stack, atajos, errores a evitar. El cómo, no solo el qué.
+
+  - id: modelos_de_negocio
+    peso: alto                    # ancla — el superpoder de Luis
+    nombre: "Modelos de negocio e ideas"
+    cubre: >
+      Desarmar cómo se monetiza una idea o producto. Modelos para distintos tipos
+      de productos digitales. Ideas regaladas que él no va a ejecutar. El porqué
+      de que algo funcione o no.
+
+  - id: lectura_del_mundo
+    peso: medio                   # el lente que da amplitud
+    nombre: "Lectura del mundo para builders"
+    cubre: >
+      IA, mercados internacionales, desarrollo económico y cambios
+      políticos/empresariales — SIEMPRE con el ángulo "qué significa para quien
+      construye". Nunca noticia por noticia; siempre la implicación práctica.
+
+  - id: proceso_y_ejecucion
+    peso: bajo                    # humaniza (subir después)
+    nombre: "Proceso, diseño y ejecución"
+    cubre: >
+      Productividad, diseño, cómo ejecuta, el drive. Sistemas reales detrás de
+      construir varias cosas a la vez.
+
+# -------------------------------------------------------------
+# TEMAS ACTIVOS  (temporales / campañas con fecha)
+# -------------------------------------------------------------
+temas_activos:
+  - id: gira_asia_seul
+    vigencia: "mientras Luis viaja por Asia / esté en Seúl"
+    nombre: "Reportando desde Asia rumbo a Seúl"
+    angulo: >
+      Observaciones en vivo de cómo Asia (y en especial Corea) usa la tecnología:
+      pagos, hábitos digitales, retail, cultura de producto. Material de primera
+      mano que alimenta el pilar 'lectura del mundo' y diferencia el perfil.
+    como_usarlo: >
+      Posts de observación auténtica ("esto vi hoy en [lugar] y lo que significa
+      para builders"). Conecta con el lente internacional sin sonar a turista.
+      Es temporal: al regresar, este tema se retira y el lente queda como pilar.
+    pilar_asociado: lectura_del_mundo
+    nota: >
+      Oportunidad natural para aterrizar producto cuando el tema sea pagos/retención
+      /loyalty y la audiencia coreana/asiática (ver bloque productos).
+
+# -------------------------------------------------------------
+# PRODUCTOS  (promoción orgánica — PENDIENTE DE DATOS)
+# -------------------------------------------------------------
+productos:
+  # >>> LLENAR con la lista real confirmada por el equipo. <<<
+  # Por cada producto:
+  #   - nombre:
+  #     que_hace:        # una línea, como a un desconocido
+  #     etapa:           # publico | beta | stealth (stealth = NO mencionar)
+  #     para_quien:      # en qué tipo de post aterriza natural
+  #     mencionar: true/false
+  lista: []              # vacío hasta tener los datos
+
+  reglas_de_promocion:
+    - "Valor primero, producto como nota al pie. Nunca un post que sea puro anuncio."
+    - "Solo cuando el tema del post lo permita de forma natural (relevancia real)."
+    - "Mención como caso/ejemplo vivido ('esto lo aplicamos en X'), no como pitch."
+    - "Frecuencia máxima ~1 de cada 8–10 posts. Nunca dos posts con producto seguidos."
+    - "Jamás mencionar productos en etapa 'stealth'."
+    - "Si no hay forma natural de encajarlo, no se fuerza: ese día no hay producto."
+
+# -------------------------------------------------------------
+# DESTINO / OFERTA
+# -------------------------------------------------------------
+destino:
+  objetivo_actual: >
+    Construir reputación y autoridad en IA, negocios digitales y vibecoding,
+    con alcance internacional. Fase de siembra: valor real y consistente.
+  objetivo_futuro: >
+    Posicionar a Luis para consultorías en IA, vibecoding y modelos de negocio
+    digitales. La autoridad de hoy es el pipeline de mañana.
+  cta_suave: >
+    Sin venta dura en esta fase. A lo mucho, invitar a seguir/guardar o a
+    responder con su caso.
+
+# -------------------------------------------------------------
+# REGLAS DE CONTENIDO
+# -------------------------------------------------------------
+reglas:
+  - "Nunca generar replies ni conversaciones: eso lo hace Luis a mano."
+  - "Cada borrador se genera en EN y ES (redacción nativa), Luis elige cuál publica."
+  - "Productos: seguir reglas_de_promocion; nunca forzar ni saturar."
+  - "Nada de humo motivacional, emojis de cohete, ni formato de gurú de hilos."
+  - "Cada tip accionable; cada opinión se moja."
+  - "Calidad de voz > cantidad."
