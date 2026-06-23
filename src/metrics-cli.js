@@ -11,6 +11,7 @@ import {
   postsPublicados, agrupar, mediana, sugerirPesos,
 } from './metrics.js';
 import { renderReporte, resumenConsola } from './report.js';
+import { renderDashboard } from './dashboard.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -26,6 +27,7 @@ async function main() {
       langs: { type: 'string', default: 'en,es' },
       'min-total': { type: 'string', default: '15' },
       'min-pilar': { type: 'string', default: '4' },
+      demo: { type: 'boolean', default: false },
       help: { type: 'boolean', short: 'h', default: false },
     },
   });
@@ -35,13 +37,16 @@ async function main() {
 
   const profile = await loadProfile(values.profile);
   const id = profile.perfil.id;
+  // En --demo, por defecto se lee el registro de ejemplo (metrics/<id>-demo.csv).
+  const csvDefault = values.demo ? `${id}-demo.csv` : `${id}.csv`;
   const csvPath = values.file
     ? resolve(process.cwd(), values.file)
-    : join(ROOT, 'metrics', `${id}.csv`);
+    : join(ROOT, 'metrics', csvDefault);
 
   if (cmd === 'track') return track({ profile, id, csvPath, values });
   if (cmd === 'report') return report({ profile, id, csvPath, values });
-  throw new Error(`Subcomando desconocido: "${cmd}". Usa "track" o "report" (--help).`);
+  if (cmd === 'dashboard') return dashboard({ profile, id, csvPath, values });
+  throw new Error(`Subcomando desconocido: "${cmd}". Usa "track", "report" o "dashboard" (--help).`);
 }
 
 // --- track: siembra el registro con los borradores de un batch ---
@@ -71,8 +76,8 @@ async function track({ id, csvPath, values }) {
   console.log(`   Llena published_at, url y las métricas de X Analytics; luego: npm run report`);
 }
 
-// --- report: cruza las métricas del registro y sugiere pesos ---
-async function report({ profile, id, csvPath, values }) {
+// --- núcleo compartido: lee el registro y calcula todo ---
+async function analizar({ profile, csvPath, values }) {
   let rows;
   try {
     rows = parseCSV(await readFile(csvPath, 'utf8')).rows;
@@ -81,13 +86,14 @@ async function report({ profile, id, csvPath, values }) {
   }
 
   const posts = postsPublicados(rows);
-  const reachScores = posts.map((p) => p.m.reachScore);
   const fechas = posts.map((p) => p.row.published_at).filter(Boolean).sort();
   const resumen = {
     total: posts.length,
     impTotal: posts.reduce((s, p) => s + p.m.imp, 0),
     erMedio: mean(posts.map((p) => p.m.er)),
-    reachMediana: mediana(reachScores),
+    reachMediana: mediana(posts.map((p) => p.m.reachScore)),
+    bmMedio: mean(posts.map((p) => p.m.bookmarkRate)),
+    followVisitaMedio: mean(posts.map((p) => p.m.followPerVisit)),
     rango: fechas.length ? `${fechas[0]} → ${fechas[fechas.length - 1]}` : '',
   };
 
@@ -108,9 +114,15 @@ async function report({ profile, id, csvPath, values }) {
   });
   pesos.actuales = actuales;
 
+  return { resumen, porPilar, porFormato, porIdioma, top, bottom, pesos };
+}
+
+// --- report: cruza las métricas del registro y sugiere pesos ---
+async function report({ profile, id, csvPath, values }) {
+  const data = await analizar({ profile, csvPath, values });
   const fecha = new Date().toISOString().slice(0, 10);
   const meta = { id, nombre: profile.perfil.nombre ?? id, handle: profile.perfil.handle ?? '', fecha };
-  const md = renderReporte({ meta, resumen, porPilar, porFormato, porIdioma, top, bottom, pesos });
+  const md = renderReporte({ meta, ...data });
 
   const outPath = values.out
     ? resolve(process.cwd(), values.out)
@@ -118,8 +130,45 @@ async function report({ profile, id, csvPath, values }) {
   await mkdir(dirname(outPath), { recursive: true });
   await writeFile(outPath, md, 'utf8');
 
-  console.log(resumenConsola({ resumen, porPilar, pesos }));
+  console.log(resumenConsola({ resumen: data.resumen, porPilar: data.porPilar, pesos: data.pesos }));
   console.log(`\n📊 Reporte: ${outPath}`);
+}
+
+// --- dashboard: tablero HTML autocontenido (se abre con doble clic) ---
+async function dashboard({ profile, id, csvPath, values }) {
+  const data = await analizar({ profile, csvPath, values });
+
+  // Contenido de los borradores (para la sección del batch y los ángulos).
+  let drafts = [];
+  let batchFecha = '';
+  try {
+    const batchPath = values.batch
+      ? resolve(process.cwd(), values.batch)
+      : await sidecarMasReciente(id);
+    const sidecar = JSON.parse(await readFile(batchPath, 'utf8'));
+    drafts = sidecar.drafts ?? [];
+    batchFecha = sidecar.fecha ?? '';
+  } catch { /* sin sidecar: el tablero igual muestra las métricas */ }
+
+  const fecha = new Date().toISOString().slice(0, 10);
+  const meta = {
+    id,
+    nombre: profile.perfil.nombre ?? id,
+    handle: profile.perfil.handle ?? '',
+    fecha,
+    demo: values.demo,
+  };
+  const html = renderDashboard({ meta, ...data, drafts, batchFecha });
+
+  const outPath = values.out
+    ? resolve(process.cwd(), values.out)
+    : join(ROOT, 'metrics', `${id}-dashboard.html`);
+  await mkdir(dirname(outPath), { recursive: true });
+  await writeFile(outPath, html, 'utf8');
+
+  console.log(resumenConsola({ resumen: data.resumen, porPilar: data.porPilar, pesos: data.pesos }));
+  console.log(`\n🖥️  Tablero: ${outPath}`);
+  console.log(`   Ábrelo con doble clic (no necesita servidor ni internet).`);
 }
 
 async function sidecarMasReciente(id) {
@@ -144,23 +193,27 @@ function ayuda() {
   console.log(`xautom — loop de medición (registro manual de X Analytics)
 
 Uso:
-  npm run track  -- [--batch out/<id>-<fecha>.json] [--langs en,es]
-  npm run report -- [--min-total 15] [--min-pilar 4]
+  npm run track     -- [--batch out/<id>-<fecha>.json] [--langs en,es]
+  npm run report    -- [--min-total 15] [--min-pilar 4]
+  npm run dashboard -- [--demo]
 
 Flujo:
   1) npm run track            siembra metrics/<id>.csv con los borradores del batch.
   2) Llenas published_at, url, impressions, likes, replies, reposts,
      bookmarks, profile_clicks y follows desde X Analytics (a mano).
   3) npm run report           cruza por pilar/formato/idioma y sugiere pesos.
+     npm run dashboard         genera un tablero HTML autocontenido.
+     npm run dashboard -- --demo   tablero con datos de ejemplo (para mostrar la idea).
 
 Opciones:
   -p, --profile <id>   Ficha (default: luis)
   -b, --batch <ruta>   Sidecar JSON del batch (default: el más reciente en out/)
-  -f, --file <ruta>    CSV del registro (default: metrics/<id>.csv)
-  -o, --out <ruta>     MD del reporte (default: metrics/<id>-reporte-<fecha>.md)
+  -f, --file <ruta>    CSV del registro (default: metrics/<id>.csv; con --demo: -demo.csv)
+  -o, --out <ruta>     Salida (default: metrics/<id>-reporte-<fecha>.md o -dashboard.html)
       --langs <lista>  Idiomas a sembrar (default: en,es)
       --min-total <n>  Posts mínimos para sugerir pesos (default: 15)
       --min-pilar <n>  Posts mínimos por pilar (default: 4)
+      --demo           Usa el registro de ejemplo (metrics/<id>-demo.csv)
 `);
 }
 

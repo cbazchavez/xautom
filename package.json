@@ -11,7 +11,8 @@
     "draft": "node src/cli.js",
     "draft:dry": "node src/cli.js --dry-run",
     "track": "node src/metrics-cli.js track",
-    "report": "node src/metrics-cli.js report"
+    "report": "node src/metrics-cli.js report",
+    "dashboard": "node src/metrics-cli.js dashboard"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.30.1",

@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tablero — Luis — CEO de CIMIENTO</title>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2230; --line:#283041;
+    --txt:#e6edf3; --muted:#8b949e; --accent:#3fb6ff; --accent2:#7ee787;
+    --warn:#f2cc60; --bad:#ff7b72;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);
+    font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  main{max-width:1040px;margin:0 auto;padding:32px 20px 64px}
+  h1{font-size:24px;margin:0 0 4px} h2{font-size:16px;margin:32px 0 12px;color:var(--muted);
+    text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+  .sub{color:var(--muted);margin:0}
+  a{color:var(--accent);text-decoration:none}
+  .banner{margin:16px 0 0;padding:10px 14px;border:1px solid var(--warn);
+    border-radius:8px;background:rgba(242,204,96,.08);color:var(--warn);font-size:13px}
+  .flow{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 4px}
+  .flow .step{flex:1;min-width:150px;background:var(--panel);border:1px solid var(--line);
+    border-radius:10px;padding:12px 14px}
+  .flow .step .k{font-size:12px;color:var(--muted)}
+  .flow .step .v{font-weight:600;margin-top:2px}
+  .flow .step.on{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:8px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
+  .card .k{font-size:12px;color:var(--muted)} .card .v{font-size:26px;font-weight:700;margin-top:4px}
+  .card .u{font-size:12px;color:var(--muted);margin-left:4px}
+  .grid2{display:grid;grid-template-columns:1.4fr 1fr;gap:16px}
+  @media(max-width:760px){.grid2{grid-template-columns:1fr}}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+  .bars{display:flex;flex-direction:column;gap:10px;margin-top:4px}
+  .row{display:grid;grid-template-columns:140px 1fr 54px;align-items:center;gap:10px}
+  .row .lbl{font-size:13px;color:var(--txt);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .track{background:var(--panel2);border-radius:6px;height:20px;overflow:hidden}
+  .fill{height:100%;background:linear-gradient(90deg,var(--accent),#2a7fd0);border-radius:6px}
+  .fill.alt{background:linear-gradient(90deg,var(--accent2),#46a758)}
+  .row .num{text-align:right;font-variant-numeric:tabular-nums;font-size:13px;color:var(--muted)}
+  .mini{font-size:12px;color:var(--muted);margin:2px 0 0}
+  table{width:100%;border-collapse:collapse;margin-top:6px;font-size:13px}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+  th{color:var(--muted);font-weight:600} td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+  .tag{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--accent)}
+  .pill{display:inline-block;font-size:11px;padding:1px 7px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+  .sug td{border-bottom:1px solid var(--line)} .chg{color:var(--accent2);font-weight:600}
+  .keep{color:var(--muted)}
+  details{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin-bottom:8px}
+  summary{cursor:pointer;font-weight:600;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  summary .pill{font-weight:400}
+  .tw{color:var(--muted);font-size:13px;margin:8px 0 0;padding-left:12px;border-left:2px solid var(--line)}
+  footer{color:var(--muted);font-size:12px;margin-top:32px;border-top:1px solid var(--line);padding-top:16px}
+  .good{color:var(--accent2)} .warnt{color:var(--warn)}
+</style>
+</head>
+<body>
+<main>
+  <h1>Tablero de desempeño — Luis — CEO de CIMIENTO</h1>
+  <p class="sub">Handle @PENDIENTE · generado 2026-06-23 · 2026-06-24 → 2026-07-10</p>
+  <div class="banner">⚠️ MODO DEMO — datos de ejemplo (≈3 semanas simuladas) para mostrar el tablero. Aún no hay cuenta publicada; los números son ilustrativos, no reales.</div>
+
+  <div class="flow">
+    <div class="step"><div class="k">1 · Borradores</div><div class="v">8 en EN/ES</div></div>
+    <div class="step"><div class="k">2 · Publicar</div><div class="v">Luis elige idioma</div></div>
+    <div class="step on"><div class="k">3 · Métricas</div><div class="v">X Analytics (manual)</div></div>
+    <div class="step on"><div class="k">4 · Recalibrar</div><div class="v">pesos por pilar</div></div>
+  </div>
+  <p class="mini">El tablero vive en los pasos 3–4: mide lo publicado y propone cómo recalibrar la ficha. No predice.</p>
+
+  
+  <h2>Resumen</h2>
+  <div class="cards">
+    <div class="card"><div class="k">Posts medidos</div><div class="v">16</div></div>
+    <div class="card"><div class="k">Impresiones</div><div class="v">34,350</div></div>
+    <div class="card"><div class="k">ER medio</div><div class="v">6.93%</div></div>
+    <div class="card"><div class="k">Score de alcance</div><div class="v">476.4<span class="u">/1k · mediana</span></div></div>
+    <div class="card"><div class="k">Bookmarks</div><div class="v">21.2<span class="u">/1k · medio</span></div></div>
+    <div class="card"><div class="k">Follow / visita</div><div class="v">11.37%</div></div>
+  </div>
+
+  <h2>Desempeño por pilar</h2>
+  <div class="grid2">
+    <div class="panel">
+      <div class="mini">Score de alcance (interacción ponderada por el algoritmo de X) · por 1k impresiones</div>
+      <div class="bars"><div class="row"><div class="lbl">lectura_del_mundo <span class="pill">n=4</span></div><div class="track"><div class="fill" style="width:100.0%"></div></div><div class="num">760.4</div></div><div class="row"><div class="lbl">modelos_de_negocio <span class="pill">n=4</span></div><div class="track"><div class="fill" style="width:76.1%"></div></div><div class="num">578.6</div></div><div class="row"><div class="lbl">construir_con_ia <span class="pill">n=4</span></div><div class="track"><div class="fill" style="width:50.5%"></div></div><div class="num">383.9</div></div><div class="row"><div class="lbl">proceso_y_ejecucion <span class="pill">n=4</span></div><div class="track"><div class="fill" style="width:34.1%"></div></div><div class="num">259.2</div></div></div>
+    </div>
+    <div class="panel">
+      <div class="mini">Bookmarks por 1k impresiones (lo que la audiencia guarda)</div>
+      <div class="bars"><div class="row"><div class="lbl">lectura_del_mundo <span class="pill">n=4</span></div><div class="track"><div class="fill alt" style="width:100.0%"></div></div><div class="num">34.4</div></div><div class="row"><div class="lbl">modelos_de_negocio <span class="pill">n=4</span></div><div class="track"><div class="fill alt" style="width:74.2%"></div></div><div class="num">25.5</div></div><div class="row"><div class="lbl">construir_con_ia <span class="pill">n=4</span></div><div class="track"><div class="fill alt" style="width:44.2%"></div></div><div class="num">15.2</div></div><div class="row"><div class="lbl">proceso_y_ejecucion <span class="pill">n=4</span></div><div class="track"><div class="fill alt" style="width:28.5%"></div></div><div class="num">9.8</div></div></div>
+    </div>
+  </div>
+
+  <div class="grid2" style="margin-top:16px">
+    <div class="panel">
+      <div class="mini">Por formato · score/1k</div>
+      <div class="bars"><div class="row"><div class="lbl">thread <span class="pill">n=3</span></div><div class="track"><div class="fill" style="width:100.0%"></div></div><div class="num">763.5</div></div><div class="row"><div class="lbl">single <span class="pill">n=13</span></div><div class="track"><div class="fill" style="width:56.8%"></div></div><div class="num">433.7</div></div></div>
+    </div>
+    <div class="panel">
+      <div class="mini">Por idioma · score/1k</div>
+      <div class="bars"><div class="row"><div class="lbl">en <span class="pill">n=14</span></div><div class="track"><div class="fill" style="width:100.0%"></div></div><div class="num">512.0</div></div><div class="row"><div class="lbl">es <span class="pill">n=2</span></div><div class="track"><div class="fill" style="width:74.2%"></div></div><div class="num">380.1</div></div></div>
+    </div>
+  </div>
+
+  <h2>Mejores y peores posts</h2>
+  <table>
+    <thead><tr><th>Post</th><th>Ángulo</th><th class="n">Score/1k</th><th class="n">ER</th><th class="n">Bookmarks</th></tr></thead>
+    <tbody>
+      <tr><td><span class="good">▲</span> B2 en · <span class="pill">lectura_del_mundo</span> thread</td><td>la guerra que toca tu margen</td><td class="n">777.4</td><td class="n">9.14%</td><td class="n">150</td></tr>
+      <tr><td><span class="good">▲</span> B1 en · <span class="pill">lectura_del_mundo</span> thread</td><td>leer a China sin titular</td><td class="n">766.0</td><td class="n">9.08%</td><td class="n">168</td></tr>
+      <tr><td><span class="good">▲</span> B1 en · <span class="pill">lectura_del_mundo</span> single</td><td>—</td><td class="n">751.2</td><td class="n">8.90%</td><td class="n">99</td></tr>
+      <tr><td><span class="warnt">▼</span> B2 es · <span class="pill">proceso_y_ejecucion</span> single</td><td>—</td><td class="n">225.6</td><td class="n">4.78%</td><td class="n">8</td></tr>
+      <tr><td><span class="warnt">▼</span> B8 en · <span class="pill">proceso_y_ejecucion</span> single</td><td>—</td><td class="n">238.9</td><td class="n">4.95%</td><td class="n">9</td></tr>
+      <tr><td><span class="warnt">▼</span> B8 en · <span class="pill">proceso_y_ejecucion</span> single</td><td>—</td><td class="n">266.5</td><td class="n">5.40%</td><td class="n">10</td></tr>
+    </tbody>
+  </table>
+  <p class="mini">▲ mejores por score de alcance · ▼ cola. El score premia replies y bookmarks por encima de likes.</p>
+
+  <h2>Sugerencia para la ficha</h2>
+  <div class="panel">
+    
+    <div class="mini">Ordenando pilares por score medido. Esto recalibra <span class="tag">pilares[].peso</span> en la ficha.</div>
+    <table class="sug">
+      <thead><tr><th>Pilar</th><th class="n">n</th><th class="n">Score/1k</th><th>Actual</th><th>Sugerido</th></tr></thead>
+      <tbody>
+        <tr><td class="tag">lectura_del_mundo</td><td class="n">4</td><td class="n">760.4</td><td>medio</td><td class="chg">alto ⟵</td></tr>
+        <tr><td class="tag">modelos_de_negocio</td><td class="n">4</td><td class="n">578.6</td><td>alto</td><td class="chg">medio ⟵</td></tr>
+        <tr><td class="tag">construir_con_ia</td><td class="n">4</td><td class="n">383.9</td><td>alto</td><td class="chg">medio ⟵</td></tr>
+        <tr><td class="tag">proceso_y_ejecucion</td><td class="n">4</td><td class="n">259.2</td><td>bajo</td><td class="keep">bajo</td></tr>
+      </tbody>
+    </table>
+    <p class="mini">Sugerencia, no orden: aplícalo a mano si concuerda con lo que ves.</p>
+  </div>
+
+  <h2>El batch que se está midiendo</h2>
+  <details><summary>B1 — leer a China sin titular <span class="pill">lectura_del_mundo</span> <span class="pill">thread</span></summary><div style="margin-top:8px"><div class="mini">EN</div><p class="tw">Most people read China as one story: rival or factory. If you build, that's the wrong lens.</p><p class="tw">China is the world's fastest product lab — hardware iterated in weeks, super-apps, payments, EVs, energy built at a scale nobody else touches. The behaviors are the signal, not the headlines.</p><p class="tw">Don't argue the geopolitics. Watch what Chinese apps and devices actually ship. Those product patterns tend to land in your market 2-3 years later. Build for the version that's already coming.</p><div class="mini" style="margin-top:8px">ES</div><p class="tw">Casi todos leen a China como una sola historia: rival o fábrica. Si construyes, es el lente equivocado.</p><p class="tw">China es el laboratorio de producto más rápido del mundo: hardware que itera en semanas, súper-apps, pagos, autos eléctricos, energía a una escala que nadie más toca. El dato son los hábitos, no los titulares.</p><p class="tw">No discutas la geopolítica. Mira lo que de verdad lanzan sus apps y dispositivos. Esos patrones suelen aterrizar en tu mercado 2-3 años después. Construye para la versión que ya viene.</p></div></details>
+  <details><summary>B2 — la guerra que toca tu margen <span class="pill">lectura_del_mundo</span> <span class="pill">thread</span></summary><div style="margin-top:8px"><div class="mini">EN</div><p class="tw">A war you're not in still hits your P&amp;L. Russia–Ukraine moves energy prices the same week, not someday.</p><p class="tw">Gas and oil spike → electricity spikes → so does the cost of compute, data centers, shipping, and anything made of atoms. AI runs on power. Power runs on geopolitics.</p><p class="tw">Two builder moves: price energy volatility into your numbers instead of pretending it's flat, or build the efficiency play — same job on a fraction of the compute. Scarcity always pays someone.</p><div class="mini" style="margin-top:8px">ES</div><p class="tw">Una guerra en la que no estás igual te pega en el P&amp;L. Rusia–Ucrania mueve el precio de la energía esa misma semana, no algún día.</p><p class="tw">Sube el gas y el petróleo → sube la luz → sube el costo del cómputo, los data centers, el flete y todo lo hecho de átomos. La IA corre con energía. La energía corre con geopolítica.</p><p class="tw">Dos jugadas para quien construye: mete la volatilidad de la energía en tus números, no la finjas plana. O haz el producto de la eficiencia: el mismo trabajo con una fracción del cómputo. La escasez siempre le paga a alguien.</p></div></details>
+  <details><summary>B3 — finge la IA primero <span class="pill">construir_con_ia</span> <span class="pill">single</span></summary><div style="margin-top:8px"><div class="mini">EN</div><p class="tw">Fastest way to test an AI product: don't build the AI yet. Do it by hand for your first 10 users and charge them. If they won't pay for the magic when a human fakes it, the model won't save it. Automate only what already works manually.</p><div class="mini" style="margin-top:8px">ES</div><p class="tw">La forma más rápida de probar un producto con IA: no construyas la IA todavía. Hazlo a mano para tus primeros 10 usuarios y cóbrales. Si no pagan por la magia cuando un humano la finge, el modelo no la va a salvar. Automatiza solo lo que ya funciona a mano.</p></div></details>
+  <details><summary>B4 — cobra el resultado, no la función <span class="pill">modelos_de_negocio</span> <span class="pill">single</span></summary><div style="margin-top:8px"><div class="mini">EN</div><p class="tw">Cheap products sell features. Expensive ones sell the outcome and hide the feature. Nobody wants 'AI transcription' — they want the meeting notes done before they leave the call. Same tech, 10x the price. You're not underpriced, you're under-framed.</p><div class="mini" style="margin-top:8px">ES</div><p class="tw">Los productos baratos venden funciones. Los caros venden el resultado y esconden la función. Nadie quiere 'transcripción con IA': quiere las notas de la junta listas antes de colgar. Misma tecnología, 10x el precio. No estás barato, estás mal enmarcado.</p></div></details>
+  <details><summary>B5 — el wrapper no es el foso <span class="pill">construir_con_ia</span> <span class="pill">single</span></summary><div style="margin-top:8px"><div class="mini">EN</div><p class="tw">Your AI wrapper is not the moat. Anyone clones the prompt in an afternoon. The moat is the boring proprietary data you collect on every use — the corrections, the edge cases, the workflow nobody else sees. Ship the wrapper to start collecting it.</p><div class="mini" style="margin-top:8px">ES</div><p class="tw">Tu wrapper de IA no es el foso. Cualquiera clona el prompt en una tarde. El foso es el dato aburrido y propio que juntas en cada uso: las correcciones, los casos raros, el flujo que nadie más ve. Lanza el wrapper para empezar a juntarlo.</p></div></details>
+  <details><summary>B6 — idea regalada: sillas vacías <span class="pill">modelos_de_negocio</span> <span class="pill">single</span></summary><div style="margin-top:8px"><div class="mini">EN</div><p class="tw">Free idea, go take it: a tool that turns a clinic's no-show list into automated texts that rebook the empty slot same-day. Clinics lose real money to empty chairs and won't build this. Boring, unsexy, profitable. I've got twenty in the queue — this one's yours.</p><div class="mini" style="margin-top:8px">ES</div><p class="tw">Idea gratis, llévatela: una app que convierte la lista de pacientes que faltaron en mensajes automáticos para reagendar y llenar el hueco el mismo día. Las clínicas pierden dinero con sillas vacías y no lo van a hacer. Aburrido, rentable. Tengo veinte en fila — es tuya.</p></div></details>
+  <details><summary>B7 — una app para todo <span class="pill">lectura_del_mundo</span> <span class="pill">thread</span> <span class="pill">gira_asia_seul</span></summary><div style="margin-top:8px"><div class="mini">EN</div><p class="tw">In Asia one app is your chat, bank, taxi, store, and ID. In the West we ship ten apps that each do one thing. Watching it up close changes how you read the word 'focus'.</p><p class="tw">The super-app works because switching costs compound: every feature makes leaving more expensive. We're taught to do one thing well. They're taught to own the whole habit.</p><p class="tw">You won't out-bundle them on day one. But take two adjacent jobs your user already does in separate tools and merge them. The wedge is doing one thing well — then quietly becoming where they live.</p><div class="mini" style="margin-top:8px">ES</div><p class="tw">En Asia una sola app es tu chat, banco, taxi, tienda e identidad. En Occidente lanzamos diez apps que hacen una cosa cada una. Verlo de cerca te cambia la idea de 'foco'.</p><p class="tw">La súper-app funciona porque el costo de cambiarte se acumula: cada función hace más caro irte. A nosotros nos enseñan a hacer una cosa bien. A ellos, a adueñarse del hábito completo.</p><p class="tw">No les vas a ganar en bundle el primer día. Pero toma dos tareas vecinas que tu usuario ya hace en herramientas separadas y únelas. La cuña es hacer una cosa bien — y luego volverte el lugar donde vive.</p></div></details>
+  <details><summary>B8 — la landing antes del producto <span class="pill">proceso_y_ejecucion</span> <span class="pill">single</span></summary><div style="margin-top:8px"><div class="mini">EN</div><p class="tw">Before I build anything, I write the landing page first. If I can't explain the promise in one screen, the product is confused, not the copy. The landing page is the cheapest version of the product — and the fastest place to kill a bad idea before it costs a month.</p><div class="mini" style="margin-top:8px">ES</div><p class="tw">Antes de construir algo, escribo la landing primero. Si no puedo explicar la promesa en una pantalla, el confundido es el producto, no el texto. La landing es la versión más barata del producto y el lugar más rápido para matar una mala idea antes de que cueste un mes.</p></div></details>
+  
+
+  <footer>
+    Se mide lo publicado, no se predice. <strong>Score de alcance</strong> = Σ(interacción × peso reportado del algoritmo de X) / impresiones —
+    replies y bookmarks pesan mucho más que un like. Norte de la siembra: bookmarks/1k y follow/visita, no likes ni followers absolutos.
+    Entrada manual desde X Analytics (sin API). Generado por xautom.
+  </footer>
+</main>
+</body>
+</html>

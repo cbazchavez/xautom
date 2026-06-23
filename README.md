@@ -78,12 +78,20 @@ out/<id>-<fecha>.json   →   metrics/<id>.csv   →   reporte por pilar/formato
 2. **Llenar a mano** en `metrics/<id>.csv`, por cada post publicado: `published_at`,
    `url`, `impressions`, `likes`, `replies`, `reposts`, `bookmarks`,
    `profile_clicks`, `follows`. Las filas sin impresiones se ignoran.
-3. **Reporte**:
+3. **Reporte / tablero**:
    ```bash
-   npm run report
+   npm run report      # reporte en Markdown
+   npm run dashboard   # tablero HTML autocontenido (se abre con doble clic)
    ```
-   Cruza el rendimiento por pilar, formato (single vs thread) e idioma (EN vs ES),
-   marca mejores/peores posts y **sugiere** cómo recalibrar `pilares[].peso`.
+   Cruzan el rendimiento por pilar, formato (single vs thread) e idioma (EN vs ES),
+   marcan mejores/peores posts y **sugieren** cómo recalibrar `pilares[].peso`.
+
+Para **mostrar la idea** antes de tener cuenta, hay un tablero con datos de
+ejemplo (claramente marcado como DEMO):
+
+```bash
+npm run dashboard -- --demo      # genera metrics/luis-dashboard.html
+```
 
 Qué se mide y por qué:
 

@@ -1,0 +1,17 @@
+batch,draft,lang,pillar,format,active_topic,published_at,url,impressions,likes,replies,reposts,bookmarks,profile_clicks,follows,notes
+2026-06-23,1,en,lectura_del_mundo,thread,,2026-06-24,https://x.com/demo/1,4800,130,34,20,168,84,13,DEMO
+2026-06-23,2,en,lectura_del_mundo,thread,,2026-06-25,https://x.com/demo/2,4200,112,30,18,150,74,11,DEMO
+2026-06-23,3,en,construir_con_ia,single,,2026-06-26,https://x.com/demo/3,1900,60,7,5,30,20,2,DEMO
+2026-06-23,4,en,modelos_de_negocio,single,,2026-06-27,https://x.com/demo/4,2500,66,14,9,68,38,6,DEMO
+2026-06-23,5,en,construir_con_ia,single,,2026-06-28,https://x.com/demo/5,1700,54,6,4,26,16,2,DEMO
+2026-06-23,6,en,modelos_de_negocio,single,,2026-06-29,https://x.com/demo/6,2200,58,12,7,58,30,4,DEMO
+2026-06-23,7,en,lectura_del_mundo,thread,gira_asia_seul,2026-06-30,https://x.com/demo/7,3900,104,28,16,132,66,10,DEMO
+2026-06-23,8,en,proceso_y_ejecucion,single,,2026-07-01,https://x.com/demo/8,1100,40,3,2,12,8,1,DEMO
+2026-06-30,1,en,lectura_del_mundo,single,,2026-07-02,https://x.com/demo/9,3000,80,21,12,99,55,8,DEMO
+2026-06-30,3,en,construir_con_ia,single,,2026-07-03,https://x.com/demo/10,1500,46,5,3,22,12,1,DEMO
+2026-06-30,5,en,construir_con_ia,single,,2026-07-04,https://x.com/demo/11,1400,44,5,3,21,11,1,DEMO
+2026-06-30,4,en,modelos_de_negocio,single,,2026-07-05,https://x.com/demo/12,1800,46,10,5,44,24,3,DEMO
+2026-06-30,6,es,modelos_de_negocio,single,,2026-07-06,https://x.com/demo/13,1500,38,8,4,36,18,2,DEMO
+2026-06-30,8,en,proceso_y_ejecucion,single,,2026-07-07,https://x.com/demo/14,1000,34,3,1,10,6,1,DEMO
+2026-07-07,8,en,proceso_y_ejecucion,single,,2026-07-09,https://x.com/demo/15,950,30,2,1,9,5,0,DEMO
+2026-07-07,2,es,proceso_y_ejecucion,single,,2026-07-10,https://x.com/demo/16,900,28,2,1,8,4,0,DEMO
