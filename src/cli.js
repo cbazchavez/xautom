@@ -67,7 +67,22 @@ async function main() {
   await mkdir(dirname(outPath), { recursive: true });
   await writeFile(outPath, md, 'utf8');
 
+  // Sidecar JSON: misma data estructurada, legible por máquina. Es la fuente
+  // del loop de medición (src/metrics-cli.js) para sembrar el registro y luego
+  // cruzar métricas por pilar/formato/idioma.
+  const sidecarPath = outPath.replace(/\.md$/i, '.json');
+  const sidecar = {
+    id: profile.perfil.id,
+    nombre: profile.perfil.nombre ?? profile.perfil.id,
+    handle: profile.perfil.handle ?? '',
+    fecha,
+    model,
+    drafts,
+  };
+  await writeFile(sidecarPath, JSON.stringify(sidecar, null, 2) + '\n', 'utf8');
+
   console.log(`\n✅ ${drafts.length} borradores escritos en: ${outPath}`);
+  console.log(`   sidecar: ${sidecarPath}`);
   if (usage) {
     console.log(`   tokens: ${usage.input_tokens} in / ${usage.output_tokens} out`);
   }

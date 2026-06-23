@@ -1,0 +1,157 @@
+{
+  "id": "luis",
+  "nombre": "Luis — CEO de CIMIENTO",
+  "handle": "@PENDIENTE",
+  "fecha": "2026-06-23",
+  "model": "claude-opus-4-8",
+  "drafts": [
+    {
+      "pillar": "lectura_del_mundo",
+      "format": "thread",
+      "angle": "leer a China sin titular",
+      "uses_active_topic": null,
+      "product": null,
+      "en": {
+        "tweets": [
+          "Most people read China as one story: rival or factory. If you build, that's the wrong lens.",
+          "China is the world's fastest product lab — hardware iterated in weeks, super-apps, payments, EVs, energy built at a scale nobody else touches. The behaviors are the signal, not the headlines.",
+          "Don't argue the geopolitics. Watch what Chinese apps and devices actually ship. Those product patterns tend to land in your market 2-3 years later. Build for the version that's already coming."
+        ]
+      },
+      "es": {
+        "tweets": [
+          "Casi todos leen a China como una sola historia: rival o fábrica. Si construyes, es el lente equivocado.",
+          "China es el laboratorio de producto más rápido del mundo: hardware que itera en semanas, súper-apps, pagos, autos eléctricos, energía a una escala que nadie más toca. El dato son los hábitos, no los titulares.",
+          "No discutas la geopolítica. Mira lo que de verdad lanzan sus apps y dispositivos. Esos patrones suelen aterrizar en tu mercado 2-3 años después. Construye para la versión que ya viene."
+        ]
+      }
+    },
+    {
+      "pillar": "lectura_del_mundo",
+      "format": "thread",
+      "angle": "la guerra que toca tu margen",
+      "uses_active_topic": null,
+      "product": null,
+      "en": {
+        "tweets": [
+          "A war you're not in still hits your P&L. Russia–Ukraine moves energy prices the same week, not someday.",
+          "Gas and oil spike → electricity spikes → so does the cost of compute, data centers, shipping, and anything made of atoms. AI runs on power. Power runs on geopolitics.",
+          "Two builder moves: price energy volatility into your numbers instead of pretending it's flat, or build the efficiency play — same job on a fraction of the compute. Scarcity always pays someone."
+        ]
+      },
+      "es": {
+        "tweets": [
+          "Una guerra en la que no estás igual te pega en el P&L. Rusia–Ucrania mueve el precio de la energía esa misma semana, no algún día.",
+          "Sube el gas y el petróleo → sube la luz → sube el costo del cómputo, los data centers, el flete y todo lo hecho de átomos. La IA corre con energía. La energía corre con geopolítica.",
+          "Dos jugadas para quien construye: mete la volatilidad de la energía en tus números, no la finjas plana. O haz el producto de la eficiencia: el mismo trabajo con una fracción del cómputo. La escasez siempre le paga a alguien."
+        ]
+      }
+    },
+    {
+      "pillar": "construir_con_ia",
+      "format": "single",
+      "angle": "finge la IA primero",
+      "uses_active_topic": null,
+      "product": null,
+      "en": {
+        "tweets": [
+          "Fastest way to test an AI product: don't build the AI yet. Do it by hand for your first 10 users and charge them. If they won't pay for the magic when a human fakes it, the model won't save it. Automate only what already works manually."
+        ]
+      },
+      "es": {
+        "tweets": [
+          "La forma más rápida de probar un producto con IA: no construyas la IA todavía. Hazlo a mano para tus primeros 10 usuarios y cóbrales. Si no pagan por la magia cuando un humano la finge, el modelo no la va a salvar. Automatiza solo lo que ya funciona a mano."
+        ]
+      }
+    },
+    {
+      "pillar": "modelos_de_negocio",
+      "format": "single",
+      "angle": "cobra el resultado, no la función",
+      "uses_active_topic": null,
+      "product": null,
+      "en": {
+        "tweets": [
+          "Cheap products sell features. Expensive ones sell the outcome and hide the feature. Nobody wants 'AI transcription' — they want the meeting notes done before they leave the call. Same tech, 10x the price. You're not underpriced, you're under-framed."
+        ]
+      },
+      "es": {
+        "tweets": [
+          "Los productos baratos venden funciones. Los caros venden el resultado y esconden la función. Nadie quiere 'transcripción con IA': quiere las notas de la junta listas antes de colgar. Misma tecnología, 10x el precio. No estás barato, estás mal enmarcado."
+        ]
+      }
+    },
+    {
+      "pillar": "construir_con_ia",
+      "format": "single",
+      "angle": "el wrapper no es el foso",
+      "uses_active_topic": null,
+      "product": null,
+      "en": {
+        "tweets": [
+          "Your AI wrapper is not the moat. Anyone clones the prompt in an afternoon. The moat is the boring proprietary data you collect on every use — the corrections, the edge cases, the workflow nobody else sees. Ship the wrapper to start collecting it."
+        ]
+      },
+      "es": {
+        "tweets": [
+          "Tu wrapper de IA no es el foso. Cualquiera clona el prompt en una tarde. El foso es el dato aburrido y propio que juntas en cada uso: las correcciones, los casos raros, el flujo que nadie más ve. Lanza el wrapper para empezar a juntarlo."
+        ]
+      }
+    },
+    {
+      "pillar": "modelos_de_negocio",
+      "format": "single",
+      "angle": "idea regalada: sillas vacías",
+      "uses_active_topic": null,
+      "product": null,
+      "en": {
+        "tweets": [
+          "Free idea, go take it: a tool that turns a clinic's no-show list into automated texts that rebook the empty slot same-day. Clinics lose real money to empty chairs and won't build this. Boring, unsexy, profitable. I've got twenty in the queue — this one's yours."
+        ]
+      },
+      "es": {
+        "tweets": [
+          "Idea gratis, llévatela: una app que convierte la lista de pacientes que faltaron en mensajes automáticos para reagendar y llenar el hueco el mismo día. Las clínicas pierden dinero con sillas vacías y no lo van a hacer. Aburrido, rentable. Tengo veinte en fila — es tuya."
+        ]
+      }
+    },
+    {
+      "pillar": "lectura_del_mundo",
+      "format": "thread",
+      "angle": "una app para todo",
+      "uses_active_topic": "gira_asia_seul",
+      "product": null,
+      "en": {
+        "tweets": [
+          "In Asia one app is your chat, bank, taxi, store, and ID. In the West we ship ten apps that each do one thing. Watching it up close changes how you read the word 'focus'.",
+          "The super-app works because switching costs compound: every feature makes leaving more expensive. We're taught to do one thing well. They're taught to own the whole habit.",
+          "You won't out-bundle them on day one. But take two adjacent jobs your user already does in separate tools and merge them. The wedge is doing one thing well — then quietly becoming where they live."
+        ]
+      },
+      "es": {
+        "tweets": [
+          "En Asia una sola app es tu chat, banco, taxi, tienda e identidad. En Occidente lanzamos diez apps que hacen una cosa cada una. Verlo de cerca te cambia la idea de 'foco'.",
+          "La súper-app funciona porque el costo de cambiarte se acumula: cada función hace más caro irte. A nosotros nos enseñan a hacer una cosa bien. A ellos, a adueñarse del hábito completo.",
+          "No les vas a ganar en bundle el primer día. Pero toma dos tareas vecinas que tu usuario ya hace en herramientas separadas y únelas. La cuña es hacer una cosa bien — y luego volverte el lugar donde vive."
+        ]
+      }
+    },
+    {
+      "pillar": "proceso_y_ejecucion",
+      "format": "single",
+      "angle": "la landing antes del producto",
+      "uses_active_topic": null,
+      "product": null,
+      "en": {
+        "tweets": [
+          "Before I build anything, I write the landing page first. If I can't explain the promise in one screen, the product is confused, not the copy. The landing page is the cheapest version of the product — and the fastest place to kill a bad idea before it costs a month."
+        ]
+      },
+      "es": {
+        "tweets": [
+          "Antes de construir algo, escribo la landing primero. Si no puedo explicar la promesa en una pantalla, el confundido es el producto, no el texto. La landing es la versión más barata del producto y el lugar más rápido para matar una mala idea antes de que cueste un mes."
+        ]
+      }
+    }
+  ]
+}

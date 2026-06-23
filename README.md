@@ -59,6 +59,44 @@ Todo vive en `profiles/luis.yaml`. Lo que más mueve la aguja:
   aterrizar producto solo (siguiendo `reglas_de_promocion`). Mientras esté vacío,
   nunca menciona productos.
 
+## Medir: ¿van a funcionar?
+
+Ningún número avala un borrador **antes** de publicarlo. El batch es un
+instrumento de medición, no una garantía. Este loop cierra el ciclo hacia la
+ficha con data real de X Analytics (entrada **manual**, sin API):
+
+```
+out/<id>-<fecha>.json   →   metrics/<id>.csv   →   reporte por pilar/formato/idioma
+   (sidecar del batch)       (registro manual)       (+ sugerencia de pesos)
+```
+
+1. **Sembrar el registro** (rellena pilar/formato/idioma solo, desde el sidecar):
+   ```bash
+   npm run track                                   # usa el sidecar más reciente de out/
+   # o: npm run track -- --batch out/luis-2026-06-23.json
+   ```
+2. **Llenar a mano** en `metrics/<id>.csv`, por cada post publicado: `published_at`,
+   `url`, `impressions`, `likes`, `replies`, `reposts`, `bookmarks`,
+   `profile_clicks`, `follows`. Las filas sin impresiones se ignoran.
+3. **Reporte**:
+   ```bash
+   npm run report
+   ```
+   Cruza el rendimiento por pilar, formato (single vs thread) e idioma (EN vs ES),
+   marca mejores/peores posts y **sugiere** cómo recalibrar `pilares[].peso`.
+
+Qué se mide y por qué:
+
+- **Score de alcance**: interacción ponderada por los pesos reportados del
+  algoritmo de X (replies y bookmarks pesan mucho más que un like). Más cerca de
+  lo que mueve el reach que el ER crudo.
+- **Norte de la siembra**: `bookmarks/1k` (valor que se guarda) y `follow/visita`
+  (conversión a seguidor), no likes ni followers absolutos.
+- **Guardarraíl honesto**: con muestra chica el reporte se **rehúsa** a sugerir
+  pesos (mínimos ajustables con `--min-total` / `--min-pilar`). 8 posts no son
+  señal; ~30–50 empiezan a serlo. Mide relativo a tu propia mediana, no a
+  benchmarks externos.
+
 ## Pendientes conocidos
 
 - `perfil.handle` real (hoy `@PENDIENTE`).

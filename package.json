@@ -9,7 +9,9 @@
   },
   "scripts": {
     "draft": "node src/cli.js",
-    "draft:dry": "node src/cli.js --dry-run"
+    "draft:dry": "node src/cli.js --dry-run",
+    "track": "node src/metrics-cli.js track",
+    "report": "node src/metrics-cli.js report"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.30.1",
