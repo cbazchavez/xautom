@@ -98,27 +98,27 @@ export function renderDashboard({ meta, resumen, porPilar, porFormato, porIdioma
     ${step('3 · Métricas', 'X Analytics (manual)', true)}
     ${step('4 · Recalibrar', 'pesos por pilar', true)}
   </div>
-  <p class="mini">El tablero vive en los pasos 3–4: mide lo publicado y propone cómo recalibrar la ficha. No predice.</p>
+  <p class="mini">Pasos 3–4 (resaltados): lo que cubre este tablero.</p>
 
   ${resumen.total === 0 ? `
   <div class="panel" style="margin-top:18px">
     <strong>Aún sin datos.</strong> Llena <span class="tag">metrics/${esc(meta.id)}.csv</span> con los números de X Analytics y regenera el tablero.
     Para ver cómo se verá, corre <span class="tag">npm run dashboard -- --demo</span>.
   </div>` : `
-  <h2>Norte · lo que perseguimos</h2>
+  <h2>Métricas principales</h2>
   <div class="cards">
     ${card('Score de alcance', per1k(resumen.reachMediana), '/1k · mediana', true)}
     ${card('Bookmarks', per1k(resumen.bmMedio), '/1k · medio', true)}
     ${card('Follow / visita', pct(resumen.followVisita), 'sigue ÷ visita · meta ≥10%', true, fvTone)}
   </div>
-  <h2>Contexto · para leer el norte, no para presumir</h2>
+  <h2>Contexto</h2>
   <div class="cards">
     ${card('Posts medidos', fmt(resumen.total), 'confianza')}
     ${card('Impresiones', fmt(resumen.impTotal), 'alcance')}
     ${card('Reach ratio', rrVal, `imp ÷ seg · meta ≥2×${resumen.followers ? ` (${fmt(resumen.followers)} seg)` : ''}`, false, rrTone)}
     ${card('Replies', per1k(resumen.replyMedio), '/1k · conversación')}
   </div>
-  <p class="mini">Semáforo: <span class="lg ex">supera</span><span class="lg ok">en rango</span><span class="lg wn">debajo</span><span class="lg bd">muy mal</span> &nbsp;Solo coloreamos los KPIs con un estándar publicado (follow÷visita, reach ratio). Los demás se quedan neutros hasta tener tu propia mediana como referencia — colorearlos contra un número inventado sería humo.</p>
+  <p class="mini">Semáforo: <span class="lg ex">supera</span><span class="lg ok">en rango</span><span class="lg wn">debajo</span><span class="lg bd">muy mal</span> &nbsp;Solo se colorean los KPIs con un benchmark publicado (follow÷visita, reach ratio); el resto queda neutro.</p>
 
   <h2>Desempeño por pilar</h2>
   <div class="grid2">
@@ -127,7 +127,7 @@ export function renderDashboard({ meta, resumen, porPilar, porFormato, porIdioma
       ${barras(porPilar, 'reachScore', per1k)}
     </div>
     <div class="panel">
-      <div class="mini">Bookmarks por 1k impresiones (lo que la audiencia guarda)</div>
+      <div class="mini">Bookmarks por 1k impresiones</div>
       ${barras(porPilar, 'bookmarkRate', per1k, true)}
     </div>
   </div>
@@ -147,7 +147,7 @@ export function renderDashboard({ meta, resumen, porPilar, porFormato, porIdioma
     <div style="margin-top:8px">
       <p class="mini">Score = Σ(interacción × peso) ÷ impresiones. Pesos crudos del heavy-ranker open-source de X (README, abr-2023):</p>
       <p class="tw"><b>${esc(pesosTxt)}</b></p>
-      <p class="mini">El <b>bookmark (10)</b> es estimación: X confirmó en 2024 que cuenta para el alcance pero nunca publicó un peso oficial. Las señales más fuertes del algoritmo —reply respondido por el autor (75), permanencia ≥2 min (11), report (−369)— no aparecen en la analítica nativa, así que no entran al score. Fuente: github.com/twitter/the-algorithm-ml. Ojo: una liga en el cuerpo del post cuesta −30 a −50% de alcance; ponla en el primer reply.</p>
+      <p class="mini">El <b>bookmark (10)</b> es estimación: X confirmó en 2024 que cuenta para el alcance pero nunca publicó un peso oficial. Las señales más fuertes del algoritmo —reply respondido por el autor (75), permanencia ≥2 min (11), report (−369)— no aparecen en la analítica nativa, así que no entran al score. Fuente: github.com/twitter/the-algorithm-ml. Una liga en el cuerpo del post cuesta −30 a −50% de alcance; ponla en el primer reply.</p>
     </div>
   </details>
 
@@ -158,7 +158,7 @@ export function renderDashboard({ meta, resumen, porPilar, porFormato, porIdioma
       ${[...top.map((p) => fila(p, anguloDe, 'good')), ...bottom.map((p) => fila(p, anguloDe, 'warnt'))].join('\n      ')}
     </tbody>
   </table>
-  <p class="mini">▲ mejores por score de alcance · ▼ cola. El score premia replies y bookmarks por encima de likes.</p>
+  <p class="mini">▲ mejores · ▼ cola, por score de alcance.</p>
 
   <h2>Sugerencia para la ficha</h2>
   <div class="panel">
@@ -174,9 +174,9 @@ export function renderDashboard({ meta, resumen, porPilar, porFormato, porIdioma
         }).join('\n        ')}
       </tbody>
     </table>
-    <p class="mini">Sugerencia, no orden: aplícalo a mano si concuerda con lo que ves.</p>` : `
+    <p class="mini">Aplícalo a mano en la ficha si concuerda con lo medido.</p>` : `
     <strong class="warnt">Muestra insuficiente.</strong>
-    <p class="mini">${esc(pesos.motivo)} No se toca la ficha con ruido — la barra existe a propósito.</p>`}
+    <p class="mini">${esc(pesos.motivo)}</p>`}
   </div>
 
   <h2>El batch que se está midiendo</h2>
@@ -184,8 +184,6 @@ export function renderDashboard({ meta, resumen, porPilar, porFormato, porIdioma
   `}
 
   <footer>
-    Se mide lo publicado, no se predice. <strong>Score de alcance</strong> = Σ(interacción × peso reportado del algoritmo de X) / impresiones —
-    replies y bookmarks pesan mucho más que un like. Norte de la siembra: bookmarks/1k y follow/visita, no likes ni followers absolutos.
     Entrada manual desde X Analytics (sin API). Generado por xautom.
   </footer>
 </main>
