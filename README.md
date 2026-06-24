@@ -132,6 +132,8 @@ Qué se mide y por qué:
 
 ## Documentación
 
+- **`docs/para-luis.html`** — pitch para Luis: qué es xautom, para qué sirve y cómo
+  resuelve crecer en X, aterrizado en el playbook real de quienes ya crecieron.
 - **`docs/estrategia.html`** — del motor al crecimiento: diagrama del ciclo motor↔tablero,
   para qué sirve cada métrica, qué más se puede construir, el plan de arranque y perfiles
   de referencia en X.
@@ -142,6 +144,8 @@ Qué se mide y por qué:
   creadores, con fuentes. El *por qué* detrás de `ALGO_PESOS` y los KPIs.
 - **`docs/research-perfiles-x.md`** — perfiles de referencia en X por pilar, tácticas
   para adoptar y la estrategia de idioma (no mezclar EN+ES en el mismo feed), con fuentes.
+- **`docs/research-crecimiento-x.md`** — análisis de crecimiento de 21 perfiles (un
+  agente por cuenta): ranking, playbook común, inglés vs español y plan de arranque.
 
 ## Pendientes conocidos
 

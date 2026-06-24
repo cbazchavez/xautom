@@ -28,11 +28,11 @@ dirección, no como verdad de laboratorio.
 - **@ShaanVP** (Shaan Puri) — frameworks de fundador con voz humana. "Curiosity gap": el primer tweet carga el 70%. "La gente no quiere información, quiere un sentimiento."
 - **@TrungTPhan** — desgloses de negocio/tech "serios empaquetados ligero" (smart threads, dumb memes). X como top-of-funnel a su lista.
 - **@george__mack** — máxima densidad de ideas, mínima paja ("anti-humo" puro). Creció por calidad, no por trucos de growth.
-- **@sangeetp** (Sangeet Paul Choudary) — economía de plataformas/network effects; una **lente propietaria** que aplica a todo ("cuando cambia la escasez, el valor se mueve").
+- **@sanguit** (Sangeet Paul Choudary) — economía de plataformas/network effects; una **lente propietaria** que aplica a todo ("cuando cambia la escasez, el valor se mueve"). *(X es secundario para él; ~9K seguidores.)*
 
 ### Lectura del mundo (macro / Asia-tech para operadores)
 - **@lillianmli** (Lillian Li, "Chinese Characteristics") — **el puente perfecto**: lee la tech china en clave de *modelo de negocio*, no de geopolítica de titular. Une dos pilares de Luis.
-- **@kyledchan** (Kyle Chan, "High Capacity") — política industrial/manufactura china traducida a implicaciones competitivas concretas.
+- **@kyleichan** (Kyle Chan, "High Capacity") — política industrial/manufactura china traducida a implicaciones competitivas concretas.
 - **@ruima** (Rui Ma, "Tech Buzz China") — tech china de frontera para inversores cross-border; autoridad de operadora financiera.
 - **@Noahpinion** (Noah Smith) — macro/política industrial con opinión legible; "explainer con tesis" (postura clara + datos), enlaza X → Substack.
 - **@ChinaTalkMedia** (Jordan Schneider) — tech-China-policy profundo pero accesible; arbitraje de información (medios chinos → operador occidental).

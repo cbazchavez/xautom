@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>xautom — para Luis</title>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2230; --line:#283041;
+    --txt:#e6edf3; --muted:#8b949e; --accent:#3fb6ff; --accent2:#7ee787;
+    --warn:#f2cc60; --bad:#ff7b72;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);
+    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  main{max-width:880px;margin:0 auto;padding:40px 22px 80px}
+  h1{font-size:30px;margin:0 0 6px;letter-spacing:-.01em}
+  h2{font-size:13px;margin:46px 0 14px;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;font-weight:700}
+  h3{font-size:18px;margin:18px 0 6px}
+  p{margin:10px 0} .lead{font-size:20px;margin:14px 0 0}
+  .sub{color:var(--muted);margin:4px 0 0} .muted{color:var(--muted)} b{color:#fff}
+  .tag{font-family:ui-monospace,Menlo,monospace;font-size:13px;color:var(--accent)}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:14px 0}
+  .one{font-size:19px;line-height:1.5}
+  .one b{color:var(--accent2)}
+  ul.plain{margin:10px 0;padding-left:22px} ul.plain li{margin:7px 0}
+  /* mapping */
+  .map{border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:10px}
+  .map .hd,.map .rw{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .map .hd{background:var(--panel2);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+  .map .hd div{padding:11px 16px}
+  .map .hd .a{color:var(--muted)} .map .hd .b{color:var(--accent)}
+  .map .rw{border-top:1px solid var(--line)}
+  .map .rw .l{padding:13px 16px;border-right:1px solid var(--line);font-size:14px}
+  .map .rw .r{padding:13px 16px;font-size:14px}
+  .map .rw .r b{color:var(--accent)}
+  @media(max-width:640px){.map .hd,.map .rw{grid-template-columns:1fr}.map .rw .l{border-right:0;border-bottom:1px solid var(--line)}}
+  /* plan */
+  .step{display:grid;grid-template-columns:34px 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+  .step:last-child{border-bottom:0}
+  .step .n{width:28px;height:28px;border-radius:50%;background:var(--panel2);border:1px solid var(--accent);
+    color:var(--accent);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+  .step .t{font-size:14px}
+  .rec{background:var(--panel2);border:1px solid var(--accent2);border-left:4px solid var(--accent2);
+    border-radius:10px;padding:16px 18px;margin-top:16px}
+  .rec b{color:var(--accent2)}
+  .no{display:flex;gap:10px;align-items:flex-start;margin:8px 0;font-size:14px}
+  .no .x{color:var(--bad);font-weight:700}
+  footer{color:var(--muted);font-size:13px;margin-top:46px;border-top:1px solid var(--line);padding-top:18px}
+</style>
+</head>
+<body>
+<main>
+
+  <h1>xautom — para Luis</h1>
+  <p class="sub">Qué es, para qué sirve y cómo te hace crecer en X sin que suene a robot ni a humo.</p>
+  <p class="lead">La meta no es "tener más seguidores". Es construir en X una audiencia que <b>importe</b>
+  —fundadores, operadores, clientes potenciales— con tu voz, sin que te coma el tiempo y sin vender humo.</p>
+
+  <!-- QUÉ ES -->
+  <h2>Qué es xautom</h2>
+  <div class="panel">
+    <p class="one">Un sistema que <b>genera borradores con tu voz</b>, <b>tú</b> eliges qué publicar, y
+    <b>mide</b> lo que funciona para mejorar la siguiente tanda — guiado por lo que de verdad hizo crecer a los
+    mejores creadores de X, no por teoría.</p>
+  </div>
+  <p>Nada se publica solo. No compra seguidores. No te promete un viral. Te da un <b>sistema operativo</b> para
+  estar presente con criterio, semana tras semana.</p>
+
+  <!-- PLAYBOOK -->
+  <h2>Cómo crecieron los que ya lo lograron</h2>
+  <p>Analizamos el crecimiento de 21 cuentas de referencia (builders de IA, modelos de negocio, lectura del
+  mundo). Más allá de los números —que casi siempre son autorreportados y no auditables—, <b>el patrón se
+  repite</b>:</p>
+  <ul class="plain">
+    <li><b>Transparencia con números reales</b> (lo que ganas, lo que cuesta, lo que falla) en vez de frases motivacionales. Es lo que más distribuye y construye confianza.</li>
+    <li><b>Mostrar, no contar:</b> construir con IA en vivo —demos, lo que se rompe, los costos— en vez de opinar sobre IA. El artefacto es el post.</li>
+    <li><b>Consistencia compuesta:</b> casi todos publicaron por 2–3 años antes del despegue. El viral llega cuando ya hay base; es un activo a 3–5 años, no una campaña.</li>
+    <li><b>Empezar conversando:</b> los primeros meses, responder con valor en los hilos de cuentas grandes del nicho. Distribución prestada antes que audiencia propia.</li>
+    <li><b>X como puerta de entrada</b> a algo que tú posees (una lista de correo) y a tu negocio real — nunca a un curso de "cómo crecer". Eso rompería la credibilidad.</li>
+  </ul>
+  <p class="muted">Modelos más afines a tu voz anti-humo: <span class="tag">@levelsio</span>,
+  <span class="tag">@marc_louvion</span>, <span class="tag">@SahilBloom</span>, <span class="tag">@george__mack</span>,
+  <span class="tag">@dvassallo</span>. (Verifica los handles antes de seguir.)</p>
+
+  <!-- MAPEO -->
+  <h2>Cómo xautom hace exactamente eso</h2>
+  <p>Cada pieza del sistema corresponde a una palanca del playbook de crecimiento:</p>
+  <div class="map">
+    <div class="hd"><div class="a">Lo que hicieron los que crecieron</div><div class="b">Cómo lo hace xautom</div></div>
+    <div class="rw"><div class="l">Voz propia, consistente, anti-humo (no genérico)</div><div class="r">La <b>ficha de voz</b>: genera en tu voz, con tus reglas y ejemplos de qué sí y qué no.</div></div>
+    <div class="rw"><div class="l">Publicar sin parar por años (consistencia)</div><div class="r">El <b>motor</b> produce tandas de borradores listos. Nunca te quedas sin qué decir.</div></div>
+    <div class="rw"><div class="l">Mostrar, no contar: el artefacto es el post</div><div class="r">El motor te da el ángulo y la estructura; tú pones el dato/demo real. Baja la fricción a casi cero.</div></div>
+    <div class="rw"><div class="l">Un formato ancla repetido (hilo/teardown)</div><div class="r">El <b>plan del batch</b> reparte temas y formatos por el peso que tú les das.</div></div>
+    <div class="rw"><div class="l">Medir qué funciona, no likes de vanidad</div><div class="r">El <b>tablero</b>: bookmarks/1k, follow÷visita y score de alcance — las señales que de verdad mueven el algoritmo.</div></div>
+    <div class="rw"><div class="l">Doblar lo que funciona</div><div class="r"><b>Recalibrar</b> la ficha con lo medido: sube el peso de lo que jala.</div></div>
+  </div>
+  <p class="muted" style="margin-top:10px">En una frase: xautom es el playbook de crecimiento de los mejores, ejecutado en tu voz y con tu criterio.</p>
+
+  <!-- PLAN -->
+  <h2>El plan de los primeros 90 días</h2>
+  <p>En <b>inglés</b> (es donde están el techo, los fundadores y los inversores; tus pilares viven ahí).
+  Una tesis estrecha: <b>"construir negocios con IA, con números reales y sin humo."</b></p>
+  <div class="panel">
+    <div class="step"><div class="n">1</div><div class="t"><b>Una postura contrarian y verificable</b> que puedas defender desde tu experiencia (ej. "la mayoría del contenido de IA es teatro; aquí construyo con P&amp;L real").</div></div>
+    <div class="step"><div class="n">2</div><div class="t"><b>Empezar conversando:</b> el grueso de los primeros 90 días, respuestas de valor a los modelos top y sus pares.</div></div>
+    <div class="step"><div class="n">3</div><div class="t"><b>Mostrar, no contar:</b> el acto de construir con IA como contenido — demos, lo que falla, costos, resultados — con capturas reales.</div></div>
+    <div class="step"><div class="n">4</div><div class="t"><b>Un formato ancla fijo</b> (un teardown semanal), sostenido por meses, atomizado en varios posts cortos.</div></div>
+    <div class="step"><div class="n">5</div><div class="t"><b>X como puerta a un activo propio</b> (tu lista de correo) y a tu negocio real, desde el día uno.</div></div>
+  </div>
+
+  <!-- PRÓXIMO PASO -->
+  <h2>Para arrancar esta semana</h2>
+  <div class="rec">
+    <b>Lo que necesitamos de ti:</b> tu cuenta de X (o crear una nueva) y el visto bueno al idioma
+    (<b>recomendamos inglés</b>). Nosotros preparamos el perfil (bio, foto, post fijado) en paralelo.
+    Ya tenemos <b>8 borradores listos</b> con tu voz: arrancamos esta misma semana y empezamos a medir.
+  </div>
+
+  <!-- LO QUE NO ES -->
+  <h2>Lo que xautom no es</h2>
+  <div class="no"><span class="x">✗</span><span>No publica por ti sin que decidas. Tú apruebas todo.</span></div>
+  <div class="no"><span class="x">✗</span><span>No promete viralidad ni compra seguidores. Mide lo real y dobla lo que funciona.</span></div>
+  <div class="no"><span class="x">✗</span><span>No persigue likes ni el número de seguidores como meta — eso es vanidad, lo dice hasta el algoritmo de X.</span></div>
+  <div class="no"><span class="x">✗</span><span>No vende humo: cada número se marca como verificado o estimado.</span></div>
+
+  <footer>
+    xautom — genera con tu voz, tú decides, mide lo publicado, dobla lo que funciona. Construido sobre el
+    playbook real de quienes ya crecieron en X.
+  </footer>
+
+</main>
+</body>
+</html>
