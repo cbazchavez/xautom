@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>xautom — del motor al crecimiento</title>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2230; --line:#283041;
+    --txt:#e6edf3; --muted:#8b949e; --accent:#3fb6ff; --accent2:#7ee787;
+    --warn:#f2cc60; --bad:#ff7b72;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);
+    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  main{max-width:920px;margin:0 auto;padding:40px 22px 80px}
+  h1{font-size:30px;margin:0 0 6px;letter-spacing:-.01em}
+  h2{font-size:13px;margin:48px 0 16px;color:var(--accent);text-transform:uppercase;
+    letter-spacing:.08em;font-weight:700}
+  h3{font-size:18px;margin:20px 0 6px}
+  p{margin:10px 0} .lead{font-size:19px;margin:14px 0 0}
+  .sub{color:var(--muted);margin:4px 0 0} .muted{color:var(--muted)} b{color:#fff}
+  .tag{font-family:ui-monospace,Menlo,monospace;font-size:13px;color:var(--accent)}
+  /* ---- flujo / ciclo ---- */
+  .band{border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:8px 0;position:relative}
+  .band.motor{border-left:4px solid var(--accent);background:linear-gradient(180deg,rgba(63,182,255,.06),transparent)}
+  .band.tablero{border-left:4px solid var(--accent2);background:linear-gradient(180deg,rgba(126,231,135,.06),transparent)}
+  .band .cap{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}
+  .band.motor .cap{color:var(--accent)} .band.tablero .cap{color:var(--accent2)}
+  .row{display:flex;gap:8px;align-items:stretch;flex-wrap:wrap}
+  .box{flex:1;min-width:150px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+  .box .t{font-weight:700;font-size:14px} .box .d{font-size:12px;color:var(--muted);margin-top:2px}
+  .ar{align-self:center;color:var(--muted);font-size:18px;flex:0 0 auto}
+  .conn{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:13px;margin:6px 0 6px 8px}
+  .conn .v{font-size:18px;color:var(--muted)}
+  .loop{display:flex;align-items:center;gap:12px;background:var(--panel2);border:1px dashed var(--line);
+    border-radius:10px;padding:12px 14px;margin-top:8px}
+  .loop .t{font-weight:700} .loop .back{margin-left:auto;color:var(--accent);font-size:13px;white-space:nowrap}
+  /* ---- métricas ---- */
+  .met{border-bottom:1px solid var(--line);padding:14px 0}
+  .met:last-child{border-bottom:0}
+  .met .name{font-weight:700;font-size:16px}
+  .met .name .chip{font-size:11px;font-weight:600;border:1px solid var(--line);border-radius:999px;padding:1px 8px;margin-left:6px;color:var(--muted)}
+  .met .name .chip.p{border-color:var(--accent);color:var(--accent)}
+  .met .q{color:var(--muted);font-size:14px;margin:4px 0 0}
+  .met .dec{font-size:14px;margin:3px 0 0}
+  .met .dec b{color:var(--accent2)}
+  /* ---- roadmap ---- */
+  .road{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:12px;margin-top:8px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .card .h{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+  .card .t{font-weight:700} .card .d{font-size:13px;color:var(--muted);margin-top:6px}
+  .eff{font-size:11px;font-weight:700;border-radius:999px;padding:1px 8px;white-space:nowrap}
+  .eff.s{background:rgba(126,231,135,.15);color:var(--accent2)}
+  .eff.m{background:rgba(242,204,96,.15);color:var(--warn)}
+  .eff.l{background:rgba(255,123,114,.15);color:var(--bad)}
+  /* ---- fases ---- */
+  .phase{display:grid;grid-template-columns:120px 1fr;gap:14px;border-left:2px solid var(--line);
+    padding:0 0 18px 18px;margin-left:6px;position:relative}
+  .phase::before{content:"";position:absolute;left:-7px;top:2px;width:12px;height:12px;border-radius:50%;
+    background:var(--accent);border:2px solid var(--bg)}
+  .phase .when{font-weight:700;color:var(--accent)}
+  .phase ul{margin:6px 0 0;padding-left:18px} .phase li{margin:4px 0;font-size:14px}
+  .rec{background:var(--panel2);border:1px solid var(--accent2);border-left:4px solid var(--accent2);
+    border-radius:10px;padding:16px 18px;margin-top:18px}
+  .rec b{color:var(--accent2)}
+  .pend{border:1px dashed var(--line);border-radius:10px;padding:14px 16px;color:var(--muted);font-size:14px;background:var(--panel)}
+  ul.plain{margin:10px 0;padding-left:22px} ul.plain li{margin:6px 0}
+  footer{color:var(--muted);font-size:13px;margin-top:48px;border-top:1px solid var(--line);padding-top:18px}
+</style>
+</head>
+<body>
+<main>
+
+  <h1>xautom — del motor al crecimiento</h1>
+  <p class="sub">Qué hace el sistema, para qué sirve cada métrica, qué más podemos hacer y cómo arrancar.</p>
+  <p class="lead">Dos mitades que forman un ciclo: <b class="tag" style="color:var(--accent)">el motor</b> genera
+  borradores con la voz de Luis; <b class="tag" style="color:var(--accent2)">el tablero</b> mide lo que se publica.
+  La recalibración cierra el ciclo.</p>
+
+  <!-- ================= DIAGRAMA ================= -->
+  <h2>El sistema en un ciclo</h2>
+
+  <div class="band motor">
+    <div class="cap">El motor · genera</div>
+    <div class="row">
+      <div class="box"><div class="t">Ficha de voz</div><div class="d">Quién es Luis, cómo suena, sus 4 pilares y reglas. La fuente de la voz.</div></div>
+      <div class="ar">→</div>
+      <div class="box"><div class="t">Plan del batch</div><div class="d">El código reparte temas por su peso, teje temas del momento y marca producto.</div></div>
+      <div class="ar">→</div>
+      <div class="box"><div class="t">8 borradores EN/ES</div><div class="d">Listos para elegir. Nada se publica solo.</div></div>
+    </div>
+  </div>
+
+  <div class="conn"><span class="v">▼</span> Luis elige qué publicar, en qué idioma y cuándo</div>
+
+  <div class="band tablero">
+    <div class="cap">El tablero · mide</div>
+    <div class="row">
+      <div class="box"><div class="t">X Analytics</div><div class="d">Gratis desde el móvil: impresiones, likes, replies, guardados, visitas, follows.</div></div>
+      <div class="ar">→</div>
+      <div class="box"><div class="t">Registro (CSV)</div><div class="d">Una fila por post. Hoy a mano; mañana con una captura.</div></div>
+      <div class="ar">→</div>
+      <div class="box"><div class="t">Tablero + KPIs</div><div class="d">Cruza por pilar, formato e idioma. Marca mejores y peores.</div></div>
+    </div>
+  </div>
+
+  <div class="conn"><span class="v">▼</span> el tablero ordena los pilares por lo medido y propone nuevos pesos</div>
+
+  <div class="loop">
+    <div><div class="t">Recalibrar la ficha</div><div class="muted" style="font-size:13px">Subes el peso de lo que funciona. Solo con muestra suficiente (~30–50 posts).</div></div>
+    <div class="back">↺ vuelve al motor</div>
+  </div>
+
+  <p class="muted" style="margin-top:12px">El punto de unión es el <b>registro</b>: el motor produce los posts, Luis los publica,
+  sus números entran al registro, y el tablero los convierte en una decisión sobre la ficha. Cada vuelta afina la siguiente.</p>
+
+  <!-- ================= MÉTRICAS ================= -->
+  <h2>Para qué sirve cada métrica</h2>
+  <p>No medimos por medir. Cada KPI responde una pregunta y habilita una decisión.</p>
+
+  <div class="met">
+    <div class="name">Score de alcance <span class="chip p">principal</span></div>
+    <div class="q">¿Este contenido se ganó distribución? (interacción de calidad por cada 1,000 vistas)</div>
+    <div class="dec">→ Decides <b>qué pilares y formatos repetir</b> y cuáles soltar.</div>
+  </div>
+  <div class="met">
+    <div class="name">Bookmarks / 1k <span class="chip p">principal</span></div>
+    <div class="q">¿La gente lo encuentra tan útil que lo guarda para después?</div>
+    <div class="dec">→ Valida los <b>temas evergreen</b> y la autoridad: lo que se guarda es lo que construye reputación.</div>
+  </div>
+  <div class="met">
+    <div class="name">Follow ÷ visita <span class="chip p">principal</span></div>
+    <div class="q">De los que entran al perfil, ¿cuántos se quedan?</div>
+    <div class="dec">→ Si está bajo (&lt;5%), la decisión es <b>arreglar bio / foto / post fijado</b>, no el contenido.</div>
+  </div>
+  <div class="met">
+    <div class="name">Reach ratio <span class="chip">contexto</span></div>
+    <div class="q">¿El algoritmo me lleva a gente nueva o solo a mis seguidores?</div>
+    <div class="dec">→ Te dice si estás <b>creciendo o predicando al coro</b> (meta ≥2×).</div>
+  </div>
+  <div class="met">
+    <div class="name">Replies / 1k <span class="chip">contexto</span></div>
+    <div class="q">¿Genero conversación?</div>
+    <div class="dec">→ Es la señal más pesada del algoritmo; decides si <b>provocar más debate</b> en tus aperturas.</div>
+  </div>
+  <div class="met">
+    <div class="name">Impresiones · Posts medidos <span class="chip">contexto</span></div>
+    <div class="q">¿Cuánta gente vio? ¿Cuánta data llevo?</div>
+    <div class="dec">→ Denominador y <b>nivel de confianza</b>: con pocos posts, no te fíes de los rankings todavía.</div>
+  </div>
+
+  <!-- ================= QUÉ MÁS ================= -->
+  <h2>Qué más podemos hacer con lo que tenemos</h2>
+  <p>Todo esto se apoya en lo ya construido (ficha, motor, registro, tablero). Etiquetado por esfuerzo:
+  <span class="eff s">chico</span> <span class="eff m">medio</span> <span class="eff l">grande</span></p>
+
+  <div class="road">
+    <div class="card"><div class="h"><span class="t">Captura → autocompletar</span><span class="eff s">chico</span></div>
+      <div class="d">Luis manda una captura del popup y un modelo barato (Haiku) llena la fila del CSV. Quita la fricción de teclear ~7 números. Costo: centavos al mes.</div></div>
+    <div class="card"><div class="h"><span class="t">Mejores horas</span><span class="eff s">chico</span></div>
+      <div class="d">De los datos de publicación + impresiones, sugerir a qué horas rinde más cada pilar.</div></div>
+    <div class="card"><div class="h"><span class="t">Reusar ganadores</span><span class="eff s">chico</span></div>
+      <div class="d">El tablero ya marca el top. Regenerar nuevos ángulos de los posts que más jalaron (sin repetirse).</div></div>
+    <div class="card"><div class="h"><span class="t">Reporte semanal</span><span class="eff s">chico</span></div>
+      <div class="d">Un resumen automático cada lunes: qué funcionó, qué probar, sin abrir nada.</div></div>
+    <div class="card"><div class="h"><span class="t">A/B del hook</span><span class="eff m">medio</span></div>
+      <div class="d">Dos aperturas del mismo borrador para ver qué primer tweet engancha más.</div></div>
+    <div class="card"><div class="h"><span class="t">Estrategia de idioma</span><span class="eff m">medio</span></div>
+      <div class="d">Con datos, decidir EN vs ES por pilar: el tablero ya separa por idioma.</div></div>
+    <div class="card"><div class="h"><span class="t">Calendario del batch</span><span class="eff m">medio</span></div>
+      <div class="d">Repartir los 8 borradores en la semana con cadencia sana (2–3/día).</div></div>
+    <div class="card"><div class="h"><span class="t">Benchmark vs. referencia</span><span class="eff m">medio</span></div>
+      <div class="d">Comparar cadencia y formato contra cuentas similares (ver investigación abajo).</div></div>
+    <div class="card"><div class="h"><span class="t">Estrategia de replies</span><span class="eff s">conducta</span></div>
+      <div class="d">70% replies a cuentas grandes, 30% contenido propio; y responder a quien te contesta (la señal #1 del algoritmo).</div></div>
+  </div>
+
+  <!-- ================= SETUP ================= -->
+  <h2>Setup al éxito: ¿arrancamos o preparamos?</h2>
+  <p>Tenemos 8 borradores listos. Podemos publicar hoy — pero 1–2 días de preparación mejoran mucho la primera
+  impresión (y el <span class="tag">follow÷visita</span> depende del perfil, no solo del post). La preparación
+  <b>corre en paralelo</b>: no retrasa el arranque.</p>
+
+  <div class="phase"><div class="when">Fase 0<br>1–2 días</div><div>
+    <b>Preparar la cuenta</b>
+    <ul>
+      <li>Bio, foto y <b>post fijado</b> — de esto depende que las visitas se vuelvan seguidores.</li>
+      <li>Elegir handle definitivo (hoy la ficha dice <span class="tag">@PENDIENTE</span>).</li>
+      <li>Definir cadencia (2–3 posts/día) y repartir los 8 borradores.</li>
+      <li>Decidir idioma por post (EN da más techo; ES, menos competencia y más cercanía).</li>
+    </ul>
+  </div></div>
+  <div class="phase"><div class="when">Fase 1<br>semanas 1–3</div><div>
+    <b>Publicar y medir</b>
+    <ul>
+      <li>Publicar el batch + nuevos batches; registrar los números (a mano o con captura).</li>
+      <li>Primer reporte/tablero para leer tendencias — <b>sin recalibrar todavía</b> (muestra chica).</li>
+      <li>Aplicar la estrategia de replies para acelerar el alcance.</li>
+    </ul>
+  </div></div>
+  <div class="phase"><div class="when">Fase 2<br>semana 3–4+</div><div>
+    <b>Recalibrar y escalar</b>
+    <ul>
+      <li>Con ~30–50 posts medidos, el tablero ya sugiere pesos con señal real.</li>
+      <li>Subir lo que funciona, reusar ganadores, ajustar idioma y formato.</li>
+    </ul>
+  </div></div>
+
+  <div class="rec">
+    <b>Recomendación:</b> sí, pídele la cuenta a Luis — y en paralelo prepara el perfil (Fase 0, 1–2 días).
+    Arrancamos esta semana con los 8 borradores que ya existen. No hay que elegir entre "preparar" y "empezar":
+    la preparación es ligera y se hace mientras se publica.
+  </div>
+
+  <!-- ================= PERFILES ================= -->
+  <h2>Perfiles de referencia (investigación)</h2>
+  <div class="pend">🔎 Investigación en curso: cuentas de X que publican contenido similar a los pilares de Luis
+  (construir con IA, modelos de negocio, lectura del mundo) en inglés y español, más la estrategia bilingüe.
+  Esta sección se completa cuando vuelvan los hallazgos — con cuentas concretas, formatos que funcionan y
+  tácticas para adoptar.</div>
+
+  <footer>
+    xautom — el motor genera, el tablero mide, la recalibración los conecta. Datos manuales desde X Analytics
+    (gratis, sin API). Abre <span class="tag">como-funciona.html</span> y <span class="tag">luis-dashboard.html</span>
+    para el detalle y el ejemplo.
+  </footer>
+
+</main>
+</body>
+</html>

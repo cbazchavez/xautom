@@ -132,6 +132,9 @@ Qué se mide y por qué:
 
 ## Documentación
 
+- **`docs/estrategia.html`** — del motor al crecimiento: diagrama del ciclo motor↔tablero,
+  para qué sirve cada métrica, qué más se puede construir, el plan de arranque y perfiles
+  de referencia en X.
 - **`docs/como-funciona.html`** — guía visual (se abre con doble clic) que explica el
   motor completo y cómo leer el tablero, en lenguaje llano. Para enseñárselo a Luis.
 - **`docs/research-x-analytics.md`** — memoria de la investigación que calibró el loop:
