@@ -87,13 +87,17 @@ async function analizar({ profile, csvPath, values }) {
 
   const posts = postsPublicados(rows);
   const fechas = posts.map((p) => p.row.published_at).filter(Boolean).sort();
+  const sumFollows = posts.reduce((s, p) => s + p.m.follows, 0);
+  const sumClics = posts.reduce((s, p) => s + p.m.profile_clicks, 0);
   const resumen = {
     total: posts.length,
     impTotal: posts.reduce((s, p) => s + p.m.imp, 0),
     erMedio: mean(posts.map((p) => p.m.er)),
     reachMediana: mediana(posts.map((p) => p.m.reachScore)),
     bmMedio: mean(posts.map((p) => p.m.bookmarkRate)),
+    replyMedio: mean(posts.map((p) => p.m.replyRate)),
     followVisitaMedio: mean(posts.map((p) => p.m.followPerVisit)),
+    followVisita: sumClics ? sumFollows / sumClics : 0, // razón agregada (menos ruido)
     rango: fechas.length ? `${fechas[0]} → ${fechas[fechas.length - 1]}` : '',
   };
 

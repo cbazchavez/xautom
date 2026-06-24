@@ -28,6 +28,7 @@
   .flow .step.on{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
   .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:8px}
   .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
+  .card.star{border-color:var(--accent);background:linear-gradient(180deg,rgba(63,182,255,.10),var(--panel))}
   .card .k{font-size:12px;color:var(--muted)} .card .v{font-size:26px;font-weight:700;margin-top:4px}
   .card .u{font-size:12px;color:var(--muted);margin-left:4px}
   .grid2{display:grid;grid-template-columns:1.4fr 1fr;gap:16px}
@@ -59,7 +60,7 @@
 <body>
 <main>
   <h1>Tablero de desempeño — Luis — CEO de CIMIENTO</h1>
-  <p class="sub">Handle @PENDIENTE · generado 2026-06-23 · 2026-06-24 → 2026-07-10</p>
+  <p class="sub">Handle @PENDIENTE · generado 2026-06-24 · 2026-06-24 → 2026-07-10</p>
   <div class="banner">⚠️ MODO DEMO — datos de ejemplo (≈3 semanas simuladas) para mostrar el tablero. Aún no hay cuenta publicada; los números son ilustrativos, no reales.</div>
 
   <div class="flow">
@@ -71,14 +72,17 @@
   <p class="mini">El tablero vive en los pasos 3–4: mide lo publicado y propone cómo recalibrar la ficha. No predice.</p>
 
   
-  <h2>Resumen</h2>
+  <h2>Norte · lo que perseguimos</h2>
   <div class="cards">
-    <div class="card"><div class="k">Posts medidos</div><div class="v">16</div></div>
-    <div class="card"><div class="k">Impresiones</div><div class="v">34,350</div></div>
-    <div class="card"><div class="k">ER medio</div><div class="v">6.93%</div></div>
-    <div class="card"><div class="k">Score de alcance</div><div class="v">476.4<span class="u">/1k · mediana</span></div></div>
-    <div class="card"><div class="k">Bookmarks</div><div class="v">21.2<span class="u">/1k · medio</span></div></div>
-    <div class="card"><div class="k">Follow / visita</div><div class="v">11.37%</div></div>
+    <div class="card star"><div class="k">Score de alcance</div><div class="v">476.4<span class="u">/1k · mediana</span></div></div>
+    <div class="card star"><div class="k">Bookmarks</div><div class="v">21.2<span class="u">/1k · medio</span></div></div>
+    <div class="card star"><div class="k">Follow / visita</div><div class="v">13.80%<span class="u">sigue ÷ visita</span></div></div>
+  </div>
+  <h2>Contexto · para leer el norte, no para presumir</h2>
+  <div class="cards">
+    <div class="card"><div class="k">Posts medidos</div><div class="v">16<span class="u">confianza</span></div></div>
+    <div class="card"><div class="k">Impresiones</div><div class="v">34,350<span class="u">alcance</span></div></div>
+    <div class="card"><div class="k">Replies</div><div class="v">4.7<span class="u">/1k · conversación</span></div></div>
   </div>
 
   <h2>Desempeño por pilar</h2>

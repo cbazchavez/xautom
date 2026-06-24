@@ -39,6 +39,7 @@ export function renderDashboard({ meta, resumen, porPilar, porFormato, porIdioma
   .flow .step.on{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
   .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:8px}
   .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
+  .card.star{border-color:var(--accent);background:linear-gradient(180deg,rgba(63,182,255,.10),var(--panel))}
   .card .k{font-size:12px;color:var(--muted)} .card .v{font-size:26px;font-weight:700;margin-top:4px}
   .card .u{font-size:12px;color:var(--muted);margin-left:4px}
   .grid2{display:grid;grid-template-columns:1.4fr 1fr;gap:16px}
@@ -86,14 +87,17 @@ export function renderDashboard({ meta, resumen, porPilar, porFormato, porIdioma
     <strong>Aún sin datos.</strong> Llena <span class="tag">metrics/${esc(meta.id)}.csv</span> con los números de X Analytics y regenera el tablero.
     Para ver cómo se verá, corre <span class="tag">npm run dashboard -- --demo</span>.
   </div>` : `
-  <h2>Resumen</h2>
+  <h2>Norte · lo que perseguimos</h2>
   <div class="cards">
-    ${card('Posts medidos', fmt(resumen.total))}
-    ${card('Impresiones', fmt(resumen.impTotal))}
-    ${card('ER medio', pct(resumen.erMedio))}
-    ${card('Score de alcance', per1k(resumen.reachMediana), '/1k · mediana')}
-    ${card('Bookmarks', per1k(resumen.bmMedio), '/1k · medio')}
-    ${card('Follow / visita', pct(resumen.followVisitaMedio))}
+    ${card('Score de alcance', per1k(resumen.reachMediana), '/1k · mediana', true)}
+    ${card('Bookmarks', per1k(resumen.bmMedio), '/1k · medio', true)}
+    ${card('Follow / visita', pct(resumen.followVisita), 'sigue ÷ visita', true)}
+  </div>
+  <h2>Contexto · para leer el norte, no para presumir</h2>
+  <div class="cards">
+    ${card('Posts medidos', fmt(resumen.total), 'confianza')}
+    ${card('Impresiones', fmt(resumen.impTotal), 'alcance')}
+    ${card('Replies', per1k(resumen.replyMedio), '/1k · conversación')}
   </div>
 
   <h2>Desempeño por pilar</h2>
@@ -167,8 +171,8 @@ export function renderDashboard({ meta, resumen, porPilar, porFormato, porIdioma
 function step(k, v, on) {
   return `<div class="step${on ? ' on' : ''}"><div class="k">${esc(k)}</div><div class="v">${esc(v)}</div></div>`;
 }
-function card(k, v, u = '') {
-  return `<div class="card"><div class="k">${esc(k)}</div><div class="v">${esc(v)}${u ? `<span class="u">${esc(u)}</span>` : ''}</div></div>`;
+function card(k, v, u = '', star = false) {
+  return `<div class="card${star ? ' star' : ''}"><div class="k">${esc(k)}</div><div class="v">${esc(v)}${u ? `<span class="u">${esc(u)}</span>` : ''}</div></div>`;
 }
 function barras(filas, key, fmtFn, alt = false) {
   const max = Math.max(...filas.map((f) => f[key]), 1e-9);
