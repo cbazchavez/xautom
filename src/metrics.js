@@ -5,7 +5,7 @@
  *
  * Filosofía (la misma que le dijimos a Luis): ningún número avala un post antes
  * de publicarlo. Esto NO predice; mide lo ya publicado y cierra el loop hacia
- * `profiles/<id>.yaml`. Con muestra chica, se calla y pide más data en vez de
+ * `profiles/<id>.yaml`. Con muestra pequeña, no sugiere pesos en vez de
  * inventar señal.
  */
 

@@ -115,21 +115,20 @@ Qué se mide y por qué:
   report = −369) no las da la analítica nativa, así que no entran. Definidos en
   `ALGO_PESOS` (`src/metrics.js`); ajústalos en un lugar si X cambia.
 - **Tablero en dos tiers**:
-  - *Norte (perseguimos)*: `score de alcance`, `bookmarks/1k` (valor que se
-    guarda), `follow÷visita` (conversión a seguidor — el KPI que recomiendan
-    Typefully y las growth guides; **verde ≥10–15%, rojo <5%**).
-  - *Contexto (para leerlo, no presumir)*: posts medidos (confianza),
-    impresiones, `reach ratio` (imp ÷ seguidores; **≥2× = el algoritmo te empuja
-    fuera de tus seguidores**) y `replies/1k`.
+  - *Principales*: `score de alcance`, `bookmarks/1k`, `follow÷visita`
+    (conversión a seguidor — el KPI que recomiendan Typefully y las growth guides;
+    **verde ≥10–15%, rojo <5%**).
+  - *Contexto*: posts medidos (confianza), impresiones, `reach ratio`
+    (imp ÷ seguidores; **≥2× = el algoritmo te muestra fuera de tus seguidores**)
+    y `replies/1k`.
   - Likes y followers absolutos se tratan como vanidad (respaldado por los pesos
     del propio algoritmo y por creadores como Justin Welsh).
 - **Para la estrategia**: una liga en el cuerpo del post cuesta **−30 a −50% de
   alcance** — ponla en el primer reply. Threads ganan en bookmarks/dwell; singles
   en velocidad de conversación.
-- **Guardarraíl honesto**: con muestra chica el reporte se **rehúsa** a sugerir
-  pesos (mínimos ajustables con `--min-total` / `--min-pilar`). 8 posts no son
-  señal; ~30–50 empiezan a serlo. Mide relativo a tu propia mediana; los
-  benchmarks externos (≥10%, ≥2×) son referencia, no dogma.
+- **Muestra mínima**: con muestra pequeña el reporte no sugiere pesos
+  (mínimos ajustables con `--min-total` / `--min-pilar`). 8 posts no son señal;
+  ~30–50 empiezan a serlo. Los benchmarks externos (≥10%, ≥2×) son referencia.
 
 ## Documentación
 

@@ -16,10 +16,9 @@ export function renderReporte({ meta, resumen, porPilar, porFormato, porIdioma, 
   o.push(`- **Mediana de score de alcance:** ${per1k(resumen.reachMediana)} /1k imp`);
   o.push('');
   o.push(
-    '> Se mide lo publicado, no se predice. El **score de alcance** pondera la ' +
-      'interacción por los pesos reportados del algoritmo de X (replies y bookmarks ' +
-      'pesan mucho más que un like). Norte de esta fase: **bookmarks/1k** (valor que se ' +
-      'guarda) y **follow/visita** (conversión a seguidor).'
+    '> **Score de alcance** = interacción ponderada por los pesos del algoritmo de X ' +
+      '(replies y bookmarks pesan más que un like). Métricas principales: **bookmarks/1k** ' +
+      'y **follow/visita** (conversión a seguidor).'
   );
   o.push('');
 
@@ -43,7 +42,7 @@ export function renderReporte({ meta, resumen, porPilar, porFormato, porIdioma, 
   if (!pesos.suficiente) {
     o.push(`⚠️ **Muestra insuficiente.** ${pesos.motivo}`);
     o.push('');
-    o.push('_No se toca `profiles/' + meta.id + '.yaml` con ruido. La barra existe a propósito._');
+    o.push('_Con muestra insuficiente no se ajustan los pesos de `profiles/' + meta.id + '.yaml`._');
   } else {
     o.push('Ordenando los pilares por score de alcance medido (mejor → peor):');
     o.push('');
@@ -55,7 +54,7 @@ export function renderReporte({ meta, resumen, porPilar, porFormato, porIdioma, 
       o.push(`| \`${s.id}\` | ${s.n} | ${per1k(s.reachScore)} | ${actual} | **${s.pesoSugerido}**${flecha} |`);
     }
     o.push('');
-    o.push('_Sugerencia, no orden. Aplica los cambios a mano en `pilares[].peso` si concuerdan con lo que ves. Revísalo cada batch: la audiencia se mueve._');
+    o.push('_Aplica los cambios a mano en `pilares[].peso` si concuerdan con lo medido. Revísalo cada batch._');
   }
   o.push('');
   o.push('---', '', '_Cálculo: ER = (likes+replies+reposts+bookmarks+profile\\_clicks)/impresiones. ' +
