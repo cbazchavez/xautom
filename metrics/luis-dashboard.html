@@ -30,7 +30,10 @@
   .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
   .card.star{border-color:var(--accent);background:linear-gradient(180deg,rgba(63,182,255,.10),var(--panel))}
   .card .k{font-size:12px;color:var(--muted)} .card .v{font-size:26px;font-weight:700;margin-top:4px}
-  .card .v.good{color:var(--accent2)} .card .v.warn{color:var(--warn)} .card .v.bad{color:var(--bad)}
+  .card .v.exceeds{color:var(--accent)} .card .v.good{color:var(--accent2)} .card .v.warn{color:var(--warn)} .card .v.bad{color:var(--bad)}
+  .lg{display:inline-block;padding:0 6px;border-radius:4px;font-size:11px;margin-right:4px}
+  .lg.ex{background:rgba(63,182,255,.18);color:var(--accent)} .lg.ok{background:rgba(126,231,135,.16);color:var(--accent2)}
+  .lg.wn{background:rgba(242,204,96,.16);color:var(--warn)} .lg.bd{background:rgba(255,123,114,.16);color:var(--bad)}
   .card .u{font-size:12px;color:var(--muted);margin-left:4px}
   .grid2{display:grid;grid-template-columns:1.4fr 1fr;gap:16px}
   @media(max-width:760px){.grid2{grid-template-columns:1fr}}
@@ -86,6 +89,7 @@
     <div class="card"><div class="k">Reach ratio</div><div class="v warn">1.75×<span class="u">imp ÷ seg · meta ≥2× (1,000 seg)</span></div></div>
     <div class="card"><div class="k">Replies</div><div class="v">4.7<span class="u">/1k · conversación</span></div></div>
   </div>
+  <p class="mini">Semáforo: <span class="lg ex">supera</span><span class="lg ok">en rango</span><span class="lg wn">debajo</span><span class="lg bd">muy mal</span> &nbsp;Solo coloreamos los KPIs con un estándar publicado (follow÷visita, reach ratio). Los demás se quedan neutros hasta tener tu propia mediana como referencia — colorearlos contra un número inventado sería humo.</p>
 
   <h2>Desempeño por pilar</h2>
   <div class="grid2">

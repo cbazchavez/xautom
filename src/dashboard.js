@@ -13,12 +13,14 @@ export function renderDashboard({ meta, resumen, porPilar, porFormato, porIdioma
   const anguloDe = (batch, draft) =>
     batch === batchFecha && drafts?.[draft - 1] ? drafts[draft - 1].angle : '';
 
-  // Benchmarks publicados (Typefully, growth guides 2025-26): follow÷visita 10-15% sano,
-  // <5% bio/pinned flojos; reach ratio ≥2× = el algoritmo te empuja fuera de tus seguidores.
-  const fvTone = resumen.followVisita >= 0.10 ? 'good' : resumen.followVisita >= 0.05 ? 'warn' : 'bad';
+  // Semáforo de 4 niveles contra benchmarks publicados (Typefully, growth guides 2025-26):
+  // azul supera · verde en rango · amarillo debajo · rojo muy mal.
+  // follow÷visita: ≥15% supera, 10-15% sano, 5-10% bajo, <5% bio/pinned flojos.
+  // reach ratio: ≥3× supera, ≥2× sano, 1-2× bajo, <1× ni llegas a tus seguidores.
+  const fvTone = tonifica(resumen.followVisita, 0.15, 0.10, 0.05);
   const rr = resumen.reachRatio;
   const rrVal = rr == null ? '—' : `${rr.toFixed(2)}×`;
-  const rrTone = rr == null ? '' : rr >= 2 ? 'good' : rr >= 1 ? 'warn' : 'bad';
+  const rrTone = rr == null ? '' : tonifica(rr, 3, 2, 1);
   const pesosTxt = Object.entries(ALGO_PESOS).map(([k, v]) => `${PESO_LABEL[k] || k} ${v}`).join(' · ');
 
   const html = `<!doctype html>
@@ -53,7 +55,10 @@ export function renderDashboard({ meta, resumen, porPilar, porFormato, porIdioma
   .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
   .card.star{border-color:var(--accent);background:linear-gradient(180deg,rgba(63,182,255,.10),var(--panel))}
   .card .k{font-size:12px;color:var(--muted)} .card .v{font-size:26px;font-weight:700;margin-top:4px}
-  .card .v.good{color:var(--accent2)} .card .v.warn{color:var(--warn)} .card .v.bad{color:var(--bad)}
+  .card .v.exceeds{color:var(--accent)} .card .v.good{color:var(--accent2)} .card .v.warn{color:var(--warn)} .card .v.bad{color:var(--bad)}
+  .lg{display:inline-block;padding:0 6px;border-radius:4px;font-size:11px;margin-right:4px}
+  .lg.ex{background:rgba(63,182,255,.18);color:var(--accent)} .lg.ok{background:rgba(126,231,135,.16);color:var(--accent2)}
+  .lg.wn{background:rgba(242,204,96,.16);color:var(--warn)} .lg.bd{background:rgba(255,123,114,.16);color:var(--bad)}
   .card .u{font-size:12px;color:var(--muted);margin-left:4px}
   .grid2{display:grid;grid-template-columns:1.4fr 1fr;gap:16px}
   @media(max-width:760px){.grid2{grid-template-columns:1fr}}
@@ -113,6 +118,7 @@ export function renderDashboard({ meta, resumen, porPilar, porFormato, porIdioma
     ${card('Reach ratio', rrVal, `imp ÷ seg · meta ≥2×${resumen.followers ? ` (${fmt(resumen.followers)} seg)` : ''}`, false, rrTone)}
     ${card('Replies', per1k(resumen.replyMedio), '/1k · conversación')}
   </div>
+  <p class="mini">Semáforo: <span class="lg ex">supera</span><span class="lg ok">en rango</span><span class="lg wn">debajo</span><span class="lg bd">muy mal</span> &nbsp;Solo coloreamos los KPIs con un estándar publicado (follow÷visita, reach ratio). Los demás se quedan neutros hasta tener tu propia mediana como referencia — colorearlos contra un número inventado sería humo.</p>
 
   <h2>Desempeño por pilar</h2>
   <div class="grid2">
@@ -213,6 +219,15 @@ function detalleBorrador(d, i) {
   const en = (d.en?.tweets ?? []).map((t) => `<p class="tw">${esc(t)}</p>`).join('');
   const es = (d.es?.tweets ?? []).map((t) => `<p class="tw">${esc(t)}</p>`).join('');
   return `<details><summary>B${i + 1} — ${esc(d.angle ?? '')} <span class="pill">${esc(d.pillar ?? '')}</span> <span class="pill">${esc(d.format ?? '')}</span>${d.uses_active_topic ? ` <span class="pill">${esc(d.uses_active_topic)}</span>` : ''}</summary><div style="margin-top:8px"><div class="mini">EN</div>${en}<div class="mini" style="margin-top:8px">ES</div>${es}</div></details>`;
+}
+
+// Semáforo de 4 niveles: azul (supera) > verde (en rango) > amarillo (debajo) > rojo (mal).
+function tonifica(x, sup, ok, bajo) {
+  if (x == null) return '';
+  if (x >= sup) return 'exceeds';
+  if (x >= ok) return 'good';
+  if (x >= bajo) return 'warn';
+  return 'bad';
 }
 
 // --- formato ---
