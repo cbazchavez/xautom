@@ -15,7 +15,7 @@ export function renderDashboard({ meta, resumen, porPilar, porFormato, porIdioma
 
   // Semáforo de 4 niveles contra benchmarks publicados (Typefully, growth guides 2025-26):
   // azul supera · verde en rango · amarillo debajo · rojo muy mal.
-  // follow÷visita: ≥15% supera, 10-15% sano, 5-10% bajo, <5% bio/pinned flojos.
+  // follow÷visita: ≥15% supera, 10-15% sano, 5-10% bajo, <5% bio/pinned poco efectivos.
   // reach ratio: ≥3× supera, ≥2× sano, 1-2× bajo, <1× ni llegas a tus seguidores.
   const fvTone = tonifica(resumen.followVisita, 0.15, 0.10, 0.05);
   const rr = resumen.reachRatio;

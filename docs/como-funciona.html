@@ -64,31 +64,31 @@
   <h1>Cómo funciona xautom</h1>
   <p class="sub">El motor y cómo leer el tablero.</p>
   <p class="lead">Genera borradores con <b>tu voz</b>, <b>tú</b> eliges qué publicar, y
-  <b>mide</b> lo publicado para afinar la siguiente tanda.</p>
+  <b>mide</b> lo publicado para afinar el siguiente lote.</p>
 
   <!-- ============ EL MOTOR ============ -->
   <h2>El motor, en dos mitades</h2>
 
   <div class="half">
     <h3 class="acc">1 · Generar borradores</h3>
-    <p>El motor lee tu <b>ficha de voz</b> y deja una tanda de borradores listos para elegir.
+    <p>El motor lee tu <b>ficha de voz</b> y deja un lote de borradores listos para elegir.
     El código decide el reparto; no improvisa.</p>
     <div class="flow">
       <div class="box"><div class="n">FICHA</div><div class="t">Tu voz (un archivo)</div><div class="d">Quién eres, cómo suenas (ejemplos sí / no), tus temas y reglas. La única fuente de tu voz.</div></div>
       <div class="arrow">→</div>
-      <div class="box"><div class="n">PLAN</div><div class="t">El reparto del batch</div><div class="d">El código decide qué tema toca a cada borrador (según el peso que les diste), cuáles tejen un tema del momento y cuáles tocan producto.</div></div>
+      <div class="box"><div class="n">PLAN</div><div class="t">El reparto del batch</div><div class="d">El código decide qué tema corresponde a cada borrador (según el peso que les diste), cuáles tejen un tema del momento y cuáles mencionan producto.</div></div>
       <div class="arrow">→</div>
       <div class="box"><div class="n">BORRADORES</div><div class="t">8 posts, EN + ES</div><div class="d">Cada uno en inglés y español nativos (no traducción), con su tema y formato.</div></div>
     </div>
     <p class="muted">Los "temas" son tus <b>pilares</b>: lectura del mundo, construir con IA,
     modelos de negocio, proceso y ejecución. A cada uno le pones un <b>peso</b> (alto/medio/bajo)
-    y eso define cuántos borradores le tocan.</p>
+    y eso define cuántos borradores le corresponden.</p>
   </div>
 
   <div class="half b">
     <h3 class="good">2 · Medir y afinar</h3>
-    <p>Publicas lo que elegiste, copias los números, y el tablero te dice qué jaló. Con eso
-    ajustas la ficha y la siguiente tanda sale mejor calibrada.</p>
+    <p>Publicas lo que elegiste, copias los números, y el tablero te muestra qué funcionó. Con eso
+    ajustas la ficha y el siguiente lote sale mejor calibrado.</p>
     <div class="flow">
       <div class="box"><div class="n">PUBLICAS</div><div class="t">Tú eliges</div><div class="d">Qué borradores, en qué idioma, cuándo.</div></div>
       <div class="arrow">→</div>
@@ -96,7 +96,7 @@
       <div class="arrow">→</div>
       <div class="box"><div class="n">TABLERO</div><div class="t">Qué funcionó</div><div class="d">Cruza por tema, formato e idioma.</div></div>
       <div class="arrow">→</div>
-      <div class="box"><div class="n">AFINAS</div><div class="t">La ficha</div><div class="d">Subes el peso de lo que jala. Vuelve a empezar.</div></div>
+      <div class="box"><div class="n">AFINAS</div><div class="t">La ficha</div><div class="d">Subes el peso de lo que mejor funciona. Vuelve a empezar.</div></div>
     </div>
   </div>
 
@@ -113,17 +113,17 @@
 
   <h3>El Score de alcance</h3>
   <p>Va con ejemplo porque es la base. <b>No todas las interacciones valen lo mismo.</b> Un
-  <b>like</b> es barato (un toque). Un <b>bookmark</b> (que alguien guarde tu post) o un
+  <b>like</b> es de bajo esfuerzo (un toque). Un <b>bookmark</b> (que alguien guarde tu post) o un
   <b>reply</b> valen mucho más: implican esfuerzo real.</p>
   <p>Dos posts, cada uno visto por 1,000 personas:</p>
   <table>
-    <thead><tr><th>Post</th><th class="n">likes</th><th class="n">guardados</th><th class="n">respuestas</th><th>Sumando "a secas"</th></tr></thead>
+    <thead><tr><th>Post</th><th class="n">likes</th><th class="n">guardados</th><th class="n">respuestas</th><th>Suma simple</th></tr></thead>
     <tbody>
       <tr><td>A</td><td class="n">60</td><td class="n">2</td><td class="n">1</td><td>63</td></tr>
       <tr><td>B</td><td class="n">20</td><td class="n">30</td><td class="n">12</td><td>62</td></tr>
     </tbody>
   </table>
-  <p>A secas casi empatan. Pero el <b>B es mejor</b>: 30 personas lo guardaron y 12 respondieron.
+  <p>En la suma simple casi empatan. Pero el <b>B es mejor</b>: 30 personas lo guardaron y 12 respondieron.
   El <b>Score de alcance</b> le pone un <b>peso</b> a cada cosa (guardar y responder pesan mucho;
   el like, poco) y así B le gana a A. Es un solo número: interacción de calidad por cada 1,000 vistas.</p>
   <div class="callout">Los pesos salen del <b>código que X hizo público</b> en 2023:
@@ -139,7 +139,7 @@
       <div>Cuántos <b>guardan</b> tu post por cada 1,000 vistas. Señal de valor: "esto lo quiero para después".</div></div>
     <div class="kpi"><div class="name acc">Seguir ÷ visita <span class="u">principal</span></div>
       <div>De los que entraron a tu perfil, <b>cuántos te siguieron</b>. Sano arriba de <b>10%</b>;
-      abajo de 5% suele ser bio o post fijado flojos.</div></div>
+      abajo de 5% suele ser bio o post fijado poco efectivos.</div></div>
     <div class="kpi"><div class="name">Reach ratio <span class="u">contexto</span></div>
       <div>Cuántas veces tu número de seguidores te vio. <b>Arriba de 2×</b> = el algoritmo te
       muestra a gente nueva, no solo a los tuyos.</div></div>
@@ -148,7 +148,7 @@
     <div class="kpi"><div class="name">Impresiones <span class="u">contexto</span></div>
       <div>Cuánta gente vio tus posts. Es el <b>denominador</b> de casi todo, no una meta.</div></div>
     <div class="kpi"><div class="name">Posts medidos <span class="u">contexto</span></div>
-      <div>Confianza: con 3 posts ignora los rankings; con 30+, créeles.</div></div>
+      <div>Confianza: con 3 posts los rankings no son fiables; con 30+, sí.</div></div>
   </div>
 
   <h3>El semáforo de colores</h3>
@@ -158,11 +158,11 @@
 
   <h3>Lo de abajo: barras, mejores/peores y la sugerencia</h3>
   <ul>
-    <li><b>Por pilar / formato / idioma:</b> barras que comparan qué <b>tema</b> jala más, qué
-    <b>formato</b> (hilo vs post suelto) y qué <b>idioma</b> rinde mejor.</li>
+    <li><b>Por pilar / formato / idioma:</b> barras que comparan qué <b>tema</b> rinde más, qué
+    <b>formato</b> (hilo vs post individual) y qué <b>idioma</b> funciona mejor.</li>
     <li><b>Mejores y peores posts:</b> el top y la cola por Score, con el ángulo de cada uno.</li>
     <li><b>Sugerencia para la ficha:</b> ordena tus pilares por lo medido y propone subir/bajar
-    su peso. Con muestra chica no propone nada: 8 posts no son señal; ~30–50 empiezan a serlo.</li>
+    su peso. Con muestra pequeña no propone nada: 8 posts no son señal; ~30–50 empiezan a serlo.</li>
   </ul>
 
   <!-- ============ EN LA PRÁCTICA ============ -->

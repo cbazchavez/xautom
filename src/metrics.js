@@ -168,7 +168,7 @@ export function sugerirPesos(porPilar, { total, minTotal = 15, minPorPilar = 4, 
   }
   const flojos = porPilar.filter((f) => f.n < minPorPilar);
   if (flojos.length) {
-    return { suficiente: false, motivo: `Pilares con muestra chica (<${minPorPilar}): ${flojos.map((f) => `${f.clave} (n=${f.n})`).join(', ')}. Aún es ruido.` };
+    return { suficiente: false, motivo: `Pilares con muestra pequeña (<${minPorPilar}): ${flojos.map((f) => `${f.clave} (n=${f.n})`).join(', ')}. Todavía no es señal confiable.` };
   }
   const ranked = [...porPilar].sort((a, b) => b.reachScore - a.reachScore);
   const sugerencia = ranked.map((f, i) => ({
