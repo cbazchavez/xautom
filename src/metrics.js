@@ -26,21 +26,33 @@ export const COLUMNS = [
   'reposts',
   'bookmarks',
   'profile_clicks',
+  'link_clicks',    // clics a la liga del post (embudo; NO entra al score de alcance)
   'follows',
   'notes',
 ];
 
 /**
- * Pesos REPORTADOS del algoritmo abierto de X (rankeo). Sirven para un "score
- * de alcance" ponderado por calidad de la interacción, no para el ER crudo.
- * Son referencia pública, no dogma: ajústalos si X cambia.
+ * Pesos del heavy-ranker OPEN-SOURCE de X (README de the-algorithm-ml, 5-abr-2023):
+ * like 0.5, retweet/repost 1, reply 13.5, profile-click ("good") 12. Son los valores
+ * CRUDOS del código, no la "fórmula simplificada" que circula en blogs (esa infla el
+ * repost a 20 y no tiene respaldo en la fuente primaria).
+ *
+ * bookmarks=10 es una ESTIMACIÓN: X confirmó en 2024 que los bookmarks cuentan para el
+ * alcance, pero nunca publicó un peso oficial. Direccionalmente plausible, no es un hecho.
+ *
+ * Señales más fuertes del algoritmo que NO entran aquí porque la analítica nativa no las
+ * expone: reply respondido por el autor = 75 (el peso positivo #1), permanencia ≥2 min = 11,
+ * report = −369, mute/block = −74. El score mide solo lo que Luis puede copiar a mano.
+ *
+ * Fuente: github.com/twitter/the-algorithm-ml/blob/main/projects/home/recap/README.md
+ * Ajústalos si X publica nuevos (el propio README dice que viven en un config y se recalibran).
  */
 export const ALGO_PESOS = {
-  likes: 1,
-  reposts: 20,
+  likes: 0.5,
+  reposts: 1,
   replies: 13.5,
   profile_clicks: 12,
-  bookmarks: 10,
+  bookmarks: 10, // estimación: X confirma que cuenta, sin número oficial
 };
 
 const ORDEN_PESO = ['alto', 'medio', 'medio', 'bajo']; // mapa rank→peso (4 pilares)
@@ -63,6 +75,7 @@ export function metricasPost(row) {
     reposts: num(row.reposts),
     bookmarks: num(row.bookmarks),
     profile_clicks: num(row.profile_clicks),
+    link_clicks: num(row.link_clicks),
     follows: num(row.follows),
   };
 
@@ -84,6 +97,7 @@ export function metricasPost(row) {
     reachScore,                                             // ponderado por algoritmo
     bookmarkRate: e.bookmarks / imp,                        // north star 1
     replyRate: e.replies / imp,                             // señal de conversación
+    linkClickRate: e.link_clicks / imp,                     // embudo (no entra al score)
     followRate: e.follows / imp,
     followPerVisit: e.profile_clicks ? e.follows / e.profile_clicks : 0, // north star 2
   };
@@ -105,6 +119,7 @@ const PROMEDIABLES = [
   'reachScore',
   'bookmarkRate',
   'replyRate',
+  'linkClickRate',
   'followRate',
   'followPerVisit',
 ];
@@ -191,6 +206,7 @@ export function filasSemilla(sidecar, langs = ['en', 'es']) {
         reposts: '',
         bookmarks: '',
         profile_clicks: '',
+        link_clicks: '',
         follows: '',
         notes: '',
       });

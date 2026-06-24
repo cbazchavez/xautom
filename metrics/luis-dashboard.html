@@ -30,6 +30,7 @@
   .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
   .card.star{border-color:var(--accent);background:linear-gradient(180deg,rgba(63,182,255,.10),var(--panel))}
   .card .k{font-size:12px;color:var(--muted)} .card .v{font-size:26px;font-weight:700;margin-top:4px}
+  .card .v.good{color:var(--accent2)} .card .v.warn{color:var(--warn)} .card .v.bad{color:var(--bad)}
   .card .u{font-size:12px;color:var(--muted);margin-left:4px}
   .grid2{display:grid;grid-template-columns:1.4fr 1fr;gap:16px}
   @media(max-width:760px){.grid2{grid-template-columns:1fr}}
@@ -74,14 +75,15 @@
   
   <h2>Norte · lo que perseguimos</h2>
   <div class="cards">
-    <div class="card star"><div class="k">Score de alcance</div><div class="v">476.4<span class="u">/1k · mediana</span></div></div>
+    <div class="card star"><div class="k">Score de alcance</div><div class="v">411.9<span class="u">/1k · mediana</span></div></div>
     <div class="card star"><div class="k">Bookmarks</div><div class="v">21.2<span class="u">/1k · medio</span></div></div>
-    <div class="card star"><div class="k">Follow / visita</div><div class="v">13.80%<span class="u">sigue ÷ visita</span></div></div>
+    <div class="card star"><div class="k">Follow / visita</div><div class="v good">13.80%<span class="u">sigue ÷ visita · meta ≥10%</span></div></div>
   </div>
   <h2>Contexto · para leer el norte, no para presumir</h2>
   <div class="cards">
     <div class="card"><div class="k">Posts medidos</div><div class="v">16<span class="u">confianza</span></div></div>
     <div class="card"><div class="k">Impresiones</div><div class="v">34,350<span class="u">alcance</span></div></div>
+    <div class="card"><div class="k">Reach ratio</div><div class="v warn">1.75×<span class="u">imp ÷ seg · meta ≥2× (1,000 seg)</span></div></div>
     <div class="card"><div class="k">Replies</div><div class="v">4.7<span class="u">/1k · conversación</span></div></div>
   </div>
 
@@ -89,7 +91,7 @@
   <div class="grid2">
     <div class="panel">
       <div class="mini">Score de alcance (interacción ponderada por el algoritmo de X) · por 1k impresiones</div>
-      <div class="bars"><div class="row"><div class="lbl">lectura_del_mundo <span class="pill">n=4</span></div><div class="track"><div class="fill" style="width:100.0%"></div></div><div class="num">760.4</div></div><div class="row"><div class="lbl">modelos_de_negocio <span class="pill">n=4</span></div><div class="track"><div class="fill" style="width:76.1%"></div></div><div class="num">578.6</div></div><div class="row"><div class="lbl">construir_con_ia <span class="pill">n=4</span></div><div class="track"><div class="fill" style="width:50.5%"></div></div><div class="num">383.9</div></div><div class="row"><div class="lbl">proceso_y_ejecucion <span class="pill">n=4</span></div><div class="track"><div class="fill" style="width:34.1%"></div></div><div class="num">259.2</div></div></div>
+      <div class="bars"><div class="row"><div class="lbl">lectura_del_mundo <span class="pill">n=4</span></div><div class="track"><div class="fill" style="width:100.0%"></div></div><div class="num">668.4</div></div><div class="row"><div class="lbl">modelos_de_negocio <span class="pill">n=4</span></div><div class="track"><div class="fill" style="width:75.9%"></div></div><div class="num">507.6</div></div><div class="row"><div class="lbl">construir_con_ia <span class="pill">n=4</span></div><div class="track"><div class="fill" style="width:48.6%"></div></div><div class="num">324.9</div></div><div class="row"><div class="lbl">proceso_y_ejecucion <span class="pill">n=4</span></div><div class="track"><div class="fill" style="width:32.8%"></div></div><div class="num">218.9</div></div></div>
     </div>
     <div class="panel">
       <div class="mini">Bookmarks por 1k impresiones (lo que la audiencia guarda)</div>
@@ -100,24 +102,32 @@
   <div class="grid2" style="margin-top:16px">
     <div class="panel">
       <div class="mini">Por formato · score/1k</div>
-      <div class="bars"><div class="row"><div class="lbl">thread <span class="pill">n=3</span></div><div class="track"><div class="fill" style="width:100.0%"></div></div><div class="num">763.5</div></div><div class="row"><div class="lbl">single <span class="pill">n=13</span></div><div class="track"><div class="fill" style="width:56.8%"></div></div><div class="num">433.7</div></div></div>
+      <div class="bars"><div class="row"><div class="lbl">thread <span class="pill">n=3</span></div><div class="track"><div class="fill" style="width:100.0%"></div></div><div class="num">670.6</div></div><div class="row"><div class="lbl">single <span class="pill">n=13</span></div><div class="track"><div class="fill" style="width:55.8%"></div></div><div class="num">374.4</div></div></div>
     </div>
     <div class="panel">
       <div class="mini">Por idioma · score/1k</div>
-      <div class="bars"><div class="row"><div class="lbl">en <span class="pill">n=14</span></div><div class="track"><div class="fill" style="width:100.0%"></div></div><div class="num">512.0</div></div><div class="row"><div class="lbl">es <span class="pill">n=2</span></div><div class="track"><div class="fill" style="width:74.2%"></div></div><div class="num">380.1</div></div></div>
+      <div class="bars"><div class="row"><div class="lbl">en <span class="pill">n=14</span></div><div class="track"><div class="fill" style="width:100.0%"></div></div><div class="num">444.2</div></div><div class="row"><div class="lbl">es <span class="pill">n=2</span></div><div class="track"><div class="fill" style="width:74.3%"></div></div><div class="num">330.1</div></div></div>
     </div>
   </div>
+
+  <details class="note"><summary>Cómo se calcula el Score de alcance (y qué no mide)</summary>
+    <div style="margin-top:8px">
+      <p class="mini">Score = Σ(interacción × peso) ÷ impresiones. Pesos crudos del heavy-ranker open-source de X (README, abr-2023):</p>
+      <p class="tw"><b>like 0.5 · repost 1 · reply 13.5 · profile click 12 · bookmark 10</b></p>
+      <p class="mini">El <b>bookmark (10)</b> es estimación: X confirmó en 2024 que cuenta para el alcance pero nunca publicó un peso oficial. Las señales más fuertes del algoritmo —reply respondido por el autor (75), permanencia ≥2 min (11), report (−369)— no aparecen en la analítica nativa, así que no entran al score. Fuente: github.com/twitter/the-algorithm-ml. Ojo: una liga en el cuerpo del post cuesta −30 a −50% de alcance; ponla en el primer reply.</p>
+    </div>
+  </details>
 
   <h2>Mejores y peores posts</h2>
   <table>
     <thead><tr><th>Post</th><th>Ángulo</th><th class="n">Score/1k</th><th class="n">ER</th><th class="n">Bookmarks</th></tr></thead>
     <tbody>
-      <tr><td><span class="good">▲</span> B2 en · <span class="pill">lectura_del_mundo</span> thread</td><td>la guerra que toca tu margen</td><td class="n">777.4</td><td class="n">9.14%</td><td class="n">150</td></tr>
-      <tr><td><span class="good">▲</span> B1 en · <span class="pill">lectura_del_mundo</span> thread</td><td>leer a China sin titular</td><td class="n">766.0</td><td class="n">9.08%</td><td class="n">168</td></tr>
-      <tr><td><span class="good">▲</span> B1 en · <span class="pill">lectura_del_mundo</span> single</td><td>—</td><td class="n">751.2</td><td class="n">8.90%</td><td class="n">99</td></tr>
-      <tr><td><span class="warnt">▼</span> B2 es · <span class="pill">proceso_y_ejecucion</span> single</td><td>—</td><td class="n">225.6</td><td class="n">4.78%</td><td class="n">8</td></tr>
-      <tr><td><span class="warnt">▼</span> B8 en · <span class="pill">proceso_y_ejecucion</span> single</td><td>—</td><td class="n">238.9</td><td class="n">4.95%</td><td class="n">9</td></tr>
-      <tr><td><span class="warnt">▼</span> B8 en · <span class="pill">proceso_y_ejecucion</span> single</td><td>—</td><td class="n">266.5</td><td class="n">5.40%</td><td class="n">10</td></tr>
+      <tr><td><span class="good">▲</span> B2 en · <span class="pill">lectura_del_mundo</span> thread</td><td>la guerra que toca tu margen</td><td class="n">682.6</td><td class="n">9.14%</td><td class="n">150</td></tr>
+      <tr><td><span class="good">▲</span> B1 en · <span class="pill">lectura_del_mundo</span> thread</td><td>leer a China sin titular</td><td class="n">673.3</td><td class="n">9.08%</td><td class="n">168</td></tr>
+      <tr><td><span class="good">▲</span> B1 en · <span class="pill">lectura_del_mundo</span> single</td><td>—</td><td class="n">661.8</td><td class="n">8.90%</td><td class="n">99</td></tr>
+      <tr><td><span class="warnt">▼</span> B2 es · <span class="pill">proceso_y_ejecucion</span> single</td><td>—</td><td class="n">188.9</td><td class="n">4.78%</td><td class="n">8</td></tr>
+      <tr><td><span class="warnt">▼</span> B8 en · <span class="pill">proceso_y_ejecucion</span> single</td><td>—</td><td class="n">203.2</td><td class="n">4.95%</td><td class="n">9</td></tr>
+      <tr><td><span class="warnt">▼</span> B8 en · <span class="pill">proceso_y_ejecucion</span> single</td><td>—</td><td class="n">230.5</td><td class="n">5.40%</td><td class="n">10</td></tr>
     </tbody>
   </table>
   <p class="mini">▲ mejores por score de alcance · ▼ cola. El score premia replies y bookmarks por encima de likes.</p>
@@ -129,10 +139,10 @@
     <table class="sug">
       <thead><tr><th>Pilar</th><th class="n">n</th><th class="n">Score/1k</th><th>Actual</th><th>Sugerido</th></tr></thead>
       <tbody>
-        <tr><td class="tag">lectura_del_mundo</td><td class="n">4</td><td class="n">760.4</td><td>medio</td><td class="chg">alto ⟵</td></tr>
-        <tr><td class="tag">modelos_de_negocio</td><td class="n">4</td><td class="n">578.6</td><td>alto</td><td class="chg">medio ⟵</td></tr>
-        <tr><td class="tag">construir_con_ia</td><td class="n">4</td><td class="n">383.9</td><td>alto</td><td class="chg">medio ⟵</td></tr>
-        <tr><td class="tag">proceso_y_ejecucion</td><td class="n">4</td><td class="n">259.2</td><td>bajo</td><td class="keep">bajo</td></tr>
+        <tr><td class="tag">lectura_del_mundo</td><td class="n">4</td><td class="n">668.4</td><td>medio</td><td class="chg">alto ⟵</td></tr>
+        <tr><td class="tag">modelos_de_negocio</td><td class="n">4</td><td class="n">507.6</td><td>alto</td><td class="chg">medio ⟵</td></tr>
+        <tr><td class="tag">construir_con_ia</td><td class="n">4</td><td class="n">324.9</td><td>alto</td><td class="chg">medio ⟵</td></tr>
+        <tr><td class="tag">proceso_y_ejecucion</td><td class="n">4</td><td class="n">218.9</td><td>bajo</td><td class="keep">bajo</td></tr>
       </tbody>
     </table>
     <p class="mini">Sugerencia, no orden: aplícalo a mano si concuerda con lo que ves.</p>

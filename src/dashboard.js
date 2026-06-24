@@ -5,9 +5,21 @@
  * → publicación → métricas → recalibración de la ficha.
  */
 
+import { ALGO_PESOS } from './metrics.js';
+
+const PESO_LABEL = { likes: 'like', reposts: 'repost', replies: 'reply', profile_clicks: 'profile click', bookmarks: 'bookmark' };
+
 export function renderDashboard({ meta, resumen, porPilar, porFormato, porIdioma, top, bottom, pesos, drafts, batchFecha }) {
   const anguloDe = (batch, draft) =>
     batch === batchFecha && drafts?.[draft - 1] ? drafts[draft - 1].angle : '';
+
+  // Benchmarks publicados (Typefully, growth guides 2025-26): follow÷visita 10-15% sano,
+  // <5% bio/pinned flojos; reach ratio ≥2× = el algoritmo te empuja fuera de tus seguidores.
+  const fvTone = resumen.followVisita >= 0.10 ? 'good' : resumen.followVisita >= 0.05 ? 'warn' : 'bad';
+  const rr = resumen.reachRatio;
+  const rrVal = rr == null ? '—' : `${rr.toFixed(2)}×`;
+  const rrTone = rr == null ? '' : rr >= 2 ? 'good' : rr >= 1 ? 'warn' : 'bad';
+  const pesosTxt = Object.entries(ALGO_PESOS).map(([k, v]) => `${PESO_LABEL[k] || k} ${v}`).join(' · ');
 
   const html = `<!doctype html>
 <html lang="es">
@@ -41,6 +53,7 @@ export function renderDashboard({ meta, resumen, porPilar, porFormato, porIdioma
   .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
   .card.star{border-color:var(--accent);background:linear-gradient(180deg,rgba(63,182,255,.10),var(--panel))}
   .card .k{font-size:12px;color:var(--muted)} .card .v{font-size:26px;font-weight:700;margin-top:4px}
+  .card .v.good{color:var(--accent2)} .card .v.warn{color:var(--warn)} .card .v.bad{color:var(--bad)}
   .card .u{font-size:12px;color:var(--muted);margin-left:4px}
   .grid2{display:grid;grid-template-columns:1.4fr 1fr;gap:16px}
   @media(max-width:760px){.grid2{grid-template-columns:1fr}}
@@ -91,12 +104,13 @@ export function renderDashboard({ meta, resumen, porPilar, porFormato, porIdioma
   <div class="cards">
     ${card('Score de alcance', per1k(resumen.reachMediana), '/1k · mediana', true)}
     ${card('Bookmarks', per1k(resumen.bmMedio), '/1k · medio', true)}
-    ${card('Follow / visita', pct(resumen.followVisita), 'sigue ÷ visita', true)}
+    ${card('Follow / visita', pct(resumen.followVisita), 'sigue ÷ visita · meta ≥10%', true, fvTone)}
   </div>
   <h2>Contexto · para leer el norte, no para presumir</h2>
   <div class="cards">
     ${card('Posts medidos', fmt(resumen.total), 'confianza')}
     ${card('Impresiones', fmt(resumen.impTotal), 'alcance')}
+    ${card('Reach ratio', rrVal, `imp ÷ seg · meta ≥2×${resumen.followers ? ` (${fmt(resumen.followers)} seg)` : ''}`, false, rrTone)}
     ${card('Replies', per1k(resumen.replyMedio), '/1k · conversación')}
   </div>
 
@@ -122,6 +136,14 @@ export function renderDashboard({ meta, resumen, porPilar, porFormato, porIdioma
       ${barras(porIdioma, 'reachScore', per1k)}
     </div>
   </div>
+
+  <details class="note"><summary>Cómo se calcula el Score de alcance (y qué no mide)</summary>
+    <div style="margin-top:8px">
+      <p class="mini">Score = Σ(interacción × peso) ÷ impresiones. Pesos crudos del heavy-ranker open-source de X (README, abr-2023):</p>
+      <p class="tw"><b>${esc(pesosTxt)}</b></p>
+      <p class="mini">El <b>bookmark (10)</b> es estimación: X confirmó en 2024 que cuenta para el alcance pero nunca publicó un peso oficial. Las señales más fuertes del algoritmo —reply respondido por el autor (75), permanencia ≥2 min (11), report (−369)— no aparecen en la analítica nativa, así que no entran al score. Fuente: github.com/twitter/the-algorithm-ml. Ojo: una liga en el cuerpo del post cuesta −30 a −50% de alcance; ponla en el primer reply.</p>
+    </div>
+  </details>
 
   <h2>Mejores y peores posts</h2>
   <table>
@@ -171,8 +193,8 @@ export function renderDashboard({ meta, resumen, porPilar, porFormato, porIdioma
 function step(k, v, on) {
   return `<div class="step${on ? ' on' : ''}"><div class="k">${esc(k)}</div><div class="v">${esc(v)}</div></div>`;
 }
-function card(k, v, u = '', star = false) {
-  return `<div class="card${star ? ' star' : ''}"><div class="k">${esc(k)}</div><div class="v">${esc(v)}${u ? `<span class="u">${esc(u)}</span>` : ''}</div></div>`;
+function card(k, v, u = '', star = false, tone = '') {
+  return `<div class="card${star ? ' star' : ''}"><div class="k">${esc(k)}</div><div class="v${tone ? ' ' + tone : ''}">${esc(v)}${u ? `<span class="u">${esc(u)}</span>` : ''}</div></div>`;
 }
 function barras(filas, key, fmtFn, alt = false) {
   const max = Math.max(...filas.map((f) => f[key]), 1e-9);

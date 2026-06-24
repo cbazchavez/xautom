@@ -77,11 +77,22 @@ out/<id>-<fecha>.json   →   metrics/<id>.csv   →   reporte por pilar/formato
    ```
 2. **Llenar a mano** en `metrics/<id>.csv`, por cada post publicado: `published_at`,
    `url`, `impressions`, `likes`, `replies`, `reposts`, `bookmarks`,
-   `profile_clicks`, `follows`. Las filas sin impresiones se ignoran.
+   `profile_clicks`, `link_clicks`, `follows`. Las filas sin impresiones se ignoran.
+
+   De dónde sale cada número (todo **gratis desde la app móvil**, "Ver analíticas
+   del post" — no hace falta Premium para medir post por post):
+   - `impressions, likes, replies, reposts, profile_clicks, link_clicks` salen
+     directos del popup de analíticas del post.
+   - `bookmarks` se lee del **contador público del tweet** (no siempre aparece en
+     el popup).
+   - `follows` **por post** es una *estimación* de X, a menudo 0 o subreportada, y
+     no existe en la API. Trátala con reserva; el conteo confiable es el **neto a
+     nivel cuenta** (dashboard de cuenta, que sí requiere Premium).
 3. **Reporte / tablero**:
    ```bash
    npm run report      # reporte en Markdown
    npm run dashboard   # tablero HTML autocontenido (se abre con doble clic)
+   npm run dashboard -- --followers 1200   # añade el reach ratio (imp ÷ seguidores)
    ```
    Cruzan el rendimiento por pilar, formato (single vs thread) e idioma (EN vs ES),
    marcan mejores/peores posts y **sugieren** cómo recalibrar `pilares[].peso`.
@@ -95,15 +106,30 @@ npm run dashboard -- --demo      # genera metrics/luis-dashboard.html
 
 Qué se mide y por qué:
 
-- **Score de alcance**: interacción ponderada por los pesos reportados del
-  algoritmo de X (replies y bookmarks pesan mucho más que un like). Más cerca de
-  lo que mueve el reach que el ER crudo.
-- **Norte de la siembra**: `bookmarks/1k` (valor que se guarda) y `follow/visita`
-  (conversión a seguidor), no likes ni followers absolutos.
+- **Score de alcance**: interacción ponderada por los pesos **crudos del
+  heavy-ranker open-source de X** (README, abr-2023): `like 0.5 · repost 1 ·
+  reply 13.5 · profile-click 12 · bookmark 10*`. No la "fórmula simplificada" de
+  blogs (que infla el repost a 20). `*bookmark`: X confirmó en 2024 que cuenta
+  para el alcance pero **no publicó un peso oficial** — es estimación. Las señales
+  más fuertes (reply respondido por el autor = 75, permanencia ≥2 min = 11,
+  report = −369) no las da la analítica nativa, así que no entran. Definidos en
+  `ALGO_PESOS` (`src/metrics.js`); ajústalos en un lugar si X cambia.
+- **Tablero en dos tiers**:
+  - *Norte (perseguimos)*: `score de alcance`, `bookmarks/1k` (valor que se
+    guarda), `follow÷visita` (conversión a seguidor — el KPI que recomiendan
+    Typefully y las growth guides; **verde ≥10–15%, rojo <5%**).
+  - *Contexto (para leerlo, no presumir)*: posts medidos (confianza),
+    impresiones, `reach ratio` (imp ÷ seguidores; **≥2× = el algoritmo te empuja
+    fuera de tus seguidores**) y `replies/1k`.
+  - Likes y followers absolutos se tratan como vanidad (respaldado por los pesos
+    del propio algoritmo y por creadores como Justin Welsh).
+- **Para la estrategia**: una liga en el cuerpo del post cuesta **−30 a −50% de
+  alcance** — ponla en el primer reply. Threads ganan en bookmarks/dwell; singles
+  en velocidad de conversación.
 - **Guardarraíl honesto**: con muestra chica el reporte se **rehúsa** a sugerir
   pesos (mínimos ajustables con `--min-total` / `--min-pilar`). 8 posts no son
-  señal; ~30–50 empiezan a serlo. Mide relativo a tu propia mediana, no a
-  benchmarks externos.
+  señal; ~30–50 empiezan a serlo. Mide relativo a tu propia mediana; los
+  benchmarks externos (≥10%, ≥2×) son referencia, no dogma.
 
 ## Pendientes conocidos
 

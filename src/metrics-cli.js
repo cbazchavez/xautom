@@ -27,6 +27,7 @@ async function main() {
       langs: { type: 'string', default: 'en,es' },
       'min-total': { type: 'string', default: '15' },
       'min-pilar': { type: 'string', default: '4' },
+      followers: { type: 'string' },
       demo: { type: 'boolean', default: false },
       help: { type: 'boolean', short: 'h', default: false },
     },
@@ -89,6 +90,9 @@ async function analizar({ profile, csvPath, values }) {
   const fechas = posts.map((p) => p.row.published_at).filter(Boolean).sort();
   const sumFollows = posts.reduce((s, p) => s + p.m.follows, 0);
   const sumClics = posts.reduce((s, p) => s + p.m.profile_clicks, 0);
+  // Seguidores: bandera --followers o perfil.seguidores. Para el reach ratio
+  // (impresiones ÷ seguidores): ≥2× = el algoritmo te empuja fuera de tus seguidores.
+  const followers = int(values.followers, profile.perfil?.seguidores ?? 0);
   const resumen = {
     total: posts.length,
     impTotal: posts.reduce((s, p) => s + p.m.imp, 0),
@@ -98,6 +102,8 @@ async function analizar({ profile, csvPath, values }) {
     replyMedio: mean(posts.map((p) => p.m.replyRate)),
     followVisitaMedio: mean(posts.map((p) => p.m.followPerVisit)),
     followVisita: sumClics ? sumFollows / sumClics : 0, // razón agregada (menos ruido)
+    followers,
+    reachRatio: followers ? mediana(posts.map((p) => p.m.imp / followers)) : null,
     rango: fechas.length ? `${fechas[0]} → ${fechas[fechas.length - 1]}` : '',
   };
 
@@ -203,11 +209,17 @@ Uso:
 
 Flujo:
   1) npm run track            siembra metrics/<id>.csv con los borradores del batch.
-  2) Llenas published_at, url, impressions, likes, replies, reposts,
-     bookmarks, profile_clicks y follows desde X Analytics (a mano).
+  2) Llenas published_at, url, impressions, likes, replies, reposts, bookmarks,
+     profile_clicks, link_clicks y follows desde X Analytics (a mano).
   3) npm run report           cruza por pilar/formato/idioma y sugiere pesos.
      npm run dashboard         genera un tablero HTML autocontenido.
      npm run dashboard -- --demo   tablero con datos de ejemplo (para mostrar la idea).
+
+Captura (todo GRATIS desde la app móvil, "Ver analíticas del post"):
+  impressions, likes, replies, reposts, profile_clicks (= profile visits) y link_clicks.
+  · bookmarks: del contador público del tweet (no siempre está en el popup).
+  · follows POR POST es una estimación de X (a menudo 0): úsala con reserva o llena el
+    neto a nivel cuenta. El dashboard de cuenta y el export CSV requieren Premium.
 
 Opciones:
   -p, --profile <id>   Ficha (default: luis)
@@ -217,6 +229,7 @@ Opciones:
       --langs <lista>  Idiomas a sembrar (default: en,es)
       --min-total <n>  Posts mínimos para sugerir pesos (default: 15)
       --min-pilar <n>  Posts mínimos por pilar (default: 4)
+      --followers <n>  Conteo de seguidores, para el reach ratio (imp ÷ seg, ≥2× sano)
       --demo           Usa el registro de ejemplo (metrics/<id>-demo.csv)
 `);
 }
