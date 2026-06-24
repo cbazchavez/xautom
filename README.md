@@ -140,6 +140,8 @@ Qué se mide y por qué:
 - **`docs/research-x-analytics.md`** — memoria de la investigación que calibró el loop:
   qué datos da X Analytics, los pesos reales del algoritmo y qué miden los buenos
   creadores, con fuentes. El *por qué* detrás de `ALGO_PESOS` y los KPIs.
+- **`docs/research-perfiles-x.md`** — perfiles de referencia en X por pilar, tácticas
+  para adoptar y la estrategia de idioma (no mezclar EN+ES en el mismo feed), con fuentes.
 
 ## Pendientes conocidos
 

@@ -65,6 +65,14 @@
     border-radius:10px;padding:16px 18px;margin-top:18px}
   .rec b{color:var(--accent2)}
   .pend{border:1px dashed var(--line);border-radius:10px;padding:14px 16px;color:var(--muted);font-size:14px;background:var(--panel)}
+  .refgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
+  @media(max-width:680px){.refgrid{grid-template-columns:1fr}}
+  .ref{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .ref .cap{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+  .ref .a{font-size:13px;margin:7px 0;line-height:1.5}
+  .ref .a .h{color:var(--accent);font-family:ui-monospace,Menlo,monospace;font-weight:700}
+  .langbox{background:var(--panel2);border:1px solid var(--accent);border-left:4px solid var(--accent);border-radius:10px;padding:16px 18px;margin-top:14px}
+  .langbox b{color:var(--accent)}
   ul.plain{margin:10px 0;padding-left:22px} ul.plain li{margin:6px 0}
   footer{color:var(--muted);font-size:13px;margin-top:48px;border-top:1px solid var(--line);padding-top:18px}
 </style>
@@ -188,7 +196,7 @@
       <li>Bio, foto y <b>post fijado</b> — de esto depende que las visitas se vuelvan seguidores.</li>
       <li>Elegir handle definitivo (hoy la ficha dice <span class="tag">@PENDIENTE</span>).</li>
       <li>Definir cadencia (2–3 posts/día) y repartir los 8 borradores.</li>
-      <li>Decidir idioma por post (EN da más techo; ES, menos competencia y más cercanía).</li>
+      <li>Elegir <b>un idioma de batalla</b> para X — no mezclar EN+ES en el mismo feed (ver "Estrategia de idioma").</li>
     </ul>
   </div></div>
   <div class="phase"><div class="when">Fase 1<br>semanas 1–3</div><div>
@@ -214,11 +222,69 @@
   </div>
 
   <!-- ================= PERFILES ================= -->
-  <h2>Perfiles de referencia (investigación)</h2>
-  <div class="pend">🔎 Investigación en curso: cuentas de X que publican contenido similar a los pilares de Luis
-  (construir con IA, modelos de negocio, lectura del mundo) en inglés y español, más la estrategia bilingüe.
-  Esta sección se completa cuando vuelvan los hallazgos — con cuentas concretas, formatos que funcionan y
-  tácticas para adoptar.</div>
+  <h2>Perfiles de referencia</h2>
+  <p>Cuentas de X que ya hacen contenido cercano a los pilares de Luis. <span class="muted">Verifica el handle
+  antes de seguir (hay clones); seguidores y métricas son orientativos, no auditados.</span></p>
+
+  <div class="refgrid">
+    <div class="ref">
+      <div class="cap">Construir con IA</div>
+      <div class="a"><span class="h">@levelsio</span> — revenue y fracasos reales, stack simple. "No construyo hasta tener clientes."</div>
+      <div class="a"><span class="h">@marc_louvion</span> — ejecución en público; regla "90% útil" + gancho en la línea 1.</div>
+      <div class="a"><span class="h">@tdinh_me</span> — productos sobre LLMs con milestones de revenue.</div>
+      <div class="a"><span class="h">@gregisenberg</span> — formato "free idea" y el "content ladder".</div>
+    </div>
+    <div class="ref">
+      <div class="cap">Modelos de negocio</div>
+      <div class="a"><span class="h">@SahilBloom</span> — frameworks memorizables; evergreen vs timely.</div>
+      <div class="a"><span class="h">@ShaanVP</span> — "curiosity gap": el primer tweet carga el 70%.</div>
+      <div class="a"><span class="h">@TrungTPhan</span> — análisis serio empaquetado ligero.</div>
+      <div class="a"><span class="h">@george__mack</span> — máxima densidad, mínima paja (anti-humo puro).</div>
+    </div>
+    <div class="ref">
+      <div class="cap">Lectura del mundo</div>
+      <div class="a"><span class="h">@lillianmli</span> — tech china en clave de modelo de negocio. El puente entre dos pilares.</div>
+      <div class="a"><span class="h">@kyledchan</span> — política industrial china → implicaciones competitivas.</div>
+      <div class="a"><span class="h">@ruima</span> — tech china de frontera para operadores cross-border.</div>
+      <div class="a"><span class="h">@Noahpinion</span> — macro con tesis clara + datos.</div>
+    </div>
+    <div class="ref">
+      <div class="cap">Voz anti-humo y cadencia</div>
+      <div class="a"><span class="h">@dvassallo</span> · <span class="h">@shl</span> — minimalista, anti-hype, basado en datos y fallas propias.</div>
+      <div class="a"><span class="h">@arvidkahl</span> — build-in-public honesto; "community garden", no megáfono.</div>
+      <div class="a"><span class="h">@thejustinwelsh</span> — el sistema de cadencia: 2/día + 1 hilo/semana, reusar el top ~5x.</div>
+    </div>
+  </div>
+  <p class="muted" style="margin-top:10px"><b style="color:#fff">En español</b> (si el idioma de X es ES, o para LinkedIn/YouTube):
+  <span class="tag">@DotCSV</span>, <span class="tag">@midudev</span>,
+  <span class="tag">@JonhernandezIA</span>, <span class="tag">@juanmerodio</span>.
+  El nicho "indie hacker hispano con MRR público" está menos desarrollado que el anglosajón.</p>
+
+  <h3>Tácticas para adoptar</h3>
+  <ul class="plain">
+    <li><b>Lente propia repetible</b> (Sangeet/Mack): una tesis-paraguas para la lectura del mundo ("¿qué se vuelve escaso y dónde se mueve el valor?") en vez de opinar de todo.</li>
+    <li><b>Puente Asia-tech → negocio</b> (Lillian Li): no geopolítica de titular; explica la lógica de negocio detrás del fenómeno. Une dos pilares en un post.</li>
+    <li><b>Artefacto &gt; opinión</b> (Levels/Dinh): mostrar el build ("lo construí con Claude en N horas"), no opinar sobre IA. Es lo más guardable.</li>
+    <li><b>El primer tweet es el 70%</b> (Marc Lou/Shaan): número específico o claim contrarian; nunca "aquí van 5 tips".</li>
+    <li><b>Listicle/framework numerado</b> con cierre marcable: el formato más bookmarkeado.</li>
+    <li><b>Cadencia operable + repurposing</b> (Welsh): 2/día + 1 hilo/semana, reusar el top ~5x. La cuenta misma como ejemplo de "proceso y ejecución".</li>
+    <li><b>Comunidad, no megáfono</b> (Arvid) + fase reply-guy ~90 días: el camino más fiable a los primeros 1K seguidores.</li>
+    <li><b>X es top-of-funnel</b>: el destino es un activo propio (newsletter/lista). "X puede banearte; tu lista no."</li>
+  </ul>
+
+  <h3>Estrategia de idioma</h3>
+  <div class="langbox">
+    <b>No mezclar inglés y español en la misma cuenta de X.</b> El algoritmo enruta por idioma + tema: si la mitad
+    de tus seguidores no interactúa con la mitad de tus posts, baja el engagement y se castiga el alcance en
+    <b>ambos</b> idiomas.
+    <ul class="plain" style="margin-top:8px">
+      <li>Elige <b>un idioma de batalla</b> por objetivo: inglés = techo, founders y VCs globales; español = mercado hispano, comunidad, prensa local.</li>
+      <li>¿Ambos? Dos cuentas separadas, contenido adaptado (no traducido). No empieces con dos.</li>
+      <li>Atajo: X en inglés y el español por LinkedIn / YouTube / newsletter, sin fragmentar el feed.</li>
+    </ul>
+    <p class="muted" style="margin:8px 0 0">El motor seguirá generando EN+ES (sirve para multicanal); en X, Luis publica un idioma.
+    No hay un estudio definitivo "EN vs ES"; la evidencia es el algoritmo + consenso de practicantes.</p>
+  </div>
 
   <footer>
     xautom — el motor genera, el tablero mide, la recalibración los conecta. Datos manuales desde X Analytics
