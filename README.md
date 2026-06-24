@@ -131,6 +131,14 @@ Qué se mide y por qué:
   señal; ~30–50 empiezan a serlo. Mide relativo a tu propia mediana; los
   benchmarks externos (≥10%, ≥2×) son referencia, no dogma.
 
+## Documentación
+
+- **`docs/como-funciona.html`** — guía visual (se abre con doble clic) que explica el
+  motor completo y cómo leer el tablero, en lenguaje llano. Para enseñárselo a Luis.
+- **`docs/research-x-analytics.md`** — memoria de la investigación que calibró el loop:
+  qué datos da X Analytics, los pesos reales del algoritmo y qué miden los buenos
+  creadores, con fuentes. El *por qué* detrás de `ALGO_PESOS` y los KPIs.
+
 ## Pendientes conocidos
 
 - `perfil.handle` real (hoy `@PENDIENTE`).

@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cómo funciona xautom — guía para Luis</title>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2230; --line:#283041;
+    --txt:#e6edf3; --muted:#8b949e; --accent:#3fb6ff; --accent2:#7ee787;
+    --warn:#f2cc60; --bad:#ff7b72;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);
+    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  main{max-width:880px;margin:0 auto;padding:40px 22px 80px}
+  h1{font-size:30px;margin:0 0 6px;letter-spacing:-.01em}
+  h2{font-size:13px;margin:44px 0 14px;color:var(--accent);text-transform:uppercase;
+    letter-spacing:.08em;font-weight:700}
+  h3{font-size:19px;margin:24px 0 6px}
+  p{margin:10px 0}
+  .lead{font-size:19px;color:var(--txt);margin:14px 0 0}
+  .sub{color:var(--muted);margin:4px 0 0}
+  .muted{color:var(--muted)}
+  b{color:#fff}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:14px 0}
+  .flow{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+  .flow .box{flex:1;min-width:150px;background:var(--panel);border:1px solid var(--line);
+    border-radius:12px;padding:14px 16px}
+  .flow .box .n{font-size:12px;color:var(--accent);font-weight:700}
+  .flow .box .t{font-weight:700;margin:3px 0}
+  .flow .box .d{font-size:13px;color:var(--muted)}
+  .arrow{color:var(--muted);align-self:center;font-size:20px}
+  .half{border-left:3px solid var(--accent);padding-left:16px;margin:18px 0}
+  .half.b{border-left-color:var(--accent2)}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+  th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line)}
+  th{color:var(--muted);font-weight:600}
+  td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+  .kpi{display:grid;grid-template-columns:170px 1fr;gap:6px 18px;align-items:baseline;
+    padding:14px 0;border-bottom:1px solid var(--line)}
+  .kpi:last-child{border-bottom:0}
+  .kpi .name{font-weight:700}
+  .kpi .name .u{display:block;font-size:12px;color:var(--muted);font-weight:400;margin-top:2px}
+  @media(max-width:620px){.kpi{grid-template-columns:1fr}}
+  .chip{display:inline-block;padding:1px 9px;border-radius:999px;font-size:12px;border:1px solid var(--line);color:var(--muted);margin-right:4px}
+  .star{border-color:var(--accent);color:var(--accent)}
+  .lg{display:inline-block;padding:2px 9px;border-radius:5px;font-size:13px;margin:0 4px 4px 0;font-weight:600}
+  .lg.ex{background:rgba(63,182,255,.16);color:var(--accent)}
+  .lg.ok{background:rgba(126,231,135,.15);color:var(--accent2)}
+  .lg.wn{background:rgba(242,204,96,.15);color:var(--warn)}
+  .lg.bd{background:rgba(255,123,114,.15);color:var(--bad)}
+  .callout{background:var(--panel2);border:1px solid var(--line);border-left:3px solid var(--warn);
+    border-radius:10px;padding:14px 18px;margin:16px 0;font-size:15px}
+  .good{color:var(--accent2)} .bad{color:var(--bad)} .acc{color:var(--accent)}
+  ul{margin:10px 0;padding-left:22px} li{margin:6px 0}
+  footer{color:var(--muted);font-size:13px;margin-top:48px;border-top:1px solid var(--line);padding-top:18px}
+  .tag{font-family:ui-monospace,Menlo,monospace;font-size:13px;color:var(--accent)}
+</style>
+</head>
+<body>
+<main>
+
+  <h1>Cómo funciona xautom</h1>
+  <p class="sub">Guía para enseñarle el motor a Luis — en cristiano, sin jerga.</p>
+  <p class="lead">Generamos borradores con <b>tu voz</b>, <b>tú</b> decides qué publicar,
+  y <b>medimos</b> si funcionan para afinar la siguiente tanda. <span class="muted">Nada se
+  publica solo. Ningún número te promete nada antes de publicar — se mide lo ya publicado.</span></p>
+
+  <!-- ============ EL MOTOR ============ -->
+  <h2>El motor, en dos mitades</h2>
+
+  <div class="half">
+    <h3 class="acc">1 · Generar borradores</h3>
+    <p>El motor lee tu <b>ficha de voz</b> y deja una tanda de borradores listos para que
+    elijas. No improvisa: todo es decisión de código, auditable.</p>
+    <div class="flow">
+      <div class="box"><div class="n">FICHA</div><div class="t">Tu voz (un archivo)</div><div class="d">Quién eres, cómo suenas (ejemplos sí / no), tus temas y reglas. La única fuente de tu voz.</div></div>
+      <div class="arrow">→</div>
+      <div class="box"><div class="n">PLAN</div><div class="t">El reparto del batch</div><div class="d">El código decide qué tema toca a cada borrador (según el peso que les diste), cuáles tejen un tema del momento y cuáles tocan producto.</div></div>
+      <div class="arrow">→</div>
+      <div class="box"><div class="n">BORRADORES</div><div class="t">8 posts, EN + ES</div><div class="d">Cada uno en inglés y español nativos (no traducción), con su tema y formato. Listos para que tú elijas.</div></div>
+    </div>
+    <p class="muted">Los "temas" son tus <b>pilares</b>: lectura del mundo, construir con IA,
+    modelos de negocio, proceso y ejecución. A cada uno le pones un <b>peso</b> (alto/medio/bajo)
+    y eso define cuántos borradores le tocan.</p>
+  </div>
+
+  <div class="half b">
+    <h3 class="good">2 · Medir y afinar</h3>
+    <p>Publicas lo que te gustó, copias los números, y el tablero te dice qué jaló. Con eso
+    ajustamos la ficha y la siguiente tanda sale mejor calibrada. Ese es el <b>ciclo</b>.</p>
+    <div class="flow">
+      <div class="box"><div class="n">PUBLICAS</div><div class="t">Tú eliges</div><div class="d">Qué borradores, en qué idioma, cuándo.</div></div>
+      <div class="arrow">→</div>
+      <div class="box"><div class="n">COPIAS</div><div class="t">Números de X</div><div class="d">Gratis desde el móvil. 2 minutos por post.</div></div>
+      <div class="arrow">→</div>
+      <div class="box"><div class="n">TABLERO</div><div class="t">Qué funcionó</div><div class="d">Cruza por tema, formato e idioma.</div></div>
+      <div class="arrow">→</div>
+      <div class="box"><div class="n">AFINAS</div><div class="t">La ficha</div><div class="d">Subes el peso de lo que jala. Vuelve a empezar.</div></div>
+    </div>
+  </div>
+
+  <!-- ============ CÓMO LEER EL TABLERO ============ -->
+  <h2>Cómo leer el tablero</h2>
+  <p>El tablero (<span class="tag">luis-dashboard.html</span>) ordena todo en <b>dos grupos</b>,
+  para no confundir lo que perseguimos con lo que es solo contexto.</p>
+
+  <div class="panel">
+    <p><span class="chip star">NORTE</span> <b>Lo que de verdad perseguimos.</b> Tres números.
+    Si estos suben, vamos bien.</p>
+    <p><span class="chip">CONTEXTO</span> <b>Para leer el Norte, no para presumir.</b> Cuánta
+    gente vio, cuántos posts llevamos (confianza), y un par de termómetros de apoyo.</p>
+  </div>
+
+  <h3>El número estrella: "Score de alcance"</h3>
+  <p>Es la idea más importante, así que va con ejemplo. <b>No todas las interacciones valen
+  lo mismo.</b> Un <b>like</b> es barato (un toque). Un <b>bookmark</b> (que alguien guarde tu
+  post) o un <b>reply</b> valen muchísimo más: implican esfuerzo real.</p>
+  <p>Imagina dos posts, cada uno visto por 1,000 personas:</p>
+  <table>
+    <thead><tr><th>Post</th><th class="n">likes</th><th class="n">guardados</th><th class="n">respuestas</th><th>Sumando "a secas"</th></tr></thead>
+    <tbody>
+      <tr><td>A</td><td class="n">60</td><td class="n">2</td><td class="n">1</td><td>63 — parece bueno</td></tr>
+      <tr><td>B</td><td class="n">20</td><td class="n">30</td><td class="n">12</td><td>62 — ¿peor?</td></tr>
+    </tbody>
+  </table>
+  <p>A secas casi empatan. Pero el <b>B es muchísimo mejor</b>: 30 personas lo guardaron y 12
+  respondieron. El <b>Score de alcance</b> le pone un <b>peso</b> a cada cosa (guardar y
+  responder pesan mucho; el like, poco) y así <b>B le gana a A por goleada</b>. Es un solo número
+  que premia lo que importa.</p>
+  <div class="callout">¿De dónde salen los pesos? Del <b>código que X hizo público</b> en 2023.
+  No los inventamos: like = 0.5, repost = 1, reply = 13.5, click al perfil = 12, guardar ≈ 10.
+  <span class="muted">(El "guardar = 10" es estimación nuestra: X confirmó que cuenta para el
+  alcance pero nunca publicó el número exacto. Lo decimos abierto en el tablero.)</span></div>
+
+  <h3>Los demás números, en una línea cada uno</h3>
+  <div class="panel">
+    <div class="kpi"><div class="name acc">Guardados / 1k <span class="u">(Norte)</span></div>
+      <div>Cuántos <b>guardan</b> tu post por cada 1,000 que lo ven. La señal de "esto es tan
+      útil que lo quiero para después". Tu mejor termómetro de valor — y casi imposible de fingir.</div></div>
+    <div class="kpi"><div class="name acc">Seguir ÷ visita <span class="u">(Norte)</span></div>
+      <div>De los que entraron a tu perfil, <b>cuántos te siguieron</b>. Mide si tu perfil
+      "cierra la venta". Sano si va arriba de <b>10%</b>; abajo de 5% suele ser bio o post fijado flojos.</div></div>
+    <div class="kpi"><div class="name acc">Score de alcance <span class="u">(Norte)</span></div>
+      <div>El número estrella de arriba: interacción de calidad por cada 1,000 vistas.</div></div>
+    <div class="kpi"><div class="name">Reach ratio <span class="u">(Contexto)</span></div>
+      <div>Cuántas veces "tu propia cantidad de seguidores" te vio. <b>Arriba de 2×</b> = el
+      algoritmo te está mostrando a <b>gente nueva</b>, no solo a los tuyos. Ahí crece una cuenta.</div></div>
+    <div class="kpi"><div class="name">Respuestas / 1k <span class="u">(Contexto)</span></div>
+      <div>Cuántos se detienen a <b>responderte</b>. Conversación — de lo que más pesa en el algoritmo.</div></div>
+    <div class="kpi"><div class="name">Impresiones <span class="u">(Contexto)</span></div>
+      <div>Cuánta gente vio tus posts. Es el <b>denominador</b> de casi todo, no una meta en sí.
+      "34 mil vistas" suena bonito pero no paga nada solo.</div></div>
+    <div class="kpi"><div class="name">Posts medidos <span class="u">(Contexto)</span></div>
+      <div>No es desempeño: es <b>confianza</b>. Con 3 posts, ignora los rankings. Con 30+, créeles.</div></div>
+  </div>
+
+  <h3>El semáforo de colores</h3>
+  <p>Los números con un estándar conocido se pintan solos:</p>
+  <p><span class="lg ex">azul · supera</span><span class="lg ok">verde · en rango</span><span class="lg wn">amarillo · debajo</span><span class="lg bd">rojo · muy mal</span></p>
+  <p class="muted">Solo coloreamos los que tienen un estándar publicado (seguir÷visita, reach ratio).
+  Los demás se quedan neutros hasta tener <b>tu propia mediana</b> como vara — pintarlos contra un
+  número inventado sería humo.</p>
+
+  <h3>Lo de abajo: barras, mejores/peores y la sugerencia</h3>
+  <ul>
+    <li><b>Por pilar / formato / idioma:</b> barras que comparan qué <b>tema</b> jala más, qué
+    <b>formato</b> (hilo vs post suelto) y qué <b>idioma</b> (inglés vs español) rinde mejor.</li>
+    <li><b>Mejores y peores posts:</b> el top y la cola por Score, con el ángulo de cada uno —
+    para ver qué tipo de post repetir y cuál soltar.</li>
+    <li><b>Sugerencia para la ficha:</b> ordena tus pilares por lo medido y propone subir/bajar
+    su peso. <b>Es sugerencia, no orden</b> — y con muestra chica <b>se rehúsa</b> a proponer nada.
+    8 posts no son señal; ~30–50 empiezan a serlo.</li>
+  </ul>
+
+  <!-- ============ EN LA PRÁCTICA ============ -->
+  <h2>En la práctica: qué copiar (y es gratis)</h2>
+  <p>Medir post por post es <b>gratis desde la app móvil</b> (toca el ícono de barras en tu post,
+  "Ver analíticas"). No necesitas Premium para esto.</p>
+  <ul>
+    <li>Del popup salen directo: <b>impresiones, likes, respuestas, reposts, visitas al perfil,
+    clics a la liga</b>.</li>
+    <li><b>Guardados</b> (bookmarks): del contador público del propio tweet.</li>
+    <li><b>Seguidores ganados por post</b>: X da una estimación poco fiable (a veces 0). El dato
+    bueno es el <b>neto de tu cuenta</b> en la semana. Úsalo con reserva.</li>
+  </ul>
+  <div class="callout"><b>Tip de alcance:</b> una liga en el cuerpo del post le cuesta entre
+  <b>−30% y −50%</b> de alcance (a X no le gusta sacarte de la app). Pon la liga en el
+  <b>primer reply</b>, no en el post.</div>
+
+  <!-- ============ HONESTIDAD ============ -->
+  <h2>Lo que este motor NO hace</h2>
+  <ul>
+    <li><b>No publica solo.</b> Solo deja borradores; tú decides todo.</li>
+    <li><b>No predice.</b> Mide lo ya publicado. Ningún número avala un post antes de salir.</li>
+    <li><b>No persigue vanidad.</b> Likes y número de seguidores no son metas — lo dice hasta
+    el propio algoritmo de X (un like pesa 0.5).</li>
+    <li><b>No inventa estándares.</b> Lo que no tiene benchmark real se mide contra tu propia historia.</li>
+    <li><b>Con poca data, se calla.</b> Prefiere no recomendar antes que recomendar con ruido.</li>
+  </ul>
+
+  <footer>
+    xautom — generamos con tu voz, tú decides, medimos lo publicado. Sin humo: cada número
+    tiene su fuente, y lo estimado se marca como estimado. Abre <span class="tag">luis-dashboard.html</span>
+    para ver todo esto con datos.
+  </footer>
+
+</main>
+</body>
+</html>
