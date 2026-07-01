@@ -59,6 +59,13 @@ Todo vive en `profiles/luis.yaml`. Lo que más mueve la aguja:
   aterrizar producto solo (siguiendo `reglas_de_promocion`). Mientras esté vacío,
   nunca menciona productos.
 
+## Material de referencia
+
+`reference/` guarda las fuentes que dieron contexto sobre Luis (deck de branding,
+frameworks de Instagram). **El motor no las lee** — son secundarias. La única fuente
+de la voz de X es `profiles/luis.yaml`; lo aprovechable de la referencia ya está
+integrado ahí (v3). Ver `reference/README.md` para la precedencia.
+
 ## Pendientes conocidos
 
 - `perfil.handle` real (hoy `@PENDIENTE`).

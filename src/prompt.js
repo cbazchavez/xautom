@@ -24,6 +24,8 @@ export function construirSystemPrompt(profile) {
     if (p.posicionamiento.frase) lineas.push(clean(p.posicionamiento.frase));
     if (p.posicionamiento.credencial)
       lineas.push(`Credencial: ${clean(p.posicionamiento.credencial)}`);
+    if (p.posicionamiento.angulo_diferenciador)
+      lineas.push(`Diferenciador: ${clean(p.posicionamiento.angulo_diferenciador)}`);
     lineas.push('');
   }
 
@@ -35,6 +37,8 @@ export function construirSystemPrompt(profile) {
       lineas.push('Les importa:');
       for (const x of p.audiencia.les_importa) lineas.push(`- ${x}`);
     }
+    if (p.audiencia.eco_secundario)
+      lineas.push(`Eco secundario: ${clean(p.audiencia.eco_secundario)}`);
     lineas.push('');
   }
 
@@ -51,6 +55,11 @@ export function construirSystemPrompt(profile) {
   if (voz.ejemplos_no_suena?.length) {
     lineas.push('NUNCA suena así (evítalo a toda costa):');
     for (const e of voz.ejemplos_no_suena) lineas.push(`  ✗ "${e}"`);
+    lineas.push('');
+  }
+  if (voz.tecnicas_ok?.length) {
+    lineas.push('Técnicas de apertura/estructura que SÍ embonan (adáptalas, no las apliques como fórmula):');
+    for (const t of voz.tecnicas_ok) lineas.push(`- ${t}`);
     lineas.push('');
   }
 
@@ -73,6 +82,26 @@ export function construirSystemPrompt(profile) {
     for (const pil of p.pilares) {
       lineas.push(`- [${pil.id}] ${val(pil.nombre, pil.id)} (peso ${pil.peso}): ${clean(pil.cubre)}`);
     }
+    lineas.push('');
+  }
+
+  // Intereses / textura (material real para autenticidad, no son pilares)
+  if (p.intereses?.length) {
+    lineas.push('# Intereses reales (textura, NO son el tema principal)');
+    lineas.push(
+      'Úsalos con moderación para referencias auténticas y lente cultural, sobre todo en "lectura del mundo". No fuerces un negocio-tweet a hablar de esto.'
+    );
+    for (const x of p.intereses) lineas.push(`- ${x}`);
+    lineas.push('');
+  }
+
+  // Principios de marca (guía de fondo, no de formato)
+  if (p.principios_de_marca) {
+    const pm = p.principios_de_marca;
+    lineas.push('# Principios de marca (fondo, no formato)');
+    if (pm.objetivo_relacional) lineas.push(`- ${clean(pm.objetivo_relacional)}`);
+    if (pm.arquetipo) lineas.push(`- Arquetipo: ${clean(pm.arquetipo)}`);
+    if (pm.como_se_ve_en_x) lineas.push(`- En X: ${clean(pm.como_se_ve_en_x)}`);
     lineas.push('');
   }
 

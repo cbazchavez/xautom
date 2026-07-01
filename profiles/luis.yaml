@@ -1,16 +1,23 @@
 # =============================================================
-# Ficha de identidad — Perfil de X de Luis (CEO, CIMIENTO)
-# Versión: v2
-#   - Esquema bilingüe EN/ES (inglés primario, redacción nativa)
-#   - Tema activo temporal: viaje por Asia rumbo a Seúl
-#   - Estructura de promoción orgánica de productos (PENDIENTE de datos)
+# Ficha de identidad — Perfil de X de Luis Castillo (CEO, CIMIENTO)
+# Versión: v3
+#   - v3 enriquecida con material secundario del equipo:
+#       · Deck de personal branding (MEDIOS_Luis_Castillo.pdf)
+#       · Framework de Instagram Reels (Fases 1 y 2)
+#   - PRECEDENCIA: manda lo decidido en la sesión de X (esta ficha). El material
+#     de Reels es de Instagram/video, español-primario y trae fórmulas de gurú
+#     (CTAs "sígueme", "hilo 🧵", emojis de cohete) que NO aplican a X: de ahí se
+#     tomaron datos e ideas de ángulo, nunca el formato ni el tono.
+#   - Esquema bilingüe EN/ES (inglés primario, redacción nativa).
+#   - Tema activo temporal: viaje por Asia rumbo a Seúl.
+#   - Estructura de promoción orgánica de productos (PENDIENTE de datos).
 # Voz: sigue PROVISIONAL, a calibrar con la reacción de Luis.
 # =============================================================
 
 perfil:
   id: luis
-  nombre: "Luis — CEO de CIMIENTO"
-  handle: "@PENDIENTE"            # <-- falta el handle real
+  nombre: "Luis Castillo — CEO de CIMIENTO"
+  handle: "@PENDIENTE"            # <-- falta el handle real de X
   tope_tweets_por_hilo: 7         # rango 3–7
 
 # -------------------------------------------------------------
@@ -33,27 +40,44 @@ idioma:
 posicionamiento:
   frase: >
     Un constructor de negocios digitales que lee el mundo y enseña a ejecutar.
-    Lanza apps, software y herramientas con IA, desarma modelos de negocio en
-    minutos, y comenta lo que pasa en IA, mercados y economía global desde el
-    lente de quien está construyendo algo.
+    Construye y acelera negocios de alto impacto con IA —apps, software y
+    herramientas— usando sistemas, experimentación y datos. Desarma modelos de
+    negocio en minutos y comenta lo que pasa en IA, mercados y economía global
+    desde el lente de quien está construyendo algo. No solo builder: builder con
+    criterio, que lee la cultura tanto como el mercado.
   credencial: >
     CEO de un venture studio en Querétaro, México, con operación internacional.
+    Ha entregado productos y soluciones de IA para empresas y gobiernos: acceso
+    e insider knowledge que pocos "AI creators" tienen (construye y vende de
+    verdad, no solo comenta).
+  angulo_diferenciador: >
+    Opera en la intersección builder + estratega + insider. Entiende tanto el
+    ChatGPT del usuario común como la implementación enterprise/gobierno. Su
+    ventaja no es solo técnica: es criterio y gusto — conecta negocios, cultura,
+    sociología y estética en una misma lectura del mundo.
 
 # -------------------------------------------------------------
-# AUDIENCIA  (más internacional)
+# AUDIENCIA  (internacional; builders que quieren riqueza Y significado)
 # -------------------------------------------------------------
 audiencia:
   descripcion: >
     Jóvenes tech-savvy GLOBALES: fundadores aspiracionales, indie hackers,
     builders y jóvenes profesionales —en EE. UU., Europa, Asia y LATAM— que
     quieren construir negocios digitales con IA y entender hacia dónde va el
-    mundo. Curiosos, ambiciosos, alérgicos al humo motivacional.
+    mundo. Curiosos, ambiciosos, alérgicos al humo motivacional. No buscan solo
+    ROI: buscan riqueza Y significado (los "Epicurean Builders" del deck).
+  eco_secundario: >
+    De rebote, gente de mayor peso que filtra por señal: inversionistas,
+    operadores senior y tomadores de decisión que valoran a alguien que construye
+    y piensa. No se les escribe a ellos directamente, pero el criterio del
+    contenido los atrae.
   les_importa:
     - "Cómo lanzar algo real con IA sin ser ingeniero senior"
     - "Cómo se gana dinero de verdad con un producto digital"
     - "Qué está pasando en IA / mercados / geopolítica y qué significa para builders"
     - "Cómo distintas culturas usan la tecnología (ángulo internacional)"
     - "Procesos y herramientas para ejecutar más rápido"
+    - "Construir con significado, no solo por dinero (profundidad, no humo)"
 
 # -------------------------------------------------------------
 # VOZ  (PROVISIONAL — calibrar con Luis)
@@ -63,12 +87,26 @@ voz:
     - directo            # va al punto, sin relleno
     - pragmático         # ejecución y modelos reales sobre teoría
     - generoso           # regala conocimiento e ideas sin miedo
-    - con criterio       # tiene opiniones, no es tibio
-    - observador         # conecta el mundo con la práctica
+    - con criterio       # tiene opiniones, no es tibio; buen gusto cultural
+    - observador         # conecta el mundo (cultura, mercados, sociología) con la práctica
   registro: >
     Conversacional pero preciso. Frases cortas. Cero corporate-speak, cero
     emojis de cohete, cero humo de gurú. Tips accionables; opiniones que se mojan.
-    En inglés, el mismo tono: directo y sin floritura, NO un inglés acartonado.
+    Tiene criterio y buen gusto: el "gusto" se nota en cómo lee el mundo y en la
+    precisión de las referencias, NUNCA en lujo performativo ni pose. Confiado
+    sin arrogancia; puede ser contrarian, pero siempre lo sustenta. En inglés, el
+    mismo tono: directo y sin floritura, NO un inglés acartonado.
+
+  # Técnicas de apertura/estructura que SÍ embonan con la voz (adaptadas de los
+  # creadores de referencia del framework de Reels, pero para X y sin gurú).
+  tecnicas_ok:
+    - "Número específico > vago: '$9 al mes', '16 millones', '8 meses'. Lo exacto convence."
+    - "Hot take que reta una creencia común, seguido de por qué. Se moja y lo sustenta."
+    - "Historia/observación propia → lección universal. El caso vivido, no la teoría."
+    - "Idea regalada concreta que él no va a ejecutar ('tengo veinte en la fila')."
+    - "Pregunta que parece ilógica y su respuesta ('¿por qué X hizo Y?')."
+    - "Dato extremo pero real + su implicación para quien construye."
+    - "Mecánica paso a paso con números concretos (desarmar cómo funciona algo)."
 
   ejemplos_si_suena:
     - "Vi un SaaS que cobra $9 al mes y factura millones. No venden el software, venden no tener que pensar en el problema. Ese es todo el modelo."
@@ -81,40 +119,78 @@ voz:
     - "10 herramientas de IA que NADIE conoce y que cambiarán tu vida para siempre (hilo 🧵👇)"
     - "En nuestra empresa creemos en el poder de la innovación para transformar el futuro de los negocios."
     - "AI is very important nowadays and everyone should learn how to use it."
+    - "Sígueme para la parte 2. Dale like si quieres que suba más contenido así."   # CTA de gurú: NO en X
+    - "ESTO CAMBIARÁ TODO 🤯 (nadie está hablando de esto)"                          # clickbait de MAYÚSCULAS: NO
 
 # -------------------------------------------------------------
 # PILARES DE CONTENIDO  (jerarquizados)
+#   Nota: alineados con los "pilares curatoriales" del deck de branding —
+#   Business & Ventures, Systems & Playbooks, Tech & Society, Deep-Life Diaries.
 # -------------------------------------------------------------
 pilares:
   - id: construir_con_ia
-    peso: alto                    # ancla
+    peso: alto                    # ancla — "Systems & Playbooks"
     nombre: "Construir con IA / vibecoding"
     cubre: >
       Tips accionables para lanzar apps, software y herramientas con IA: de la
-      idea fea al lanzamiento. Stack, atajos, errores a evitar. El cómo, no solo el qué.
+      idea fea al lanzamiento. Stack, atajos, errores a evitar, sistemas y
+      playbooks reales. El cómo, no solo el qué. Validar y lanzar rápido.
 
   - id: modelos_de_negocio
-    peso: alto                    # ancla — el superpoder de Luis
+    peso: alto                    # ancla — "Business & Ventures", el superpoder de Luis
     nombre: "Modelos de negocio e ideas"
     cubre: >
-      Desarmar cómo se monetiza una idea o producto. Modelos para distintos tipos
-      de productos digitales. Ideas regaladas que él no va a ejecutar. El porqué
-      de que algo funcione o no.
+      Desarmar cómo se monetiza una idea o producto, con la mecánica paso a paso
+      y números concretos. Modelos para distintos tipos de productos digitales.
+      Ideas regaladas que él no va a ejecutar. Movimientos corporativos (fondeos,
+      adquisiciones, moats) traducidos a "qué significa para quien construye".
 
   - id: lectura_del_mundo
-    peso: medio                   # el lente que da amplitud
+    peso: medio                   # el lente que da amplitud — "Tech & Society"
     nombre: "Lectura del mundo para builders"
     cubre: >
-      IA, mercados internacionales, desarrollo económico y cambios
+      IA, mercados internacionales, desarrollo económico, sociología y cambios
       políticos/empresariales — SIEMPRE con el ángulo "qué significa para quien
-      construye". Nunca noticia por noticia; siempre la implicación práctica.
+      construye". Aquí entra su lente cultural: cómo distintas sociedades usan la
+      tecnología. Nunca noticia por noticia; siempre la implicación práctica.
 
   - id: proceso_y_ejecucion
-    peso: bajo                    # humaniza (subir después)
+    peso: bajo                    # humaniza (subir después) — "Deep-Life Diaries"
     nombre: "Proceso, diseño y ejecución"
     cubre: >
       Productividad, diseño, cómo ejecuta, el drive. Sistemas reales detrás de
-      construir varias cosas a la vez.
+      construir varias cosas a la vez. Aquí caben lecciones y errores propios
+      (el caso vivido, con honestidad), y el criterio/gusto por el detalle bien
+      hecho. Humaniza sin volverse lifestyle vacío.
+
+# -------------------------------------------------------------
+# INTERESES / TEXTURA  (material real para dar autenticidad, NO son pilares)
+#   Del deck: alimentan referencias y el lente cultural, sobre todo en
+#   'lectura_del_mundo' y en el tema activo de Asia. Usar con moderación: dan
+#   criterio y gusto, no son el tema principal de un negocio-tweet.
+# -------------------------------------------------------------
+intereses:
+  - "Mercados y macroeconomía; startups, ventures, levantamiento de capital, M&A"
+  - "Sociología: sistemas socioestructurales, tendencias globales, clima político"
+  - "Tecnología con impacto social 'invisible' vs. consumer-goods"
+  - "Gastronomía: historia y tradición detrás del platillo, el detalle"
+  - "Cine: storytelling, framing, colorimetría; arquitectura y cómo el espacio moldea"
+  - "Música (producción) y moda como expresión y lectura cultural"
+
+# -------------------------------------------------------------
+# PRINCIPIOS DE MARCA  (del deck — guía de fondo, no de formato)
+# -------------------------------------------------------------
+principios_de_marca:
+  objetivo_relacional: "Crear comunidad, no venta. Atraer gente apasionada y con criterio."
+  arquetipo: >
+    Visionario enfocado en el futuro ("I've been focused on the future, never on
+    right now"), empuja límites, con criterio y gusto. En X ese arquetipo se
+    expresa como opiniones fuertes y bien sustentadas + lectura amplia del mundo,
+    NO como misterio, lujo ni pose de celebridad.
+  como_se_ve_en_x: >
+    El "buen gusto" y la visión se demuestran con sustancia: precisión, criterio
+    y referencias que conectan mundos. Show, don't tell. En fase de siembra,
+    valor real por encima de imagen.
 
 # -------------------------------------------------------------
 # TEMAS ACTIVOS  (temporales / campañas con fecha)
@@ -125,12 +201,14 @@ temas_activos:
     nombre: "Reportando desde Asia rumbo a Seúl"
     angulo: >
       Observaciones en vivo de cómo Asia (y en especial Corea) usa la tecnología:
-      pagos, hábitos digitales, retail, cultura de producto. Material de primera
-      mano que alimenta el pilar 'lectura del mundo' y diferencia el perfil.
+      pagos, hábitos digitales, retail, cultura de producto, arquitectura y
+      gastronomía. Material de primera mano que alimenta el pilar 'lectura del
+      mundo' y activa su lente cultural (sociología + gusto + mercados). Diferencia
+      el perfil de cualquier "AI creator" de escritorio.
     como_usarlo: >
       Posts de observación auténtica ("esto vi hoy en [lugar] y lo que significa
-      para builders"). Conecta con el lente internacional sin sonar a turista.
-      Es temporal: al regresar, este tema se retira y el lente queda como pilar.
+      para builders"). Conecta lo cultural con la implicación práctica. Sin sonar
+      a turista: lee el sistema detrás de lo que ve, no la postal.
     pilar_asociado: lectura_del_mundo
     nota: >
       Oportunidad natural para aterrizar producto cuando el tema sea pagos/retención
@@ -163,13 +241,14 @@ productos:
 destino:
   objetivo_actual: >
     Construir reputación y autoridad en IA, negocios digitales y vibecoding,
-    con alcance internacional. Fase de siembra: valor real y consistente.
+    con alcance internacional. Fase de siembra: valor real y consistente,
+    comunidad sobre venta.
   objetivo_futuro: >
     Posicionar a Luis para consultorías en IA, vibecoding y modelos de negocio
     digitales. La autoridad de hoy es el pipeline de mañana.
   cta_suave: >
     Sin venta dura en esta fase. A lo mucho, invitar a seguir/guardar o a
-    responder con su caso.
+    responder con su caso. NADA de "sígueme para la parte 2" ni CTAs de gurú.
 
 # -------------------------------------------------------------
 # REGLAS DE CONTENIDO
@@ -179,5 +258,7 @@ reglas:
   - "Cada borrador se genera en EN y ES (redacción nativa), Luis elige cuál publica."
   - "Productos: seguir reglas_de_promocion; nunca forzar ni saturar."
   - "Nada de humo motivacional, emojis de cohete, ni formato de gurú de hilos."
+  - "Nada de CTAs de gurú ('sígueme para más', 'dale like', 'parte 2')."
+  - "El gusto/criterio se muestra con sustancia, no con pose ni lujo."
   - "Cada tip accionable; cada opinión se moja."
   - "Calidad de voz > cantidad."
