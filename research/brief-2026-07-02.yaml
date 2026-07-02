@@ -1,0 +1,106 @@
+# Brief de actualidad — investigado por Claude Code el 2026-07-02
+# Formato y reglas: ver research/README.md
+fecha: 2026-07-02
+
+noticias:
+  - titulo: "Corea del Sur lanza megaproyectos de IA y chips por más de $870B"
+    fuente: "Al Jazeera / TechTimes"
+    url: "https://www.aljazeera.com/news/2026/6/29/south-korea-announces-more-than-1-trillion-ai-chip-investment-drive"
+    resumen: >
+      El gobierno coreano presentó tres megaproyectos (semiconductores, IA física
+      y datacenters de IA) con más de 1,350 billones de wones (~$872B) de
+      inversión público-privada. Samsung comprometió ~$649B a 10 años — la mayor
+      promesa de inversión corporativa en la historia del país.
+    por_que_importa: >
+      Luis está rumbo a Seúl: esto es contexto de primera mano. Corea está
+      apostando el país entero a la capa física de la IA, no a los modelos.
+    pilar_sugerido: lectura_del_mundo
+
+  - titulo: "Corea destina $10.3B en financiamiento a 'IA física' en 6 industrias"
+    fuente: "UPI"
+    url: "https://www.upi.com/amp/Top_News/World-News/2026/07/01/physical-ai-national-growth-fund/1251782951422/"
+    resumen: >
+      El 1 de julio, la Financial Services Commission coreana anunció ~16
+      billones de wones ($10.3B) este año en financiamiento de política pública
+      para acelerar la adopción de IA física (robots, vehículos, equipo fabril
+      que percibe y decide) en 6 industrias: IA, robótica, vehículos del futuro,
+      defensa, semiconductores y baterías.
+    por_que_importa: >
+      Mientras Occidente debate chatbots, Corea financia la IA que toca el mundo
+      físico. Ángulo de observación en vivo para el viaje.
+    pilar_sugerido: lectura_del_mundo
+
+  - titulo: "Samsung y SK Hynix invierten $518B en nuevas fábricas de chips"
+    fuente: "The Japan Times"
+    url: "https://www.japantimes.co.jp/business/2026/07/01/tech/samsung-sk-hynix-korea-chips/"
+    resumen: >
+      Los dos mayores fabricantes de memoria del mundo invertirán 800 billones
+      de wones ($518B) con proveedores para construir dos sitios de fabricación
+      cada uno en el suroeste de Corea. Juntos controlan ~80% de la producción
+      global de HBM, la memoria que alimenta los aceleradores de IA. Meta:
+      duplicar la capacidad de memoria del país en 5 años.
+    por_que_importa: >
+      El cuello de botella de la IA no son las ideas, es la memoria HBM — y 80%
+      la controlan dos empresas del país que Luis va a pisar.
+    pilar_sugerido: lectura_del_mundo
+
+  - titulo: "Together AI levanta $800M (Serie C) a valuación de $8.3B"
+    fuente: "Crescendo AI News"
+    url: "https://www.crescendo.ai/news/latest-vc-investment-deals-in-ai-startups"
+    resumen: >
+      Together AI cerró una Serie C de $800M a valuación post de $8.3B. Su
+      negocio: plataforma para que empresas entrenen y corran IA sobre modelos
+      open source, sin depender de los labs cerrados.
+    por_que_importa: >
+      El modelo de negocio no es el modelo de IA: es quitar la fricción de usar
+      los abiertos. Desarmable en un tweet: quién captura valor en la capa media.
+    pilar_sugerido: modelos_de_negocio
+
+  - titulo: "Récord histórico: $510B de venture capital global en H1 2026"
+    fuente: "Crunchbase News"
+    url: "https://news.crunchbase.com/venture/global-startup-exits-ipo-ma-soar-ai-q2-h1-2026/"
+    resumen: >
+      El funding global de startups llegó a $510B en la primera mitad de 2026,
+      superando los $440B de TODO 2025. Solo en Q2 se invirtieron $205B en más
+      de 5,000 startups. El boom es desigual: concentrado en EE. UU. y en la
+      capa de infraestructura de IA.
+    por_que_importa: >
+      Hay más capital que nunca y a la vez más concentrado que nunca. Qué
+      significa para el builder fuera de San Francisco.
+    pilar_sugerido: modelos_de_negocio
+
+  - titulo: "Vibe coding: 92% de developers en EE. UU. lo usan a diario, pero solo ~29% confía en el código"
+    fuente: "Hostinger / Keyhole Software (compilaciones de datos 2026)"
+    url: "https://www.hostinger.com/blog/vibe-coding-statistics"
+    resumen: >
+      Datos de adopción 2026: 92% de developers en EE. UU. usa herramientas de
+      AI coding a diario, Cursor llegó a ~$2B de ingreso anualizado y penetró
+      ~70% del Fortune 1000. Pero la confianza va en sentido contrario: solo
+      29–33% confía en la precisión del código generado (bajó de 43% en 2024) y
+      la favorabilidad cayó de 77% (2023) a 60% (2026).
+    por_que_importa: >
+      La adopción ganó; la confianza se rezagó. Para quien construye con IA, el
+      diferenciador ya no es usarla sino saber verificarla. Tesis central de Luis.
+    pilar_sugerido: construir_con_ia
+
+  - titulo: "Meta explora vender su cómputo de IA excedente como negocio de nube"
+    fuente: "The Neuron (digest del 2 de julio)"
+    url: "https://www.theneuron.ai/explainer-articles/around-the-horn-digest-everything-that-happened-in-ai-today-thursday-july-2-2026/"
+    resumen: >
+      Reportes (CNBC) de que Meta explora un negocio de nube para vender su
+      capacidad de cómputo de IA excedente y posiblemente acceso hosteado a
+      modelos. La acción subió: los inversionistas buscan retorno del capex
+      masivo en infraestructura de IA.
+    por_que_importa: >
+      Cuando el capex no encuentra retorno interno, se vuelve producto. El
+      movimiento clásico de "vender el excedente" (AWS 2006) repitiéndose.
+    pilar_sugerido: modelos_de_negocio
+
+# Tweets curados del timeline de Luis — los pega el equipo A MANO.
+# El motor genera el TAKE de Luis (nunca copia); si necesita contexto, sale
+# marcado quote_of para publicarse como quote-tweet citando al autor.
+# Formato:
+#   - autor: "@handle"
+#     tweet: "Texto del tweet."
+#     idea: "Qué ángulo podría tener Luis (opcional)."
+feed: []

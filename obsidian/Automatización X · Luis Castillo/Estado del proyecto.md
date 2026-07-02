@@ -22,6 +22,11 @@ Foto del proyecto al **2026-07-01**. Ver índice: [[Automatización X · Luis Ca
 - **Material de referencia** versionado en `reference/` (deck + Reels), marcado como
   secundario.
 - **Archivo de ejemplo** (`examples/luis-ejemplo.md`) para ver el formato de salida.
+- **Sistema de actualidad** (2026-07-02): briefs de noticias en `research/` que el
+  motor inyecta al batch (`--brief`, default el más reciente), con primer brief real
+  generado. Ver [[Actualidad y curación del feed]].
+- **Swipe file** (2026-07-02): base de datos en `swipe/` de tweets del feed de Luis
+  con buen performance, para destilar patrones (hooks, formatos) hacia la ficha.
 
 ## 🧭 Decisiones tomadas
 
@@ -45,8 +50,11 @@ Foto del proyecto al **2026-07-01**. Ver índice: [[Automatización X · Luis Ca
    - Al tenerla: `npm run draft -- --profile luis --count 6` → primer batch real en `out/`.
 3. **Calibrar la voz** con la reacción de Luis al primer batch (ajustar ejemplos SÍ/NO).
    Pedir que el batch incluya 1–2 borradores del pilar nuevo **"Vida y cultura"**.
-4. **Handle real de X** de Luis (hoy `@PENDIENTE`).
-5. **Lista de productos** reales (nombre, qué hace, etapa, si se menciona) para la
+4. **Handle real de X** de Luis (hoy `@PENDIENTE`) — ya hay acceso a la cuenta; solo
+   falta poner el handle en la ficha. La contraseña NO se guarda en vault ni repo.
+5. **Poblar el swipe** con la primera tanda (~20 tweets) del feed de Luis →
+   `swipe/inbox.md`, y pedir a Claude que lo procese.
+6. **Lista de productos** reales (nombre, qué hace, etapa, si se menciona) para la
    promoción orgánica.
 
 ## ⏭️ Próximo paso concreto

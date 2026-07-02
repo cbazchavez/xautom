@@ -167,6 +167,8 @@ const OUTPUT_SHAPE = `{
       "angle": "<etiqueta corta del ángulo, 3-6 palabras, en español>",
       "uses_active_topic": "<id del tema activo o null>",
       "product": "<nombre del producto mencionado o null>",
+      "news_ref": "<url de la noticia del brief usada, o null>",
+      "quote_of": "<@autor del tweet a citar como quote-tweet, o null>",
       "en": { "tweets": ["...", "..."] },
       "es": { "tweets": ["...", "..."] }
     }
@@ -174,7 +176,7 @@ const OUTPUT_SHAPE = `{
 }
 Para "single", cada array "tweets" tiene exactamente 1 elemento.`;
 
-export function construirUserPrompt(specs, profile) {
+export function construirUserPrompt(specs, profile, brief = null) {
   const temas = profile.temas_activos ?? [];
   const lineas = [];
 
@@ -205,6 +207,46 @@ export function construirUserPrompt(specs, profile) {
     for (const t of usados) {
       lineas.push(`- ${t.id}: ${clean(t.angulo)} Cómo usarlo: ${clean(t.como_usarlo)}`);
     }
+  }
+
+  // Brief de actualidad: noticias investigadas + tweets curados del feed
+  if (brief?.noticias?.length) {
+    lineas.push(
+      '',
+      '# Actualidad (brief de noticias de hoy)',
+      'Material OPCIONAL para anclar borradores en lo que está pasando. Reglas:',
+      '- Un borrador puede usar una noticia SOLO si embona con su pilar asignado.',
+      '- Si la usa, reporta la url en "news_ref". Si no, "news_ref": null.',
+      '- No repitas el take obvio: el valor de Luis es leer qué significa para quien construye.',
+      '- Usa SOLO los datos del resumen; no inventes cifras ni detalles extra.',
+      '- Máximo una noticia por borrador; no todos los borradores necesitan noticia.',
+      ''
+    );
+    brief.noticias.forEach((n, i) => {
+      const partes = [`${i + 1}. ${clean(n.titulo)}`];
+      if (n.fuente) partes.push(`(${clean(n.fuente)})`);
+      lineas.push(partes.join(' '));
+      if (n.resumen) lineas.push(`   Resumen: ${clean(n.resumen)}`);
+      if (n.por_que_importa) lineas.push(`   Ángulo para Luis: ${clean(n.por_que_importa)}`);
+      if (n.pilar_sugerido) lineas.push(`   Pilar sugerido: ${clean(n.pilar_sugerido)}`);
+      if (n.url) lineas.push(`   URL: ${clean(n.url)}`);
+    });
+  }
+
+  if (brief?.feed?.length) {
+    lineas.push(
+      '',
+      '# Del feed de Luis (tweets curados a mano por el equipo)',
+      'Ideas que circulan en el timeline de Luis. Reglas INNEGOCIABLES:',
+      '- NUNCA copies ni parafrasees de cerca el tweet ajeno: sería plagio. El borrador es el TAKE PROPIO de Luis sobre esa idea, con su ángulo (puede coincidir, matizar o llevar la contra).',
+      '- Si el borrador se entiende solo, deja "quote_of": null.',
+      '- Si el borrador necesita el tweet original como contexto, escribe "quote_of": "<@autor>" — se publicará como quote-tweet citando al autor. En ese caso el texto NO debe repetir lo que ya dice el tweet citado.',
+      ''
+    );
+    brief.feed.forEach((f, i) => {
+      lineas.push(`${i + 1}. ${clean(f.autor ?? '@?')}: "${clean(f.tweet)}"`);
+      if (f.idea) lineas.push(`   Posible ángulo de Luis: ${clean(f.idea)}`);
+    });
   }
 
   lineas.push('', 'Devuelve solo el JSON.');

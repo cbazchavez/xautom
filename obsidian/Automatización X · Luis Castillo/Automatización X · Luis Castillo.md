@@ -30,6 +30,7 @@ a las demás notas.
 - [[Ficha de perfil · Luis Castillo]] — quién es Luis y cómo suena en X.
 - [[Estado del proyecto]] — qué está construido, decisiones y pendientes.
 - [[Cómo funciona el motor]] — el flujo técnico, en simple.
+- [[Actualidad y curación del feed]] — swipe file del feed + briefs de noticias.
 
 ## 🎯 En una frase
 

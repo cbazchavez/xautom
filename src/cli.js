@@ -5,6 +5,7 @@ import { resolve, join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { loadProfile } from './profile.js';
+import { cargarBrief } from './brief.js';
 import { planearBatch } from './distribute.js';
 import { construirSystemPrompt, construirUserPrompt } from './prompt.js';
 import { generarBorradores, DEFAULT_MODEL } from './generate.js';
@@ -21,6 +22,7 @@ async function main() {
       profile: { type: 'string', short: 'p', default: 'luis' },
       count: { type: 'string', short: 'n', default: '6' },
       model: { type: 'string', short: 'm' },
+      brief: { type: 'string', short: 'b', default: 'latest' },
       out: { type: 'string', short: 'o' },
       'dry-run': { type: 'boolean', default: false },
       help: { type: 'boolean', short: 'h', default: false },
@@ -33,13 +35,19 @@ async function main() {
   const profile = await loadProfile(values.profile);
   const model = values.model || DEFAULT_MODEL;
 
+  const brief = await cargarBrief(values.brief, ROOT);
   const specs = planearBatch(profile, count);
   const system = construirSystemPrompt(profile);
-  const user = construirUserPrompt(specs, profile);
+  const user = construirUserPrompt(specs, profile, brief);
 
   console.log(`📋 Perfil: ${profile.perfil.nombre} (${profile.perfil.id})`);
   console.log(`🎯 Batch: ${count} borradores`);
   console.log(`🧱 Pilares: ${specs.map((s) => s.pilar).join(', ')}`);
+  if (brief) {
+    console.log(
+      `📰 Brief: ${brief.__path} (${brief.noticias.length} noticias, ${brief.feed.length} del feed)`
+    );
+  }
   const conTema = specs.filter((s) => s.temaActivo).length;
   const conProd = specs.filter((s) => s.producto).length;
   if (conTema) console.log(`🌏 Con tema activo: ${conTema}`);
@@ -83,12 +91,15 @@ Opciones:
   -p, --profile <id|ruta>   Ficha a usar (default: luis)
   -n, --count <n>           Número de borradores (1–30, default: 6)
   -m, --model <id>          Modelo de Anthropic (default: ${DEFAULT_MODEL})
+  -b, --brief <modo>        Brief de actualidad: 'latest' (default), 'none',
+                            o ruta a un research/brief-*.yaml concreto
   -o, --out <ruta>          Archivo .md de salida (default: out/<id>-<fecha>.md)
       --dry-run             Imprime los prompts sin llamar a la API
   -h, --help                Esta ayuda
 
 Ejemplos:
   npm run draft -- --profile luis --count 6
+  npm run draft -- --count 6 --brief none      # batch evergreen, sin noticias
   npm run draft -- --dry-run
 `);
 }

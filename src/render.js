@@ -51,6 +51,8 @@ function metaLinea(d) {
   if (d.format) tags.push(`formato: \`${d.format}\``);
   if (d.uses_active_topic) tags.push(`tema activo: \`${d.uses_active_topic}\``);
   if (d.product) tags.push(`producto: \`${d.product}\``);
+  if (d.news_ref) tags.push(`noticia: ${d.news_ref}`);
+  if (d.quote_of) tags.push(`**publicar como quote-tweet de ${d.quote_of}**`);
   return `_${tags.join(' · ')}_`;
 }
 
