@@ -1,6 +1,16 @@
 # =============================================================
 # Ficha de identidad — Perfil de X de Luis Castillo (CEO, CIMIENTO)
-# Versión: v3
+# Versión: v4
+#   - v4 (2026-07-02): alineación profunda con el deck MEDIOS_Luis_Castillo.pdf.
+#       · NUEVO pilar "Vida y cultura" (peso medio) — equivale al pilar
+#         "Deep-Life Diaries" del deck: los intereses personales como contenido
+#         propio, no solo condimento.
+#       · Intereses expandidos con los ÁNGULOS específicos de Luis por tema.
+#       · Círculos de audiencia del deck (Curious Free Agents, Cultured Amplifiers).
+#       · Voz: se suman rasgos del brand voice del deck + atmósfera "late-night
+#         thoughts". Arquetipo traducido como "anticipación con los pies en la
+#         tierra" (aprobado por el equipo).
+#       · proceso_y_ejecucion sube a peso medio (empareja con la ficha del vault).
 #   - v3 enriquecida con material secundario del equipo:
 #       · Deck de personal branding (MEDIOS_Luis_Castillo.pdf)
 #       · Framework de Instagram Reels (Fases 1 y 2)
@@ -66,6 +76,15 @@ audiencia:
     quieren construir negocios digitales con IA y entender hacia dónde va el
     mundo. Curiosos, ambiciosos, alérgicos al humo motivacional. No buscan solo
     ROI: buscan riqueza Y significado (los "Epicurean Builders" del deck).
+  # Círculos secundarios (del deck de MEDIOS). No se les escribe directamente,
+  # pero el contenido debe darles razones de quedarse.
+  circulo_growth: >
+    "Curious Free Agents": talento creativo y técnico con sed de proyectos y
+    cultura. Llegan por la inspiración y las referencias (arte, lecturas,
+    estética) — el pilar vida_y_cultura les habla especialmente.
+  circulo_echo: >
+    "Cultured Amplifiers": creadores de contenido y marcas lifestyle de alto
+    gusto que amplifican por afinidad de criterio.
   eco_secundario: >
     De rebote, gente de mayor peso que filtra por señal: inversionistas,
     operadores senior y tomadores de decisión que valoran a alguien que construye
@@ -89,6 +108,8 @@ voz:
     - generoso           # regala conocimiento e ideas sin miedo
     - con criterio       # tiene opiniones, no es tibio; buen gusto cultural
     - observador         # conecta el mundo (cultura, mercados, sociología) con la práctica
+    - independiente      # del brand voice del deck: no repite el consenso
+    - desafiante         # del deck: reta creencias, siempre sustentado
   registro: >
     Conversacional pero preciso. Frases cortas. Cero corporate-speak, cero
     emojis de cohete, cero humo de gurú. Tips accionables; opiniones que se mojan.
@@ -96,6 +117,11 @@ voz:
     precisión de las referencias, NUNCA en lujo performativo ni pose. Confiado
     sin arrogancia; puede ser contrarian, pero siempre lo sustenta. En inglés, el
     mismo tono: directo y sin floritura, NO un inglés acartonado.
+  atmosfera: >
+    "Late-night thoughts" (del deck): observaciones que suenan a pensamiento de
+    las 2 a.m. — la idea que no lo deja dormir, no el calendario editorial.
+    Aplica sobre todo a lectura_del_mundo y vida_y_cultura; los posts de tips
+    siguen siendo diurnos y directos.
 
   # Técnicas de apertura/estructura que SÍ embonan con la voz (adaptadas de los
   # creadores de referencia del framework de Reels, pero para X y sin gurú).
@@ -113,6 +139,8 @@ voz:
     - "Idea gratis para quien la quiera ejecutar: [idea concreta]. Yo no voy a llegar a esta, tengo veinte en la fila. Ahí les va."
     - "No necesitas saber programar para lanzar tu primera herramienta con IA. Necesitas una idea fea pero específica y un fin de semana."
     - "Everyone's reading this [market/AI] news as [the obvious take]. If you're building something, it means something else: [concrete implication]."
+    - "The best product lesson I got this month wasn't from an app. It was a 12-seat bar: no menu, no choices, total trust in the person making your drink. That's positioning."
+    - "Los espacios moldean cómo piensas. No es casualidad que las mejores ideas nunca salgan de una sala de juntas."
 
   ejemplos_no_suena:
     - "El éxito no llega a quienes esperan. Levántate y construye tu imperio hoy. 🚀💪"
@@ -155,7 +183,7 @@ pilares:
       tecnología. Nunca noticia por noticia; siempre la implicación práctica.
 
   - id: proceso_y_ejecucion
-    peso: bajo                    # humaniza (subir después) — "Deep-Life Diaries"
+    peso: medio                   # humaniza — behind-the-scenes del builder
     nombre: "Proceso, diseño y ejecución"
     cubre: >
       Productividad, diseño, cómo ejecuta, el drive. Sistemas reales detrás de
@@ -163,19 +191,55 @@ pilares:
       (el caso vivido, con honestidad), y el criterio/gusto por el detalle bien
       hecho. Humaniza sin volverse lifestyle vacío.
 
+  - id: vida_y_cultura
+    peso: medio                   # NUEVO en v4 — "Deep-Life Diaries" del deck
+    nombre: "Vida y cultura"
+    cubre: >
+      Los intereses personales de Luis como contenido con derecho propio (no
+      solo condimento): música, gastronomía y coctelería, cine, arquitectura,
+      moda, cultura pop. Usar los ÁNGULOS del bloque 'intereses' de abajo — lo
+      valioso no es el tema sino el lente de Luis sobre el tema. Un post de este
+      pilar NO necesita moraleja de negocios para justificarse: el criterio y el
+      gusto SON el contenido. Si la conexión con negocio/producto surge natural,
+      mejor; forzarla lo vuelve fábula de LinkedIn.
+
 # -------------------------------------------------------------
-# INTERESES / TEXTURA  (material real para dar autenticidad, NO son pilares)
-#   Del deck: alimentan referencias y el lente cultural, sobre todo en
-#   'lectura_del_mundo' y en el tema activo de Asia. Usar con moderación: dan
-#   criterio y gusto, no son el tema principal de un negocio-tweet.
+# INTERESES  (del deck de MEDIOS — doble uso)
+#   1) Tema principal del pilar 'vida_y_cultura'.
+#   2) Textura y referencias en el resto (sobre todo 'lectura_del_mundo' y el
+#      tema activo de Asia).
+#   Lo importante es el ÁNGULO de Luis en cada tema, no el tema en sí.
 # -------------------------------------------------------------
 intereses:
-  - "Mercados y macroeconomía; startups, ventures, levantamiento de capital, M&A"
-  - "Sociología: sistemas socioestructurales, tendencias globales, clima político"
-  - "Tecnología con impacto social 'invisible' vs. consumer-goods"
-  - "Gastronomía: historia y tradición detrás del platillo, el detalle"
-  - "Cine: storytelling, framing, colorimetría; arquitectura y cómo el espacio moldea"
-  - "Música (producción) y moda como expresión y lectura cultural"
+  - tema: "Música"
+    angulo: "Producción musical, contexto histórico y cultural, el proceso creativo."
+  - tema: "Gastronomía y coctelería"
+    angulo: >
+      La historia y tradición detrás de un platillo; el detalle en sabor y
+      presentación; la comida como memoria compartida — el medio con el que
+      todos conectamos emocionalmente.
+  - tema: "Cine"
+    angulo: "Lo técnico (storytelling, framing, camerawork, colorimetría) y lo emocional."
+  - tema: "Arquitectura e interiorismo"
+    angulo: "Los espacios dan forma a los pensamientos de quienes los habitan."
+  - tema: "Moda"
+    angulo: >
+      Expresión propia y de grupos vía la vestimenta; la agenda que se empuja
+      vs. la realidad poblacional; cómo se valúa la creatividad por prestigio;
+      el cuidado de los tejidos.
+  - tema: "Cultura pop / entretenimiento"
+    angulo: >
+      Celebridades, figuras públicas y creadores; la calidad y consciencia del
+      consumo en un mundo inmediato post-IA.
+  - tema: "Sociología"
+    angulo: >
+      Sistemas socioestructurales, tendencias globales, clima político (vive
+      sobre todo en 'lectura_del_mundo').
+  - tema: "Tecnología y mercados"
+    angulo: >
+      Consumer-goods vs. desarrollos 'invisibles' con impacto social;
+      consecuencias macroeconómicas; startups, capital, M&A (vive en los
+      pilares de negocio).
 
 # -------------------------------------------------------------
 # PRINCIPIOS DE MARCA  (del deck — guía de fondo, no de formato)
@@ -184,9 +248,10 @@ principios_de_marca:
   objetivo_relacional: "Crear comunidad, no venta. Atraer gente apasionada y con criterio."
   arquetipo: >
     Visionario enfocado en el futuro ("I've been focused on the future, never on
-    right now"), empuja límites, con criterio y gusto. En X ese arquetipo se
-    expresa como opiniones fuertes y bien sustentadas + lectura amplia del mundo,
-    NO como misterio, lujo ni pose de celebridad.
+    right now"), empuja límites, con criterio y gusto. En X se traduce como
+    ANTICIPACIÓN CON LOS PIES EN LA TIERRA: leer antes que nadie qué significa
+    algo, sin tono de profeta. Opiniones fuertes y bien sustentadas + lectura
+    amplia del mundo, NO misterio, lujo ni pose de celebridad.
   como_se_ve_en_x: >
     El "buen gusto" y la visión se demuestran con sustancia: precisión, criterio
     y referencias que conectan mundos. Show, don't tell. En fase de siembra,

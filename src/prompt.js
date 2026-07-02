@@ -37,6 +37,10 @@ export function construirSystemPrompt(profile) {
       lineas.push('Les importa:');
       for (const x of p.audiencia.les_importa) lineas.push(`- ${x}`);
     }
+    if (p.audiencia.circulo_growth)
+      lineas.push(`Círculo growth: ${clean(p.audiencia.circulo_growth)}`);
+    if (p.audiencia.circulo_echo)
+      lineas.push(`Círculo echo: ${clean(p.audiencia.circulo_echo)}`);
     if (p.audiencia.eco_secundario)
       lineas.push(`Eco secundario: ${clean(p.audiencia.eco_secundario)}`);
     lineas.push('');
@@ -46,6 +50,7 @@ export function construirSystemPrompt(profile) {
   lineas.push('# Voz (lo más importante)');
   if (voz.adjetivos?.length) lineas.push(`Adjetivos: ${voz.adjetivos.join(', ')}.`);
   if (voz.registro) lineas.push(clean(voz.registro));
+  if (voz.atmosfera) lineas.push(`Atmósfera: ${clean(voz.atmosfera)}`);
   lineas.push('');
   if (voz.ejemplos_si_suena?.length) {
     lineas.push('SÍ suena a esta persona (imita el tono, no copies literal):');
@@ -85,13 +90,16 @@ export function construirSystemPrompt(profile) {
     lineas.push('');
   }
 
-  // Intereses / textura (material real para autenticidad, no son pilares)
+  // Intereses (doble uso: tema principal en 'vida_y_cultura', textura en el resto)
   if (p.intereses?.length) {
-    lineas.push('# Intereses reales (textura, NO son el tema principal)');
+    lineas.push('# Intereses reales (doble uso)');
     lineas.push(
-      'Úsalos con moderación para referencias auténticas y lente cultural, sobre todo en "lectura del mundo". No fuerces un negocio-tweet a hablar de esto.'
+      'En el pilar "vida_y_cultura" son el TEMA PRINCIPAL: usa el ángulo indicado, no el tema genérico. En los demás pilares son textura: referencias auténticas con moderación, sin forzar un negocio-tweet a hablar de esto.'
     );
-    for (const x of p.intereses) lineas.push(`- ${x}`);
+    for (const x of p.intereses) {
+      if (typeof x === 'string') lineas.push(`- ${x}`);
+      else lineas.push(`- ${val(x.tema, '')}: ${clean(x.angulo ?? '')}`);
+    }
     lineas.push('');
   }
 
