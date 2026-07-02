@@ -1,0 +1,83 @@
+---
+title: Diario del proyecto
+tags: [diario, bitacora, x-twitter, luis-castillo]
+actualizado: 2026-07-02
+---
+
+# 📓 Diario del proyecto
+
+Bitácora de cambios de [[Automatización X · Luis Castillo]]. Entrada nueva arriba.
+(Es el diario del proyecto; el diario general de sesiones vive en
+`05 - Personal/Diario de Claude/`.)
+
+---
+
+## 2026-07-02
+
+### Ficha v3 → v4: coherencia con el deck de MEDIOS
+
+Se leyó completo el deck `MEDIOS Luis Castillo.pdf` (28 págs., escritorio/CIMIENTO) y
+se contrastó con la [[Ficha de perfil · Luis Castillo]]. Ya era coherente en lo esencial
+(Epicurean Builders, comunidad sobre venta, tono nonchalant); el hueco era que los
+**intereses personales** del deck estaban reducidos a "textura". Cambios:
+
+- **Nuevo pilar "Vida y cultura" (peso medio)** — equivalente al "Deep-Life Diaries"
+  del deck: música, gastronomía/coctelería, cine, arquitectura, moda, cultura pop como
+  contenido propio. Regla: un post cultural no necesita moraleja de negocios.
+- **Intereses expandidos con los ángulos de Luis** por tema (comida como memoria
+  emocional, espacios que moldean el pensamiento, moda como agenda vs. realidad…).
+- **Círculos de audiencia del deck**: Curious Free Agents (growth) y Cultured
+  Amplifiers (echo), además de los inversionistas.
+- **Voz**: + independiente/desafiante, atmósfera "late-night thoughts", y el arquetipo
+  visionario traducido como **"anticipación con los pies en la tierra"** (aprobado).
+- **Sección "qué del deck NO aplica a X"**: CTAs de funnel, formatos de video,
+  celebrity status declarado — divergencia documentada, no olvido.
+- `proceso_y_ejecucion` subió de peso bajo a medio (emparejado ficha ↔ yaml).
+
+### Sincronización del repo (commit `ced1b34`)
+
+Se clonó `cbazchavez/xautom` desde WSL (push con el Git Credential Manager de Windows):
+`profiles/luis.yaml` quedó en **v4** y `src/prompt.js` se ajustó a los campos nuevos —
+los intereses ahora son `{tema, angulo}` (el render viejo habría impreso
+`[object Object]`), y el prompt incluye atmósfera y círculos. YAML validado con parser;
+**queda pendiente `draft:dry` en la sesión del repo** (WSL no tiene Node).
+
+### Sistema de actualidad — briefs de noticias (commit `72793b9`)
+
+Para drafts "actuales": carpeta `research/` con briefs por día
+(`brief-YYYY-MM-DD.yaml`) que investiga Claude con búsqueda web. El CLI ganó
+`--brief latest|none|<ruta>` (default: el más reciente); módulo nuevo `src/brief.js`.
+Reglas a nivel prompt: noticia opcional por borrador y solo si embona con el pilar,
+trazabilidad vía `news_ref`, y solo datos del resumen (anti-alucinación). **Primer
+brief real** con 7 noticias; destacan los megaproyectos coreanos de IA/chips (~$872B)
+que empatan con el tema activo del viaje a Seúl.
+
+### Swipe file — base de datos del feed de Luis (mismo commit)
+
+Aclarado el objetivo (base de referencia, no publicar contenido ajeno): carpeta
+`swipe/` con `inbox.md` (captura en crudo del feed) → `tweets.yaml` (estructurado por
+Claude con métricas y análisis de por qué funciona). Cada ~20 entradas se destilan
+**patrones** (hooks, formatos, largos de hilo) hacia `voz.tecnicas_ok` de la ficha. El
+motor no lee la base directamente; de ahí salen estructuras, nunca frases. La sección
+`feed:` del brief cubre el caso "take de Luis sobre un tweet del timeline", con
+`quote_of` para publicarse como quote-tweet citando al autor.
+
+### Decisiones y notas
+
+- **La contraseña de la cuenta de X no se guarda** en vault ni repo (gestor de
+  contraseñas). Para la ficha solo falta el **handle** (hoy `@PENDIENTE`).
+- Se creó la nota [[Actualidad y curación del feed]] y se eliminó el borrador
+  rechazado "Sistema de actualidad" que quedó a medias en el vault.
+- Pendientes ordenados en [[Estado del proyecto]]: `draft:dry` → API key → primer
+  batch (con 1–2 de "Vida y cultura") → handle → poblar swipe → lista de productos.
+
+---
+
+## 2026-07-01 (retroactivo, resumen)
+
+- Motor `xautom` funcionando de punta a punta (validado en seco); ficha **v3**
+  enriquecida con el deck de branding y frameworks de Reels (commit `48eca4b`).
+- Borradores versionados en `out/`; notas de Obsidian del proyecto añadidas al repo
+  y copiadas al vault (commit `abedd23`).
+- Decisiones: solo motor de borradores (sin BD ni dashboard), Opus para calibrar,
+  inglés primario con redacción nativa, el motor no publica — Luis elige.

@@ -31,6 +31,7 @@ a las demás notas.
 - [[Estado del proyecto]] — qué está construido, decisiones y pendientes.
 - [[Cómo funciona el motor]] — el flujo técnico, en simple.
 - [[Actualidad y curación del feed]] — swipe file del feed + briefs de noticias.
+- [[Diario del proyecto]] — bitácora de cambios, entrada nueva arriba.
 
 ## 🎯 En una frase
 
