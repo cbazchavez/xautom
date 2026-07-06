@@ -1,8 +1,8 @@
 ---
 title: Ficha de perfil · Luis Castillo
 tags: [ficha, perfil, voz, x-twitter, luis-castillo]
-version: v4
-actualizado: 2026-07-02
+version: v5
+actualizado: 2026-07-06
 fuente_tecnica: profiles/luis.yaml
 fuente_branding: "Desktop/CIMIENTO/MEDIOS Luis Castillo.pdf"
 ---
@@ -10,8 +10,14 @@ fuente_branding: "Desktop/CIMIENTO/MEDIOS Luis Castillo.pdf"
 # 👤 Ficha de perfil · Luis Castillo
 
 Versión legible de la identidad de X de Luis. La fuente técnica que lee el motor es
-`profiles/luis.yaml` (**v4**, sincronizada el 2026-07-02) — esta nota es su espejo
+`profiles/luis.yaml` (**v5**, sincronizada el 2026-07-06) — esta nota es su espejo
 humano. Ver [[Automatización X · Luis Castillo]].
+
+> [!info] Novedades v5 (2026-07-06)
+> Se añadieron al motor los **7 moldes de post** y la **mezcla de pesos** (ligero/medio/
+> pesado) para que el feed no canse — detalle en [[Moldes y mezcla de pesos — X Luis]]. Los
+> **8 borradores aprobados** entraron como `ejemplos_si_suena`. **Publica el operador**
+> (el usuario) a mano; el motor no publica.
 
 > [!note] La voz es **provisional**
 > Se calibra con la reacción de Luis al primer batch de borradores. Cuando algo

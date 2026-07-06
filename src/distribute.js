@@ -9,6 +9,41 @@
 
 const PESO_A_NUMERO = { alto: 3, medio: 2, bajo: 1 };
 
+// Mezcla de PESO de post (ligero/medio/pesado) por batch, para que el feed no
+// canse. Objetivo (no cuota rígida) — ver voz.mezcla_pesos en la ficha.
+const PESO_OBJETIVO = [
+  { peso: 'ligero', frac: 0.4 },
+  { peso: 'medio', frac: 0.45 },
+  { peso: 'pesado', frac: 0.15 },
+];
+const MAX_PESADO_POR_BATCH = 2;
+
+/** Reparte `count` slots entre pesos (largest remainder), capando 'pesado' a MAX. */
+export function distribuirPesos(count) {
+  const cuotas = PESO_OBJETIVO.map((p) => {
+    const ideal = p.frac * count;
+    return { peso: p.peso, n: Math.floor(ideal), rem: ideal - Math.floor(ideal) };
+  });
+
+  let asignados = cuotas.reduce((s, c) => s + c.n, 0);
+  const porResto = [...cuotas].sort((a, b) => b.rem - a.rem);
+  for (let i = 0; asignados < count; i++, asignados++) {
+    porResto[i % porResto.length].n++;
+  }
+
+  // Cap de pesados: el excedente pasa a 'medio' (conserva el total).
+  const pesado = cuotas.find((c) => c.peso === 'pesado');
+  const medio = cuotas.find((c) => c.peso === 'medio');
+  if (pesado.n > MAX_PESADO_POR_BATCH) {
+    medio.n += pesado.n - MAX_PESADO_POR_BATCH;
+    pesado.n = MAX_PESADO_POR_BATCH;
+  }
+
+  const slots = [];
+  for (const c of cuotas) for (let i = 0; i < c.n; i++) slots.push(c.peso);
+  return barajar(slots);
+}
+
 /** Reparte `count` slots entre pilares según su peso (largest remainder). */
 export function distribuirPilares(pilares, count) {
   const ponderados = pilares.map((p) => ({
@@ -40,8 +75,14 @@ export function distribuirPilares(pilares, count) {
 export function planearBatch(profile, count) {
   const pilares = profile.pilares ?? [];
   const slotsPilar = distribuirPilares(pilares, count);
+  const slotsPeso = distribuirPesos(count); // pilar y peso se barajan independiente
 
-  const specs = slotsPilar.map((pilar) => ({ pilar, temaActivo: null, producto: null }));
+  const specs = slotsPilar.map((pilar, i) => ({
+    pilar,
+    peso: slotsPeso[i] ?? null, // guarda: si faltara, el prompt lo omite
+    temaActivo: null,
+    producto: null,
+  }));
 
   asignarTemasActivos(specs, profile);
   asignarProductos(specs, profile);

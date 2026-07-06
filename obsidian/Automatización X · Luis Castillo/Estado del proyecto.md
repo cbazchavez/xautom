@@ -1,70 +1,81 @@
 ---
 title: Estado del proyecto
 tags: [estado, roadmap, decisiones, x-twitter, luis-castillo]
-actualizado: 2026-07-02
+actualizado: 2026-07-06 12:40 CST
 rama: claude/beautiful-darwin-5pee3l
 repo: cbazchavez/xautom
 ---
 
 # 📊 Estado del proyecto
 
-Foto del proyecto al **2026-07-01**. Ver índice: [[Automatización X · Luis Castillo]].
+> **🕐 Última actualización: 2026-07-06 12:40 (CST).**
+> Esta nota es un **snapshot vivo**: se reescribe **al terminar cada sesión** con fecha y
+> hora, explicando todo lo que el proyecto tiene en ese momento. Ver índice:
+> [[Automatización X · Luis Castillo]].
 
-## ✅ Qué ya está construido
+## 🎯 Qué es (en una frase)
 
-- **Motor de borradores (`xautom`)** funcionando de punta a punta (validado en seco).
-- **Ficha de identidad** de Luis en `profiles/luis.yaml` — **v4**, alineada a fondo con
-  el deck de branding: pilar nuevo "Vida y cultura", intereses con ángulos, círculos de
-  audiencia (ver [[Ficha de perfil · Luis Castillo]]).
-- **Generación bilingüe** EN/ES nativa, con salida en Markdown lado a lado.
-- **Plan de batch determinista**: reparte pilares por peso, teje el tema activo (Asia/Seúl)
-  y deja lista la mecánica de productos (aunque la lista esté vacía).
-- **Material de referencia** versionado en `reference/` (deck + Reels), marcado como
-  secundario.
-- **Archivo de ejemplo** (`examples/luis-ejemplo.md`) para ver el formato de salida.
-- **Sistema de actualidad** (2026-07-02): briefs de noticias en `research/` que el
-  motor inyecta al batch (`--brief`, default el más reciente), con primer brief real
-  generado. Ver [[Actualidad y curación del feed]].
-- **Swipe file** (2026-07-02): base de datos en `swipe/` de tweets del feed de Luis
-  con buen performance, para destilar patrones (hooks, formatos) hacia la ficha.
+Motor `xautom` (Node) que lee la ficha de identidad de Luis (`profiles/luis.yaml`) y genera
+**borradores bilingües EN/ES** de posts de X, listos para revisar. **No publica:** deja
+borradores; **el operador (el usuario) elige y publica a mano** en la cuenta de Luis.
+
+## ✅ Qué ya está construido (al 2026-07-06 12:40)
+
+- **Motor de borradores** funcionando de punta a punta (validado en seco hasta v4).
+- **Ficha `profiles/luis.yaml` → v5** (2026-07-06). Novedades v5:
+  - **`voz.moldes`** — 7 moldes de post destilados del swipe (listicle, contrarian STOP,
+    receipts, transformación+humildad, credencial-primero, aserción filosa, compartir
+    generoso), cada uno con su peso. Ver [[Moldes y mezcla de pesos — X Luis]].
+  - **`voz.mezcla_pesos`** — receta ligero/medio/pesado por batch (anti-cansancio).
+  - **`ejemplos_si_suena`** ampliado con los **8 borradores aprobados** por Luis.
+- **Reparto de pesos en el motor** (`src/distribute.js` → `distribuirPesos`) + render en
+  `src/prompt.js`. Lógica verificada con simulación (batch de 12 → 5 ligeros/5 medios/2
+  pesados). **⚠️ Falta `draft:dry` con Node** para validar en vivo (se editó en WSL).
+- **Generación bilingüe** EN/ES nativa, salida Markdown lado a lado en `out/`.
+- **Plan de batch determinista**: pilares por peso + tema activo (Asia/Seúl) + producto
+  (~1/9) + **ahora también peso de post**.
+- **Sistema de actualidad** (`research/` briefs) y **swipe file** (`swipe/`).
+- **Notas de Obsidian** reorganizadas (2026-07-06): diario como carpeta por fecha
+  (`Diario del proyecto/`), borradores en `Borradores/`, + notas Swipe y Moldes.
 
 ## 🧭 Decisiones tomadas
 
 | Tema | Decisión |
 |---|---|
-| Alcance del MVP | Solo **motor de borradores**. Sin base de datos ni dashboard. |
-| Analítica | **Fuera por ahora** (se retoma si duele la revisión). |
-| Perfil de arranque | **1 ficha real** (Luis) para calibrar la voz antes de replicar. |
-| Modelo de IA | **Opus** (mejor calidad de voz para calibrar). Sonnet si el costo aprieta. |
-| Idioma | **Inglés primario**, español secundario, redacción nativa. |
-| Publicación | El motor **no publica ni responde**: solo borradores; Luis elige. |
-| Borradores generados | Se **versionan** en `out/` para revisarlos desde GitHub. |
+| Meta del perfil | **Autoridad y comunidad** (no payout/monetización). Siembra. |
+| Volumen | 10-12 posts/día **con barra de calidad dura** (se publica porque es bueno, no para llenar cuota). El motor genera; el operador elige. |
+| Quién publica | **El operador (el usuario)**, a mano, en la cuenta de Luis. El motor NO publica. |
+| Alcance del MVP | Motor de borradores. GUI local (tipo HaruLeads) **diferida**, se hará en **Node**. |
+| Modelo de IA | **Opus** para calibrar. |
+| Idioma | Inglés primario, español secundario, redacción nativa. |
+| Perfiles de referencia | @athcanft = formato (robar CÓMO, tirar QUÉ); @jasonfried/@paulg = sustancia. |
 
 ## 🔴 Pendientes (en orden)
 
-1. **Correr `npm run draft:dry -- --profile luis`** en la próxima sesión del repo (que
-   sí tiene Node) para validar en seco la ficha **v4** — el yaml se sincronizó el
-   2026-07-02 desde WSL, donde solo se pudo validar el parseo del YAML, no el motor.
-2. **Cargar `ANTHROPIC_API_KEY`** como variable de entorno del environment.
-   - ⚠️ Ya se guardó, pero **entra en una sesión nueva** (esta arrancó sin ella).
-   - Al tenerla: `npm run draft -- --profile luis --count 6` → primer batch real en `out/`.
-3. **Calibrar la voz** con la reacción de Luis al primer batch (ajustar ejemplos SÍ/NO).
-   Pedir que el batch incluya 1–2 borradores del pilar nuevo **"Vida y cultura"**.
-4. **Handle real de X** de Luis (hoy `@PENDIENTE`) — ya hay acceso a la cuenta; solo
-   falta poner el handle en la ficha. La contraseña NO se guarda en vault ni repo.
-5. **Poblar el swipe** con la primera tanda (~20 tweets) del feed de Luis →
-   `swipe/inbox.md`, y pedir a Claude que lo procese.
-6. **Lista de productos** reales (nombre, qué hace, etapa, si se menciona) para la
-   promoción orgánica.
+1. **`draft:dry` en sesión con Node** para validar la ficha v5 y el reparto de pesos
+   (editado en WSL sin poder ejecutar el motor). Revisar que la distribución de pesos se
+   vea bien antes del primer batch real.
+2. **`ANTHROPIC_API_KEY`** como variable de entorno (ya guardada; entra en sesión nueva).
+   Luego `npm run draft -- --profile luis --count 12` → primer batch con mezcla de pesos.
+3. **Espejo `obsidian/` en el repo** ya sincronizado desde el vault (2026-07-06). Si se
+   reorganiza en el vault otra vez, replicar vault→repo antes del próximo sync.
+4. **Handle real de X** de Luis (hoy `@PENDIENTE` en la ficha).
+5. **Seguir poblando el swipe**, sobre todo perfiles de **sustancia** (arquetipo
+   cultura×negocio aún falta).
+6. **Lista de productos** reales (`productos.lista`, hoy vacía) para promoción orgánica.
+7. **GUI local** (diferida): dashboard Node con revisar borradores / swipe / rendimiento
+   (métricas a mano) / botón prender-apagar.
 
 ## ⏭️ Próximo paso concreto
 
-> Iniciar una **sesión nueva** sobre la rama `claude/beautiful-darwin-5pee3l` (para que
-> cargue la API key), validar la ficha v4 con `draft:dry`, generar el primer batch real
-> (con 1–2 borradores de "Vida y cultura") y **revisar la voz juntos**.
+> **Sesión de Windows/repo con Node:** `git pull` de `xautom`, `npm run draft:dry` para
+> validar v5 + el reparto de pesos, cargar la API key, y generar el **primer batch real de
+> 12** con la mezcla de pesos. Revisar la distribución y la voz. Luego el operador empieza
+> a **publicar** los mejores.
 
 ## 📌 Notas de contexto
 
-- El entorno de trabajo es **efímero** (se recrea cada sesión): por eso todo lo que importa
-  se **commitea** al repo, incluida esta carpeta de Obsidian.
-- El motor de la voz vive **solo** en `profiles/luis.yaml`; el resto es andamiaje.
+- El entorno de trabajo es **efímero**: todo lo que importa se **commitea** al repo
+  (incluida la carpeta `obsidian/`). El motor de la voz vive **solo** en `profiles/luis.yaml`.
+- X está amurallado: Claude no lee links de X; el swipe y las métricas se alimentan con
+  texto/screenshots a mano.

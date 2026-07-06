@@ -4,11 +4,11 @@ area: CIMIENTO
 titulo: "Automatización X · Luis Castillo"
 estado: activo
 prioridad: alta
-proximo_paso: "Sesión nueva sobre la rama: validar ficha v4 con draft:dry, generar el primer batch real (incluir 1-2 de Vida y cultura) y calibrar la voz con Luis"
+proximo_paso: "Sesión de Windows/repo: integrar los 7 moldes + la mezcla de pesos a profiles/luis.yaml (voz.tecnicas_ok), validar con draft:dry y generar el primer batch aplicando la receta de pesos (ligeros+valor, no solo mini-ensayos). Seguir capturando perfiles de sustancia."
 deadline: 2026-09-30
 repo: cbazchavez/xautom
 tags: [proyecto, x-twitter, luis-castillo, automatizacion, ia]
-actualizado: 2026-07-01
+actualizado: 2026-07-06
 ---
 
 # 🧵 Automatización X · Luis Castillo
@@ -31,7 +31,10 @@ a las demás notas.
 - [[Estado del proyecto]] — qué está construido, decisiones y pendientes.
 - [[Cómo funciona el motor]] — el flujo técnico, en simple.
 - [[Actualidad y curación del feed]] — swipe file del feed + briefs de noticias.
-- [[Diario del proyecto]] — bitácora de cambios, entrada nueva arriba.
+- [[Swipe X — captura (xautom)]] — captura de perfiles de referencia (@athcanft, @jasonfried, @paulg) y sus moldes.
+- [[Moldes y mezcla de pesos — X Luis]] — los 7 moldes + la receta anti-cansancio para los batches.
+- **Carpeta `Borradores/`** — borradores por fecha. Última tanda: [[Borradores de prueba X — calibración voz Luis]] (A-H, aprobados por Luis).
+- **Carpeta `Diario del proyecto/`** — bitácora por fecha (una nota por día). Última: [[Diario del proyecto/2026-07-06|2026-07-06]].
 
 ## 🎯 En una frase
 

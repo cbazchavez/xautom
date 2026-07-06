@@ -1,6 +1,15 @@
 # =============================================================
 # Ficha de identidad — Perfil de X de Luis Castillo (CEO, CIMIENTO)
-# Versión: v4
+# Versión: v5
+#   - v5 (2026-07-06): calibración de voz con swipe real + sistema de moldes/pesos.
+#       · voz.moldes: 7 moldes de post destilados de perfiles de referencia
+#         (@athcanft = formato; @paulg/@jasonfried = registros ligeros). Son
+#         ESTRUCTURAS, no frases: robar el CÓMO, nunca el QUÉ.
+#       · voz.mezcla_pesos: receta ligero/medio/pesado por batch (anti-cansancio).
+#       · ejemplos_si_suena ampliado con borradores aprobados por Luis (A-H).
+#       · Publicación: la hace a mano el OPERADOR (el usuario), no el motor ni un bot.
+#       · PENDIENTE: correr `draft:dry` en sesión con Node para validar el reparto
+#         de pesos de distribute.js (se editó sin poder ejecutar el motor).
 #   - v4 (2026-07-02): alineación profunda con el deck MEDIOS_Luis_Castillo.pdf.
 #       · NUEVO pilar "Vida y cultura" (peso medio) — equivale al pilar
 #         "Deep-Life Diaries" del deck: los intereses personales como contenido
@@ -134,6 +143,57 @@ voz:
     - "Dato extremo pero real + su implicación para quien construye."
     - "Mecánica paso a paso con números concretos (desarmar cómo funciona algo)."
 
+  # Moldes de post destilados de perfiles de referencia (swipe). Son ESTRUCTURAS,
+  # no frases: robar el CÓMO, nunca el QUÉ. Cada uno con su "peso" (ver mezcla_pesos).
+  moldes:
+    - id: listicle_lecciones
+      nombre: "Listicle de lecciones"
+      peso: medio
+      forma: "Hook con dos puntos → bullets aireados de una línea → reframe final que eleva una lección a principio."
+    - id: contrarian_stop
+      nombre: "Contrarian STOP"
+      peso: medio
+      forma: "'Deja de [error común]' → la alternativa → comparación anclada en números."
+    - id: receipts_prueba
+      nombre: "Receipts / prueba"
+      peso: medio
+      forma: "Mostrar evidencia, no contarla. IMPORTANTE para Luis: prueba de craft/criterio, NUNCA de dinero ni flex de ingresos."
+    - id: transformacion_humildad
+      nombre: "Transformación + humildad"
+      peso: pesado
+      forma: "Historia específica → resultado contraintuitivo → principio extraído → cierre honesto y autoconsciente. El de más impacto; racionar (máx 1-2 por batch)."
+    - id: credencial_primero
+      nombre: "Credencial-primero"
+      peso: medio
+      forma: "'Gasté $X / pasé Y meses haciendo Z, esto es lo que sé:' → índice o lista. La credencial real compra la atención antes de pedirla."
+    - id: asercion_filosa
+      nombre: "Aserción filosa"
+      peso: ligero
+      forma: "Una sola idea, declarada sin rodeos, sin historia ni atmósfera. Se moja. Corta (registro Paul Graham)."
+    - id: compartir_generoso
+      nombre: "Compartir generoso"
+      peso: ligero
+      forma: "'Alguien me preguntó X, así que armé/escribí esto — róbatelo.' Valor por utilidad, humaniza, cero pose (registro Jason Fried)."
+
+  # Mezcla de pesos por batch — para que el feed NO canse (todos-trascendentes agota).
+  # El peso es una PISTA de realización para el modelo; el código (distribute.js) solo
+  # lo reparte anti-clumping. Objetivo por batch, no cuota rígida.
+  mezcla_pesos:
+    ligero:
+      objetivo_pct: 40
+      que_es: "Bajo esfuerzo de lectura; humaniza y mantiene presencia. Moldes: asercion_filosa, compartir_generoso, una observación suelta o una pregunta."
+    medio:
+      objetivo_pct: 45
+      que_es: "El caballo de batalla: valor concreto y extraíble. Moldes: listicle_lecciones, contrarian_stop, credencial_primero, receipts_prueba, mecánica paso a paso."
+    pesado:
+      objetivo_max_por_batch: 2
+      que_es: "Mini-ensayo con reveal / lección profunda (molde transformacion_humildad). Alto impacto pero se gasta rápido."
+    reglas:
+      - "No más de 1-2 pesados por batch: dos revelaciones profundas seguidas cansan."
+      - "Varía el largo: mezcla one-liners con hilos; si todo mide igual, se siente plantilla."
+      - "No toda idea necesita moraleja; un ligero puede solo ser útil o ser observado."
+      - "Se publica porque es bueno, nunca para llenar cuota. El número no es el enemigo; el relleno sí."
+
   ejemplos_si_suena:
     - "Vi un SaaS que cobra $9 al mes y factura millones. No venden el software, venden no tener que pensar en el problema. Ese es todo el modelo."
     - "Idea gratis para quien la quiera ejecutar: [idea concreta]. Yo no voy a llegar a esta, tengo veinte en la fila. Ahí les va."
@@ -141,6 +201,15 @@ voz:
     - "Everyone's reading this [market/AI] news as [the obvious take]. If you're building something, it means something else: [concrete implication]."
     - "The best product lesson I got this month wasn't from an app. It was a 12-seat bar: no menu, no choices, total trust in the person making your drink. That's positioning."
     - "Los espacios moldean cómo piensas. No es casualidad que las mejores ideas nunca salgan de una sala de juntas."
+    # --- Borradores aprobados por Luis el 2026-07-06 (calibración de voz) ---
+    - "i spent three weeks hand-coding a client dashboard last year. last month i rebuilt the same thing in a weekend, with AI doing the boring 80%. the lesson wasn't 'AI is faster.' it was that most of what i was proud of — the plumbing — was never the value. the value was the 20% only i could judge."
+    - "stop trying to build a product people love. build the one thing they hate doing, and do it for them. the best business i saw this month charges $40/mo to rename and file your invoices. no delight, no magic. just 'i never think about this again.' boring problems have the loosest wallets."
+    - "i've shipped AI tools for companies and a couple of governments. here's what nobody tells you: the model is never the hard part. 90% of the work is deciding what NOT to automate. the client doesn't want AI, they want to stop worrying about the thing. taste is the moat — anyone can call the same API you do."
+    - "worked out of a friend's studio in mexico city last week. concrete, twelve-foot ceilings, one long table, no dividers. got more done in three days than the previous three weeks in my nice ergonomic setup. we obsess over productivity apps. the room was the productivity app."
+    - "most 'AI strategy' is just deciding what you're willing to be worse at, faster."
+    - "the best menu in the city has nine items. the worst has ninety. confidence is a form of respect."
+    - "want to test a startup idea this weekend without code? write the landing page first, as if it already exists. put a real price on it. send it to 10 people who'd actually pay. if nobody clicks 'buy,' you just saved 3 months. the idea was always the cheap part."
+    - "someone asked how i keep client projects from turning into chaos. so i wrote down the exact setup i use: one doc, three sections, updated every friday. nothing fancy. steal it."
 
   ejemplos_no_suena:
     - "El éxito no llega a quienes esperan. Levántate y construye tu imperio hoy. 🚀💪"
@@ -320,7 +389,7 @@ destino:
 # -------------------------------------------------------------
 reglas:
   - "Nunca generar replies ni conversaciones: eso lo hace Luis a mano."
-  - "Cada borrador se genera en EN y ES (redacción nativa), Luis elige cuál publica."
+  - "Cada borrador se genera en EN y ES (redacción nativa). El OPERADOR (el usuario) elige cuál publicar y lo publica a mano en la cuenta de Luis. El motor no publica ni un bot: solo deja borradores."
   - "Productos: seguir reglas_de_promocion; nunca forzar ni saturar."
   - "Nada de humo motivacional, emojis de cohete, ni formato de gurú de hilos."
   - "Nada de CTAs de gurú ('sígueme para más', 'dale like', 'parte 2')."

@@ -67,6 +67,20 @@ export function construirSystemPrompt(profile) {
     for (const t of voz.tecnicas_ok) lineas.push(`- ${t}`);
     lineas.push('');
   }
+  if (voz.moldes?.length) {
+    lineas.push('Moldes de post (estructuras de referencia; roba el CÓMO, nunca copies frases de nadie):');
+    for (const m of voz.moldes) lineas.push(`- [${m.peso}] ${val(m.nombre, m.id)}: ${clean(m.forma)}`);
+    lineas.push('');
+  }
+  if (voz.mezcla_pesos) {
+    const mp = voz.mezcla_pesos;
+    lineas.push('Peso de cada post (para que el feed no canse — cada borrador trae su peso asignado, respétalo):');
+    if (mp.ligero?.que_es) lineas.push(`- ligero: ${clean(mp.ligero.que_es)}`);
+    if (mp.medio?.que_es) lineas.push(`- medio: ${clean(mp.medio.que_es)}`);
+    if (mp.pesado?.que_es) lineas.push(`- pesado: ${clean(mp.pesado.que_es)}`);
+    if (mp.reglas?.length) for (const r of mp.reglas) lineas.push(`  · ${clean(r)}`);
+    lineas.push('');
+  }
 
   // Idioma
   if (p.idioma) {
@@ -189,6 +203,7 @@ export function construirUserPrompt(specs, profile, brief = null) {
 
   specs.forEach((s, i) => {
     const partes = [`Pilar: ${s.pilar}`];
+    if (s.peso) partes.unshift(`Peso: ${s.peso}`);
     if (s.temaActivo) {
       partes.push(`Tema activo: ${s.temaActivo.id} — ${clean(s.temaActivo.nombre)}`);
     }
