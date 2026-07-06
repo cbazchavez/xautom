@@ -1,0 +1,49 @@
+# Brief de actualidad — investigado por Claude Code el 2026-07-06
+# Formato y reglas: ver research/README.md
+# Tema del día: Luis está en Corea recorriendo China → ángulo "Asia ya vive el futuro".
+# ⚠️ REGLA DURA: solo usar los datos de estos resúmenes; nunca inventar cifras.
+#    Cada borrador que use una noticia reporta su `url` en news_ref.
+fecha: 2026-07-06
+
+noticias:
+  - titulo: "China supera los 50,000 km de tren de alta velocidad (fin de 2025)"
+    fuente: "CGTN"
+    url: "https://news.cgtn.com/news/2025-12-26/China-s-high-speed-rail-network-surpasses-50-000-km-as-new-line-opens-1Jqs8wMoheo/p.html"
+    resumen: >
+      A cierre de 2025 la red de alta velocidad en operación de China superó los
+      50,000 km — más que la del resto del mundo combinado (Newsweek). En 2026 se
+      planean +2,000 km nuevos; meta ~60,000 km para 2030.
+    por_que_importa: >
+      Luis está recorriendo China: dato de primera mano. El ángulo no es "qué
+      grande", es "la capacidad de terminar cosas" vs. Occidente que "planea" una
+      línea por década.
+    pilar_sugerido: lectura_del_mundo
+
+  - titulo: "62.9% de los autos nuevos vendidos en China en mayo 2026 fueron de nueva energía (BEV+PHEV)"
+    fuente: "CarNewsChina"
+    url: "https://carnewschina.com/2026/06/10/electric-cars-occupied-62-9-of-the-market-share-in-may-2026-in-china/"
+    resumen: >
+      En mayo de 2026, los vehículos de nueva energía (eléctricos de batería +
+      híbridos enchufables) fueron el 62.9% de las ventas de autos nuevos en
+      China. BYD lideró 2025 con >4.54M de unidades entregadas; Tesla quedó 5º en
+      China (~4.9% del mercado NEV). NOTA: "nueva energía" incluye híbridos
+      enchufables, no solo 100% eléctricos — usar el término correcto.
+    por_que_importa: >
+      Occidente sigue debatiendo "range anxiety"; en China lo eléctrico ya es el
+      default del mercado. Ángulo: no es debate, es infraestructura hecha.
+    pilar_sugerido: lectura_del_mundo
+
+  - titulo: "China es prácticamente cashless: ~90% de los pagos móviles son por código QR"
+    fuente: "Daxue Consulting / Wikipedia (Mobile payments in China)"
+    url: "https://daxueconsulting.com/payment-methods-in-china/"
+    resumen: >
+      ~969M de usuarios de pago móvil (jun 2024); >85% de penetración urbana; los
+      pagos móviles fueron ~73% de las transacciones en 2024 y >90% de esos pagos
+      móviles se hacen por código QR. Alipay (~1B usuarios) y WeChat Pay dominan.
+    por_que_importa: >
+      "Tap to pay" en Occidente se vende como futuro; China lo resolvió con un QR
+      hace ~una década. Observación en vivo (el puesto de comida, el templo).
+    pilar_sugerido: lectura_del_mundo
+
+# feed: (tweets del timeline sobre los que Luis daría su take) — vacío hoy.
+feed: []
