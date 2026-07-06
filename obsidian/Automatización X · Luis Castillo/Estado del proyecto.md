@@ -1,14 +1,14 @@
 ---
 title: Estado del proyecto
 tags: [estado, roadmap, decisiones, x-twitter, luis-castillo]
-actualizado: 2026-07-06 12:40 CST
+actualizado: 2026-07-06 12:54 CST
 rama: claude/beautiful-darwin-5pee3l
 repo: cbazchavez/xautom
 ---
 
 # 📊 Estado del proyecto
 
-> **🕐 Última actualización: 2026-07-06 12:40 (CST).**
+> **🕐 Última actualización: 2026-07-06 12:54 (CST).**
 > Esta nota es un **snapshot vivo**: se reescribe **al terminar cada sesión** con fecha y
 > hora, explicando todo lo que el proyecto tiene en ese momento. Ver índice:
 > [[Automatización X · Luis Castillo]].
@@ -19,7 +19,7 @@ Motor `xautom` (Node) que lee la ficha de identidad de Luis (`profiles/luis.yaml
 **borradores bilingües EN/ES** de posts de X, listos para revisar. **No publica:** deja
 borradores; **el operador (el usuario) elige y publica a mano** en la cuenta de Luis.
 
-## ✅ Qué ya está construido (al 2026-07-06 12:40)
+## ✅ Qué ya está construido (al 2026-07-06 12:54)
 
 - **Motor de borradores** funcionando de punta a punta (validado en seco hasta v4).
 - **Ficha `profiles/luis.yaml` → v5** (2026-07-06). Novedades v5:
@@ -43,7 +43,7 @@ borradores; **el operador (el usuario) elige y publica a mano** en la cuenta de 
 | Tema | Decisión |
 |---|---|
 | Meta del perfil | **Autoridad y comunidad** (no payout/monetización). Siembra. |
-| Volumen | 10-12 posts/día **con barra de calidad dura** (se publica porque es bueno, no para llenar cuota). El motor genera; el operador elige. |
+| Volumen | **Arrancar en 3-5 publicados/día** (sostenible; el reto #1 del operador es la constancia) y subir solo si aguanta Y funciona. El motor genera 10-12 borradores; el operador elige. Barra de calidad dura: se publica porque es bueno, no para llenar cuota. |
 | Quién publica | **El operador (el usuario)**, a mano, en la cuenta de Luis. El motor NO publica. |
 | Alcance del MVP | Motor de borradores. GUI local (tipo HaruLeads) **diferida**, se hará en **Node**. |
 | Modelo de IA | **Opus** para calibrar. |
@@ -68,10 +68,12 @@ borradores; **el operador (el usuario) elige y publica a mano** en la cuenta de 
 
 ## ⏭️ Próximo paso concreto
 
-> **Sesión de Windows/repo con Node:** `git pull` de `xautom`, `npm run draft:dry` para
-> validar v5 + el reparto de pesos, cargar la API key, y generar el **primer batch real de
-> 12** con la mezcla de pesos. Revisar la distribución y la voz. Luego el operador empieza
-> a **publicar** los mejores.
+> **Ahora (sin Node):** el operador publica **3-5/día** a mano los 8 borradores aprobados
+> → probar la constancia.
+> **Próxima sesión con Node (Windows):** `git pull`, `npm run draft:dry -- --count 12`
+> para validar v5 + el reparto de pesos, cargar la API key, generar el **primer batch real
+> de 12**, y **capturar más swipe de sustancia** (arquetipo cultura×negocio). Revisar
+> distribución y voz; el operador publica los mejores.
 
 ## 📌 Notas de contexto
 
