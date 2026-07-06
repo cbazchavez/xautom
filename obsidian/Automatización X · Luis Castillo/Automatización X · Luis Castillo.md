@@ -33,7 +33,7 @@ a las demás notas.
 - [[Actualidad y curación del feed]] — swipe file del feed + briefs de noticias.
 - [[Swipe X — captura (xautom)]] — captura de perfiles de referencia (@athcanft, @jasonfried, @paulg) y sus moldes.
 - [[Moldes y mezcla de pesos — X Luis]] — los 7 moldes + la receta anti-cansancio para los batches.
-- **Carpeta `Borradores/`** — borradores por fecha. Última tanda: [[Borradores de prueba X — calibración voz Luis]] (A-H, aprobados por Luis).
+- **Carpeta `Borradores/`** — borradores por fecha. Última tanda: [[Borradores/2026-07-06|Borradores 2026-07-06]] (A-H, aprobados por Luis).
 - **Carpeta `Diario del proyecto/`** — bitácora por fecha (una nota por día). Última: [[Diario del proyecto/2026-07-06|2026-07-06]].
 
 ## 🎯 En una frase

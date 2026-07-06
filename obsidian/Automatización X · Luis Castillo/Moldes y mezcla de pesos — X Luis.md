@@ -10,7 +10,7 @@ destino_repo: "profiles/luis.yaml → voz.tecnicas_ok (integrar en sesión de Wi
 Sistema para **replicar buenos borradores sin que el feed canse**. Nace de calibrar la
 voz el 2026-07-06 con el swipe de [[Swipe X — captura (xautom)]] (perfiles @athcanft,
 @jasonfried, @paulg) y de la reacción de Luis a los primeros 4 borradores (todos
-aprobados, ver [[Borradores de prueba X — calibración voz Luis]]).
+aprobados, ver [[Borradores/2026-07-06|Borradores 2026-07-06]]).
 
 > ⚠️ **La casa canónica de esto es `profiles/luis.yaml` (`voz.tecnicas_ok`).** Esta nota
 > es el borrador humano; hay que integrarla al repo en la sesión de Windows o el motor
@@ -74,4 +74,4 @@ Pensado para que Luis **elija y publique** manteniendo la barra alta (meta = aut
 
 ---
 *Ver también: [[Ficha de perfil · Luis Castillo]] · [[Swipe X — captura (xautom)]] ·
-[[Borradores de prueba X — calibración voz Luis]] · [[Automatización X · Luis Castillo]]*
+[[Borradores/2026-07-06|Borradores 2026-07-06]] · [[Automatización X · Luis Castillo]]*

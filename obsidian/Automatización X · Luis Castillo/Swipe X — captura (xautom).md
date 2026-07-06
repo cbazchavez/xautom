@@ -263,4 +263,4 @@ que se moja* (PG) o *una cosa útil que regalas* (JF). Ver [[Moldes y mezcla de 
 
 ---
 *Ver también: [[Automatización X · Luis Castillo]] · [[Moldes y mezcla de pesos — X Luis]] ·
-[[Borradores de prueba X — calibración voz Luis]] · [[Ficha de perfil · Luis Castillo]]*
+[[Borradores/2026-07-06|Borradores 2026-07-06]] · [[Ficha de perfil · Luis Castillo]]*
