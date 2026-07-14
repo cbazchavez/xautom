@@ -380,3 +380,1002 @@
     Presunción desactivada por el propio chiste: el juego de palabras (cool/frío)
     vuelve la arrogancia autoparodia. Patrón: puedes decir cosas grandes de ti
     mismo si el envoltorio muestra que no te tomas en serio.
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Lote 2 Kanye (@kanyewest) — 2026-07-14. Selección MANUAL del operador: 81
+# tweets elegidos en el explorador de épocas (78 netos; 3 ya estaban en lote 1).
+# Épocas acordadas: 2010-11 MBDTF · 2012-15 ráfagas · feb-mar 2016 TLOP ·
+# abril 2018 Wyoming. Runs consecutivos agrupados como thread para capturar la
+# estructura de la ráfaga, no tweets huérfanos. Criterio del operador: "cocky,
+# nonchalant pero sabiendo de lo que habla, en su peak" — sin breakdowns.
+# ─────────────────────────────────────────────────────────────────────────────
+
+- id: 23
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/19752583676"
+  capturado: 2026-07-14
+  formato: single
+  tema: "reporte nonchalant de nivel de juego"
+  texto: >
+    Up early in the morning taking meetings in Silicone Valley
+  metricas: null
+  por_que_funciona: >
+    Flexea el nivel de la mesa (Silicon Valley) con tono de agenda cotidiana.
+    El estatus se comunica como rutina, no como logro — nonchalance pura.
+
+- id: 24
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/19758633594"
+  capturado: 2026-07-14
+  formato: single
+  tema: "build in public antes de que existiera el término"
+  texto: >
+    The album is no longer called "Good Ass Job"   I'm bouncing a couple of
+    titles around now
+  metricas: null
+  por_que_funciona: >
+    Comparte una decisión de producto a medio cocinar sin pedir opinión ni hacer
+    encuesta. Mete a la audiencia a la cocina y mantiene el control creativo.
+
+- id: 25
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/19781480596"
+  capturado: 2026-07-14
+  formato: single
+  tema: "autoconsciencia juguetona del medio"
+  texto: >
+    awwwww man this is addictive    I might get in trouble on here!!!!
+  metricas: null
+  por_que_funciona: >
+    Tercer día en Twitter y ya se ríe de sí mismo Y profetiza. Meta-comentario
+    del canal en tiempo real; la honestidad sobre el propio impulso humaniza.
+
+- id: 26
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/19864769813"
+  capturado: 2026-07-14
+  formato: single
+  tema: "principio de liderazgo con giro"
+  texto: >
+    one of the keys to leadership is doing what YOU believe is right   ... for
+    those who follow you
+  metricas: null
+  por_que_funciona: >
+    Arranca como frase de póster y el remate ("for those who follow you") le da
+    la vuelta: la convicción propia como responsabilidad hacia otros, no como ego.
+
+- id: 27
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/19865459236"
+  capturado: 2026-07-14
+  formato: single
+  tema: "consejo de negocio seco en registro casual"
+  texto: >
+    Make sure your accounts receivable are faster than your accounts payable
+  metricas: null
+  por_que_funciona: >
+    Finanzas operativas reales (ciclo de caja) tuiteadas por una estrella de rap
+    sin bajarle el nivel técnico. El contraste registro/sustancia ES la autoridad.
+    Directísimo al pilar modelos_de_negocio de Luis.
+
+- id: 28
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/20339346492"
+  capturado: 2026-07-14
+  formato: single
+  tema: "dilema de gusto como contenido"
+  texto: >
+    Is it wrong to wear a CHANEL dinner jacket with a T shirt to the airport if
+    it's still breakfast time out here in Singapore uugh TOO LATE!
+  metricas: null
+  por_que_funciona: >
+    Pregunta de etiqueta hiper-específica autorespondida ("TOO LATE!"). El gusto
+    aparece como dilema vivido, no como cátedra; el lujo es contexto, no punto.
+
+- id: 29
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/20393943785"
+  capturado: 2026-07-14
+  formato: thread
+  tema: "vulnerabilidad → convicción (run del glow)"
+  texto: >
+    People ar so scared of pain hurt and embarrassment that no one takes risk
+    anymore ... I've made so many mistakes that made me better today
+
+    I've been hurt and embarrassed but I still believe in good will. Give of
+    yourself with no fear and one day he'll have you in the clear.
+
+    He returns the blessings you give 10 fold.  I feel God's light shining
+    through my darkest year of my life and career. I feel the glow again
+
+    I will be a better man, friend, role model, citizen, blogger, tweeter,
+    artist, creator, giver, thinker, motivator and person. IFEELTHEGLOW
+  metricas: null
+  por_que_funciona: >
+    Arco completo en 4 tweets: tesis sobre el miedo al riesgo → herida propia →
+    fe → compromiso. La vulnerabilidad va SIEMPRE pegada a la convicción, nunca
+    sola — por eso no lee a víctima. Molde transformación+humildad en versión run.
+
+- id: 30
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/27142329712"
+  capturado: 2026-07-14
+  formato: thread
+  tema: "reporte de proceso con criterio innegociable"
+  texto: >
+    Late night in the studio in Australia wrapping up the album... what songs
+    will make it, what songs won't?    Most every song has been...
+
+    extended and has music embellishments... I don't make my album music under
+    any radio format... I just let that shit ride
+  metricas: null
+  por_que_funciona: >
+    Bitácora de trabajo en vivo que remata con un principio de craft ("I don't
+    make my album music under any radio format"). Enseña el molde: mostrar el
+    proceso Y la regla que lo gobierna, en el mismo aliento.
+
+- id: 31
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/27323682275"
+  capturado: 2026-07-14
+  formato: single
+  tema: "reflexión nocturna sin resolver"
+  texto: >
+    I'm afraid that the older I get the more I'll have to regret... what do you
+    do with regret... especially for an admitted perfectionist
+  metricas: null
+  por_que_funciona: >
+    Pregunta abierta sin respuesta ni moraleja — el "late-night thought" puro
+    que pide la ficha de Luis. La autoetiqueta ("admitted perfectionist") ancla
+    la reflexión en identidad, no en filosofía genérica.
+
+- id: 32
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/27325009747"
+  capturado: 2026-07-14
+  formato: single
+  tema: "aforismo económico sobre el tiempo"
+  texto: >
+    Spending time is a never ending cost ... cause every second you experience
+    the next second it's lost
+  metricas: null
+  por_que_funciona: >
+    Filosofía del tiempo en vocabulario de contabilidad (cost/spent/lost). Usar
+    el léxico de un dominio para iluminar otro — el movimiento favorito del
+    pilar lectura_del_mundo.
+
+- id: 33
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/2206369407041537"
+  capturado: 2026-07-14
+  formato: single
+  tema: "independencia de criterio declarada"
+  texto: >
+    I can't take anymore advice!!!  I create, I'm creative, I have a good heart,
+    everyone will see and understand one day.
+  metricas: null
+  por_que_funciona: >
+    Cierre de puertas al consejo externo declarado sin pedir permiso. La
+    autodefinición en tres golpes ("I create, I'm creative, I have a good
+    heart") no argumenta: afirma. Confianza en el propio norte.
+
+- id: 34
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/2210828602314753"
+  capturado: 2026-07-14
+  formato: single
+  tema: "honestidad de proceso + gratitud"
+  texto: >
+    Sometimes it's not simple, some days it's not easy...  I just want to
+    create. I love you guys, thanks for the support!
+  metricas: null
+  por_que_funciona: >
+    Admite el costo sin dramatizarlo y regresa al deseo simple ("I just want to
+    create"). El registro ligero-honesto que baja al creador del pedestal sin
+    performance de sufrimiento.
+
+- id: 35
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/38694578693476352"
+  capturado: 2026-07-14
+  formato: single
+  tema: "aserción filosa sobre percepción"
+  texto: >
+    Context is everything... something good  taken out of context can become bad
+  metricas: null
+  por_que_funciona: >
+    Principio de comunicación completo en una línea, nacido de experiencia
+    propia (nadie fue más descontextualizado que él) pero formulado universal.
+    La credencial vivida está implícita, no dicha.
+
+- id: 36
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/152799571456696320"
+  capturado: 2026-07-14
+  formato: single
+  tema: "hot take cultural con autoconsciencia"
+  texto: >
+    No way Spirited Away is better than Akira... NOOO WAAAY...  sorry was just
+    looking at a youtube of top 10 anime films
+  metricas: null
+  por_que_funciona: >
+    Opinión cultural fuerte + la confesión de contexto ("sorry was just looking
+    at a youtube") que lo hace humano. Mojarse en cultura con la misma energía
+    que en negocio — el pilar vida_y_cultura sin moraleja.
+
+- id: 37
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/154799720412360704"
+  capturado: 2026-07-14
+  formato: thread
+  tema: "rediseño de un sistema desde primeros principios"
+  texto: >
+    Instead of kicking kids out of schools for using there iPhones... why not
+    promote it? Allow kids to use search engines to do test...
+
+    like the real WORLD!!! Give kids the amount of test they would have in a
+    year in one day but they have to get everything perfect...
+
+    Some kids have better memories than others...  what about emotional IQs...
+    what about kids who do bad in school because of how bad there..
+  metricas: null
+  por_que_funciona: >
+    Toma un sistema conocido (escuela), señala el absurdo (prohibir la
+    herramienta del mundo real) y propone la alternativa en concreto. Molde
+    contrarian aplicado a sistemas, no a hacks — lectura_del_mundo puro.
+
+- id: 38
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/154802366686830592"
+  capturado: 2026-07-14
+  formato: thread
+  tema: "manifiesto de inversión en creatividad (extractos del run 5-ene-2012)"
+  texto: >
+    We need to take what Michael Jackson felt and Mcqueen and Steve Jobs and we
+    need make things better...
+
+    I invest every dime back into creativity... hiring amazing creatives paying
+    for flights, offices ... etc...
+
+    My area of expertise is in music, my passion is in music design film and
+    products... my strength is connectivity...
+
+    There are so many broken systems from the economy to school systems  jail
+    systems... we need experts for this...
+
+    We need scientist and top world designers to directly affect governments.
+  metricas: null
+  por_que_funciona: >
+    Autodefinición de portafolio ("expertise / passion / strength" — tres capas
+    distintas) + dónde pone el dinero + a qué escala aspira. Un builder
+    describiendo su stack personal y su tesis del mundo en un solo run. El
+    mapeo con Luis (criterio + conectividad + IA para gobiernos) es casi 1:1.
+
+- id: 39
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/359353884600311808"
+  capturado: 2026-07-14
+  formato: single
+  tema: "defensa del user experience propio"
+  texto: >
+    please don't diminish the user experience by just posting it as a normal
+    video  …    please link them to my site
+  metricas:
+    vistas: null
+    likes: 2272
+    rts: null
+    respuestas: null
+  por_que_funciona: >
+    Un músico usando "user experience" en 2013 para defender cómo se consume su
+    obra. El criterio de producto aplicado al arte propio: el creador que piensa
+    en la experiencia completa, no solo en el contenido.
+
+- id: 40
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/519062807136849920"
+  capturado: 2026-07-14
+  formato: single
+  tema: "primicia de insider"
+  texto: >
+    JOHN GALLIANO is the new creative director of MARGIELA, I heard this rumor
+    when I was in Paris and just received confirmation this morning!
+  metricas:
+    vistas: null
+    likes: 8240
+    rts: null
+    respuestas: null
+  por_que_funciona: >
+    Rompe una noticia de industria antes que la prensa y de paso enseña el
+    acceso ("I heard this rumor when I was in Paris"). La autoridad por
+    información que otros no tienen — el insider knowledge como contenido.
+
+- id: 41
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/524800121213419520"
+  capturado: 2026-07-14
+  formato: single
+  tema: "sinceridad sin ironía"
+  texto: >
+    Sometimes I feel like just saying I love you isn’t strong enough to express
+    how much I love you…
+  metricas:
+    vistas: null
+    likes: 162684
+    rts: null
+    respuestas: null
+  por_que_funciona: >
+    Sentimiento enorme dicho sin adorno ni ironía protectora. Registro raro en
+    X (la sinceridad da más miedo que el hot take) y por eso destaca. 162K likes
+    de pura falta de cinismo.
+
+- id: 42
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/568799126965473281"
+  capturado: 2026-07-14
+  formato: single
+  tema: "autodefinición generacional"
+  texto: >
+    I have millions of ideas and I represent a new generation just trying to
+    express themselves in a broken world.
+  metricas:
+    vistas: null
+    likes: 47661
+    rts: null
+    respuestas: null
+  por_que_funciona: >
+    Se planta como representante de algo más grande que él. El movimiento
+    retórico: mi abundancia (millions of ideas) al servicio de un nosotros
+    (new generation). Ambición legitimada por representación.
+
+- id: 43
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/568799151686750208"
+  capturado: 2026-07-14
+  formato: single
+  tema: "credencial negada como bandera"
+  texto: >
+    I don’t call myself a designer as I was not allowed to go to Saint Martins
+  metricas:
+    vistas: null
+    likes: 12686
+    rts: null
+    respuestas: null
+  por_que_funciona: >
+    Convierte el rechazo institucional en identidad: no reclama el título, y al
+    negárselo se lo apropia con más fuerza. El outsider que no pide permiso —
+    ironía seca en una línea.
+
+- id: 44
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/568799246226292737"
+  capturado: 2026-07-14
+  formato: single
+  tema: "desafío en plural"
+  texto: >
+    All we have are our dreams, and you can step on our dreams and ideas all
+    you want, but we won’t stop fighting.
+  metricas:
+    vistas: null
+    likes: 56449
+    rts: null
+    respuestas: null
+  por_que_funciona: >
+    El desafío en primera persona del plural: no "no me detendrán" sino "no nos
+    detendrán". Reclutar a la audiencia dentro de la lucha propia — la
+    resistencia como identidad compartida.
+
+- id: 45
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/586360975151927297"
+  capturado: 2026-07-14
+  formato: single
+  tema: "canon personal declarado sin jerarquía esperada"
+  texto: >
+    Akira and There Will Be Blood are equally my 2 favorite movies of all time.
+  metricas:
+    vistas: null
+    likes: 26117
+    rts: null
+    respuestas: null
+  por_que_funciona: >
+    Un anime cyberpunk y un drama de P.T. Anderson "equally" — el gusto que
+    cruza mundos sin pedir permiso ni justificar la mezcla. La precisión de la
+    referencia (no "me gusta el cine") es lo que hace la declaración creíble.
+
+- id: 46
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/692083418083921921"
+  capturado: 2026-07-14
+  formato: single
+  tema: "reencuadre de categoría"
+  texto: >
+    This is not album of the year.  This is album of the life.
+  metricas:
+    vistas: null
+    likes: 268558
+    rts: 225084
+    respuestas: null
+  por_que_funciona: >
+    Rechaza la métrica estándar (album of the year) e inventa una categoría
+    propia donde es imbatible. Estructura espejo de 5+5 palabras, memorizable
+    al instante. El GOAT-talk en su forma más pura: no compite, redefine.
+
+- id: 47
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/692435356029997056"
+  capturado: 2026-07-14
+  formato: single
+  tema: "declaración de intención simple"
+  texto: >
+    I love the world bottom line and all I want is peace and positive energy
+  metricas:
+    vistas: null
+    likes: 68867
+    rts: null
+    respuestas: null
+  por_que_funciona: >
+    "Bottom line" hace el trabajo: cierra el debate antes de abrirlo. La
+    positividad declarada como postura final, no como humor del día.
+
+- id: 48
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/694721638714052608"
+  capturado: 2026-07-14
+  formato: single
+  tema: "ambición como tributo"
+  texto: >
+    So many musicians touch my life and made me who I am…    I want to make
+    something great to honor my idols…
+  metricas:
+    vistas: null
+    likes: 51251
+    rts: null
+    respuestas: null
+  por_que_funciona: >
+    La ambición formulada como deuda con los maestros, no como conquista. Hacer
+    algo grande "para honrar" desactiva la arrogancia sin bajar la mira.
+
+- id: 49
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/698421596613005312"
+  capturado: 2026-07-14
+  formato: thread
+  tema: "respuesta a gatekeepers + mantra"
+  texto: >
+    You seem like the type of organization hired to always keep dreamers down…
+    when certain things in history happen you just got to respect it…
+
+    respect the struggle… respect the hustle… respect the dreams…  respect the
+    movement…
+  metricas:
+    vistas: null
+    likes: 41767
+    rts: null
+    respuestas: null
+  por_que_funciona: >
+    Confronta a la institución sin nombrarla y remata con un mantra de cuatro
+    golpes ("respect the...") que convierte el agravio en himno. La repetición
+    con variación como recurso rítmico.
+
+- id: 50
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/702565339289276416"
+  capturado: 2026-07-14
+  formato: thread
+  tema: "tesis económica + respeto al que trabaja"
+  texto: >
+    What is your definition of true freedom? There is no true freedom without
+    economic freedom.
+
+    Respect to everyone working hard to keep a roof over their kids
+  metricas:
+    vistas: null
+    likes: 36348
+    rts: null
+    respuestas: null
+  por_que_funciona: >
+    Pregunta retórica → tesis en una línea → aterrizaje en la gente real. La
+    idea abstracta (libertad económica) gana peso al conectarse de inmediato
+    con el que paga la renta. Estructura mínima de ensayo en dos tweets.
+
+- id: 51
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/702566677813317633"
+  capturado: 2026-07-14
+  formato: thread
+  tema: "autoproclamación de rol"
+  texto: >
+    The world needs a guy like me. The world needs somebody to not be scared
+    and tell his truth.
+
+    You won't always agree with me but I'm gon always be me. I'm woke!
+  metricas:
+    vistas: null
+    likes: 6247
+    rts: null
+    respuestas: null
+  por_que_funciona: >
+    Se asigna un rol público (el que dice la verdad sin miedo) y gestiona la
+    expectativa en la misma respiración ("you won't always agree with me").
+    Prometer consistencia en vez de acuerdo — contrato honesto con la audiencia.
+
+- id: 52
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/703600555759898624"
+  capturado: 2026-07-14
+  formato: single
+  tema: "elogio desmedido a un tercero"
+  texto: >
+    Will Ferrell has reached walking living breathing god status!
+  metricas:
+    vistas: null
+    likes: 46330
+    rts: null
+    respuestas: null
+  por_que_funciona: >
+    La misma energía hiperbólica que usa para sí mismo, apuntada a otro. El
+    entusiasmo desmedido por el trabajo ajeno es la cara generosa del ego —
+    y humaniza más que cualquier humblebrag.
+
+- id: 53
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/706896340425568258"
+  capturado: 2026-07-14
+  formato: thread
+  tema: "estándar doble: para todos y para mí"
+  texto: >
+    I want people to be the best version of themselves and I will be the best
+    version of me.
+
+    Growing and learning but not being told to stop ...not being stunted.
+  metricas:
+    vistas: null
+    likes: 53380
+    rts: null
+    respuestas: null
+  por_que_funciona: >
+    Deseo para otros + compromiso propio en la misma frase, sin sermonear. El
+    segundo tweet define crecimiento por lo que NO acepta (ser frenado) — la
+    negación como forma de precisión.
+
+- id: 54
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/707368100103135232"
+  capturado: 2026-07-14
+  formato: thread
+  tema: "promesa de producto con humildad de plazos"
+  texto: >
+    really happy to get the quality of the products better at half the prices
+    of last year…
+
+    bear with me guys, Rome wasn’t built in a day but I promise to keep my
+    promises…
+  metricas:
+    vistas: null
+    likes: 20650
+    rts: null
+    respuestas: null
+  por_que_funciona: >
+    Update de producto con los dos números que importan (mejor calidad, mitad
+    de precio) + gestión de expectativas sin defensividad. "I promise to keep
+    my promises" — accountability dicha en su propio idioma.
+
+- id: 55
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/707370922064396288"
+  capturado: 2026-07-14
+  formato: single
+  tema: "confesión de calma como imagen"
+  texto: >
+    sometimes the quiet moments feel like I’m home from battle…
+  metricas:
+    vistas: null
+    likes: 13236
+    rts: null
+    respuestas: null
+  por_que_funciona: >
+    Una sola imagen (volver de la batalla) para nombrar el descanso del que
+    vive en intensidad. El ligero-poético: ni tip ni opinión, solo un estado
+    compartido con precisión.
+
+- id: 56
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/707705694389198849"
+  capturado: 2026-07-14
+  formato: single
+  tema: "diagnóstico cultural en una línea"
+  texto: >
+    I feel we are so stuck in the past and tradition.
+  metricas:
+    vistas: null
+    likes: 12156
+    rts: null
+    respuestas: null
+  por_que_funciona: >
+    Diagnóstico de época en 10 palabras, en primera persona ("I feel") para no
+    sonar a editorial. La opinión grande dicha chiquito.
+
+- id: 57
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/712423370734903296"
+  capturado: 2026-07-14
+  formato: single
+  tema: "promesa de retorno a la comunidad"
+  texto: >
+    And I promise the power is in the people and I will use the power given by
+    the people to bring everything I have back to the people.
+  metricas:
+    vistas: null
+    likes: 15214
+    rts: null
+    respuestas: null
+  por_que_funciona: >
+    Círculo retórico completo (people → power → people) que convierte la
+    plataforma en deuda. La comunidad como fuente y destino — el juego de
+    siembra dicho con solemnidad de juramento.
+
+- id: 58
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/985671904202764288"
+  capturado: 2026-07-14
+  formato: thread
+  tema: "taxonomía de creadores"
+  texto: >
+    Some people have to work within the existing consciousness while some
+    people can shift the consciousness
+
+    often people working with the existing consciousness are jealous of those
+    who are more in touch and they become hard-core capitalist in hopes of
+    creating the illusion that the value of money is worth more than the value
+    of time and  friends
+  metricas:
+    vistas: null
+    likes: 218994
+    rts: null
+    respuestas: null
+  por_que_funciona: >
+    Divide el mundo en dos tipos (operar dentro del sistema vs. moverlo) y se
+    coloca sin decirlo en el segundo. La taxonomía como flex indirecto: defines
+    las categorías y dejas que el lector te ubique.
+
+- id: 59
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/986302131106975749"
+  capturado: 2026-07-14
+  formato: thread
+  tema: "el run de 'ideas como moneda' (5 tweets seguidos)"
+  texto: >
+    As a creative your ideas are your strongest form of currency
+
+    You have to protect your ability to create at all cost
+
+    try to avoid any contractual situation where you are held back from your
+    ideas
+
+    distraction is the enemy of vision
+
+    Sometimes you have to get rid of everything
+  metricas:
+    vistas: null
+    likes: 218412
+    rts: null
+    respuestas: null
+  por_que_funciona: >
+    Cinco aforismos que escalan de tesis (ideas = moneda) a consejo contractual
+    concreto a mandato radical (get rid of everything). Cada tweet para solo,
+    pero el run construye un argumento. La ráfaga como formato: un ensayo
+    desarmado en piezas autocontenidas.
+
+- id: 60
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/986621201920356352"
+  capturado: 2026-07-14
+  formato: single
+  tema: "permiso para soltar"
+  texto: >
+    You have the best ideas. Other people's opinions are usually more
+    distractive than informative. Follow your own vision. base your actions on
+    love. Do things you love and if you don't absolutely love something stop
+    doing it as soon as you can.
+  metricas:
+    vistas: null
+    likes: 213353
+    rts: null
+    respuestas: null
+  por_que_funciona: >
+    Habla al lector en segunda persona con fe total en él ("You have the best
+    ideas") y cierra con la instrucción más accionable del run: si no lo amas,
+    déjalo ya. Generosidad + filo en el mismo párrafo.
+
+- id: 61
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/986624114579333120"
+  capturado: 2026-07-14
+  formato: thread
+  tema: "contra la competencia como marco"
+  texto: >
+    Don't follow crowds. Follow the innate feelings inside of you. Do what you
+    feel not what you think. Thoughts have been placed in our heads to make
+    everyone assimilate. Follow what you feel.
+
+    I don't believe in the concept of an enemy. We have been conditioned to
+    always be in competition. Stop looking for something to beat and just be.
+    You don't have to do all the work. Once you start moving in love the
+    universe will assist you.
+
+    You will be a drop of water with the ocean as your army. If you move out of
+    fear than your on your own. Then it's just you and the money and the
+    countless people you have to lie to and manipulate to build a man made path
+    that will never lead to true happiness.
+  metricas:
+    vistas: null
+    likes: 186487
+    rts: null
+    respuestas: null
+  por_que_funciona: >
+    Rechaza el marco competitivo entero en vez de jugar mejor dentro de él
+    ("stop looking for something to beat and just be"). La imagen de la gota
+    con el océano de ejército es el tipo de metáfora que carga todo el
+    argumento sola.
+
+- id: 62
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/986629658211844097"
+  capturado: 2026-07-14
+  formato: single
+  tema: "tiempo y dinero como constructos"
+  texto: >
+    There's love stories.  Pain happiness. It's 3 dementional. There's taste
+    touch sound. It's the most entertaining for of entertainment. Just being.
+    We believe time is a man made construct. Actually time and money are both
+    man made currency. Because you can spend them both.
+  metricas:
+    vistas: null
+    likes: 64284
+    rts: null
+    respuestas: null
+  por_que_funciona: >
+    Cierra con un giro lógico limpio: tiempo y dinero son ambos moneda "porque
+    los dos se gastan". El argumento por gramática compartida (spend) — la
+    observación lingüística que revela una idea económica.
+
+- id: 63
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/986646262446305281"
+  capturado: 2026-07-14
+  formato: thread
+  tema: "ego confesado con risa"
+  texto: >
+    I find myself getting stuck in the idea of originality and letting my ego
+    push me to say things like "this person stole this from me" and the funny
+    thing is it'll be a reference I took from somewhere 😂
+
+    let's be less concerned with ownership of ideas. It is important that ideas
+    see the light of day even if you don't get the credit for them. Let's be
+    less concerned with credit awards and external validation.
+  metricas:
+    vistas: null
+    likes: 108704
+    rts: null
+    respuestas: null
+  por_que_funciona: >
+    Se cacha a sí mismo en la hipocresía Y lo tuitea, con risa incluida. La
+    auto-auditoría del ego en público es la forma más barata de credibilidad:
+    nadie puede acusarte de lo que ya confesaste. Y el principio que extrae
+    (ideas > crédito) queda validado por la confesión.
+
+- id: 64
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/987411453131943936"
+  capturado: 2026-07-14
+  formato: thread
+  tema: "tres aforismos de estructura"
+  texto: >
+    I don’t believe in horizontal hierarchy. If you build a ladder too high
+    it’s actually most dangerous for the people at the top.
+
+    images are limitless and words aren't. Words are defined
+
+    sharing is community holding information is capitalism
+  metricas:
+    vistas: null
+    likes: 40749
+    rts: null
+    respuestas: null
+  por_que_funciona: >
+    Tres tesis sueltas de teoría organizacional/medios/información, cada una en
+    formato axioma sin desarrollo. El run demuestra que puedes tuitear ideas de
+    ensayo sin escribir el ensayo — el lector completa el argumento.
+
+- id: 65
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/987727961477472257"
+  capturado: 2026-07-14
+  formato: single
+  tema: "mandato de expresión"
+  texto: >
+    be fearless. Express what you feel not what you've been programmed to think.
+  metricas:
+    vistas: null
+    likes: 135932
+    rts: null
+    respuestas: null
+  por_que_funciona: >
+    Imperativo de dos golpes con la oposición feel/programmed-to-think haciendo
+    el trabajo conceptual. El formato mandato-directo sin suavizantes.
+
+- id: 66
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/988456198599929856"
+  capturado: 2026-07-14
+  formato: single
+  tema: "anuncio de cambio de época"
+  texto: >
+    new ideas will no longer be condemned by the masses. We are on the frontier
+    of massive change. Starting from breaking out of our mental prisons.
+  metricas:
+    vistas: null
+    likes: 89078
+    rts: null
+    respuestas: null
+  por_que_funciona: >
+    Habla desde el futuro como si ya estuviera decidido ("will no longer").
+    Declarar el cambio de época en vez de predecirlo — la anticipación con
+    autoridad que pide el arquetipo visionario de la ficha.
+
+- id: 67
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/988571191651713024"
+  capturado: 2026-07-14
+  formato: thread
+  tema: "terquedad como estrategia"
+  texto: >
+    I’ve always had a desire to do things people wouldn’t even think to do
+
+    If your foresight is incredible   Stay stubborn to your vision
+  metricas:
+    vistas: null
+    likes: 95539
+    rts: null
+    respuestas: null
+  por_que_funciona: >
+    Condicional honesto: la terquedad solo se recomienda SI la visión es real
+    ("if your foresight is incredible"). No romantiza la necedad — la condiciona
+    a la calidad del juicio. Matiz raro en el género motivacional.
+
+- id: 68
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/988795997869391873"
+  capturado: 2026-07-14
+  formato: single
+  tema: "autodescripción en lista seca"
+  texto: >
+    dragon 🐉 energy
+    Natural born leaders
+    Very instinctive
+    Great foresight
+  metricas:
+    vistas: null
+    likes: 41007
+    rts: null
+    respuestas: null
+  por_que_funciona: >
+    Autodescripción en formato de ficha técnica, sin verbo ni oración. La lista
+    seca como formato de identidad — cuatro líneas que se leen en dos segundos
+    y se recuerdan.
+
+- id: 69
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/988798056798670851"
+  capturado: 2026-07-14
+  formato: single
+  tema: "cita apropiada como escudo"
+  texto: >
+    to be great is to be misunderstood
+  metricas:
+    vistas: null
+    likes: 131229
+    rts: null
+    respuestas: null
+  por_que_funciona: >
+    Emerson comprimido y sin atribución — la incomprensión pública reencuadrada
+    como evidencia de grandeza. Seis palabras que convierten la crítica en
+    confirmación. (Ojo: el movimiento retórico es blindaje; robar la estructura,
+    no usarla para inmunizarse a todo feedback.)
+
+- id: 70
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/988813591582134272"
+  capturado: 2026-07-14
+  formato: single
+  tema: "humildad en cuatro palabras"
+  texto: >
+    never a master. Always a student.
+  metricas:
+    vistas: null
+    likes: 166317
+    rts: null
+    respuestas: null
+  por_que_funciona: >
+    El contrapeso exacto del GOAT-talk, del mismo autor y la misma semana. La
+    pareja negación/afirmación en espejo. La confianza extrema necesita estos
+    tweets-ancla para no volverse caricatura — lección de mezcla para el batch.
+
+- id: 71
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/989142253468708864"
+  capturado: 2026-07-14
+  formato: single
+  tema: "independencia declarada como identidad"
+  texto: >
+    I no longer have a manager. I can't be managed
+  metricas:
+    vistas: null
+    likes: 223503
+    rts: null
+    respuestas: null
+  por_que_funciona: >
+    Noticia operativa (despedí a mi manager) convertida en rasgo de carácter
+    ("I can't be managed") con un solo giro de verbo. El hecho como pretexto;
+    la identidad como punchline.
+
+- id: 72
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/989151947218345987"
+  capturado: 2026-07-14
+  formato: single
+  tema: "compromiso de precio en cinco palabras"
+  texto: >
+    We will reach the prices I've promised
+  metricas:
+    vistas: null
+    likes: 22078
+    rts: null
+    respuestas: null
+  por_que_funciona: >
+    Update de producto reducido a su esencia: la promesa sostenida. Sin
+    excusas, sin roadmap, sin adjetivos. La accountability como one-liner.
+
+- id: 73
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/989177694309859328"
+  capturado: 2026-07-14
+  formato: thread
+  tema: "libertad mental + optimismo declarado"
+  texto: >
+    Free thinkers don't fear retaliation for your thoughts.  The traditional
+    thinkers are only using thoughts and words but they are in a mental prison.
+    You are free. You've already won. Feel energized. Move in love not fear.
+    Be afraid of nothing.
+
+    And also I'm all the way out the sunken place. And I'm not scared anymore.
+    I'm not scared of the media. I'm not scared of the past and I'm optimistic
+    about the future. This tweet is in love not fear.
+  metricas:
+    vistas: null
+    likes: 86754
+    rts: null
+    respuestas: null
+  por_que_funciona: >
+    Declara al lector ganador por adelantado ("You've already won") y luego se
+    aplica la medicina a sí mismo, nombrando sus miedos uno por uno para
+    despedirlos. La valentía enumerada es más creíble que la valentía genérica.
+
+- id: 74
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/989562129496731648"
+  capturado: 2026-07-14
+  formato: single
+  tema: "diagnóstico del conformismo"
+  texto: >
+    Instead of doing what you feel
+    you just do what other people think you should do
+  metricas:
+    vistas: null
+    likes: 57140
+    rts: null
+    respuestas: null
+  por_que_funciona: >
+    Acusación en segunda persona partida en dos líneas — el line break hace la
+    pausa de un jab. Sin consejo ni cierre: deja el diagnóstico picando. El
+    tweet que incomoda es el que se comparte.
