@@ -1,4 +1,382 @@
 # Base de datos del swipe — tweets del nicho con buen performance.
 # La llena Claude procesando swipe/inbox.md. Formato: ver swipe/README.md.
 # De aquí se destilan PATRONES para la ficha; el contenido jamás se copia.
-[]
+#
+# Lote Kanye West (@kanyewest) — capturado 2026-07-14 desde el archivo yzy-twts.com.
+# Arquetipo que cubre: REGISTRO LIGERO DECLARATIVO (aserción filosa + observación
+# absurda hiper-específica). Criterio de selección: bangers curados por el archivista
+# + top engagement + curación editorial 2010-2013 (época sin métricas). Excluido:
+# contenido ofensivo/de odio (2022-2025), promo de discos, replies, y lo que solo
+# funciona por el contexto de celebridad.
+# ⚠️ Kanye es profesor de REGISTRO, no de sustancia ni de conducta. Se roba el CÓMO
+# (confianza declarativa, especificidad, cero hedging), jamás el QUÉ.
+
+- id: 1
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/27590685489"
+  capturado: 2026-07-14
+  formato: single
+  tema: "observación absurda de experiencia compartida"
+  texto: >
+    I hate when I'm on a flight and I wake up with a water bottle next to me like
+    oh great  now I gotta be responsible for this water bottle
+  metricas: null
+  por_que_funciona: >
+    Micro-observación de una experiencia universal, elevada por la especificidad
+    emocional ("responsible for this water bottle"). Cero moraleja, cero setup: la
+    gracia está en nombrar exactamente lo que todos sintieron y nadie dijo. Molde
+    de "observación suelta" en su forma más pura.
+
+- id: 2
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/20071050693"
+  capturado: 2026-07-14
+  formato: single
+  tema: "declaración plana desde experiencia vivida"
+  texto: >
+    Fur pillows are hard to actually sleep on
+  metricas: null
+  por_que_funciona: >
+    Siete palabras. Reporte seco de una experiencia que solo él tiene, entregado
+    como dato neutro. El lujo aparece de fondo, nunca como flex: el post es sobre
+    la incomodidad, no sobre tener almohadas de piel. El deadpan hace todo el trabajo.
+
+- id: 3
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/24897144116"
+  capturado: 2026-07-14
+  formato: single
+  tema: "autoconfianza autoconsciente"
+  texto: >
+    I make awesome decisions in bike stores!!!
+  metricas: null
+  por_que_funciona: >
+    Confianza total aplicada a un dominio ridículamente pequeño. El contraste entre
+    la energía de la declaración y lo trivial del tema ES el chiste. Enseña que la
+    autocelebración funciona cuando es específica y autoconsciente, no grandiosa.
+
+- id: 4
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/21409201572"
+  capturado: 2026-07-14
+  formato: single
+  tema: "el gusto como contenido"
+  texto: >
+    Sometimes I get emotional over fonts
+  metricas: null
+  por_que_funciona: >
+    Confesión de sensibilidad estética en cinco palabras. El criterio/gusto como
+    contenido con derecho propio — exactamente el pilar vida_y_cultura de Luis.
+    No explica ni justifica: quien lo entiende, lo entiende (autoselección de audiencia).
+
+- id: 5
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/21715744067"
+  capturado: 2026-07-14
+  formato: single
+  tema: "declaración absoluta sobre tema mundano"
+  texto: >
+    French fries are the Devil
+  metricas: null
+  por_que_funciona: >
+    Aserción máximamente absoluta sobre el tema más mundano posible. La
+    desproporción deliberada entre certeza y tema genera la sonrisa. Patrón: la
+    opinión pequeña dicha con convicción total pega más que la opinión grande dicha con matices.
+
+- id: 6
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/19858383286"
+  capturado: 2026-07-14
+  formato: single
+  tema: "declaración de gusto sin justificar"
+  texto: >
+    I hate stickers on laptops
+  metricas: null
+  por_que_funciona: >
+    Opinión de diseño/estética declarada sin argumentar. Divide a la audiencia a
+    propósito y genera conversación. El criterio se muestra teniendo opiniones,
+    no explicándolas todas.
+
+- id: 7
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/19833553628"
+  capturado: 2026-07-14
+  formato: single
+  tema: "especificidad autobiográfica"
+  texto: >
+    Dating models  I had to learn to like small dogs and cigarettes
+  metricas: null
+  por_que_funciona: >
+    Una vida entera comprimida en un detalle: no dice "salir con modelos tiene
+    costos raros", muestra LOS costos exactos (perros chicos, cigarros). La
+    especificidad hace el trabajo de mil palabras. Transferible: contar el detalle, no el resumen.
+
+- id: 8
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/25287781546"
+  capturado: 2026-07-14
+  formato: single
+  tema: "ambición sin humo"
+  texto: >
+    I haven't made my best work yet
+  metricas: null
+  por_que_funciona: >
+    Ambición declarada en seis palabras, sin promesa concreta ni fecha ni humo
+    motivacional. Dicho por alguien con obra, es poderoso; el mismo tweet de un
+    novato sería vacío. Lección: este registro se gana con credencial previa.
+
+- id: 9
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/4039129478201344"
+  capturado: 2026-07-14
+  formato: single
+  tema: "aforismo con imagen concreta"
+  texto: >
+    You have to balance ignorance with intellect! Can't have school with out recess!
+  metricas: null
+  por_que_funciona: >
+    Principio abstracto (balance entre rigor y juego) aterrizado en una imagen que
+    cualquiera vivió (escuela/recreo). El molde aforismo funciona cuando la segunda
+    frase vuelve tangible la primera.
+
+- id: 10
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/521069610138079232"
+  capturado: 2026-07-14
+  formato: single
+  tema: "paradoja personal"
+  texto: >
+    not smiling makes me smile
+  metricas:
+    vistas: null
+    likes: 192542
+    rts: 265935
+    respuestas: null
+  por_que_funciona: >
+    Paradoja autorreferencial de cinco palabras (más RTs que likes — rarísimo).
+    Convierte un rasgo criticado (nunca sonríe en fotos) en declaración de identidad.
+    Patrón: apropiarse del defecto que te señalan y devolverlo como postura.
+
+- id: 11
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/646504665929027584"
+  capturado: 2026-07-14
+  formato: single
+  tema: "exhortación máxima en una línea"
+  texto: >
+    Please: Do everything you possibly can in one lifetime.
+  metricas:
+    vistas: null
+    likes: 302697
+    rts: 411717
+    respuestas: null
+  por_que_funciona: >
+    El "Please:" inicial lo transforma: no es sermón, es súplica personal. Una sola
+    idea gigante sin desarrollo — la brevedad le da peso de epitafio. De los pocos
+    tweets "motivacionales" que no huelen a gurú, porque pide en vez de presumir.
+
+- id: 12
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/686060974554497026"
+  capturado: 2026-07-14
+  formato: single
+  tema: "declaración de estándares de trabajo"
+  texto: >
+    I have no interest in working with anyone who is too important or too good or
+    too traditional to take a call at 3am
+  metricas:
+    vistas: null
+    likes: 136801
+    rts: 78991
+    respuestas: null
+  por_que_funciona: >
+    Filtro de valores declarado como hecho, no como consejo. El detalle concreto
+    (la llamada a las 3am) vuelve tangible un estándar abstracto (obsesión >
+    protocolo). Molde: "no trabajo con X" define tu cultura mejor que "busco Y".
+
+- id: 13
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/986687322140721152"
+  capturado: 2026-07-14
+  formato: single
+  tema: "principio sin adorno"
+  texto: >
+    don't trade your authenticity for approval
+  metricas:
+    vistas: null
+    likes: 310468
+    rts: 143355
+    respuestas: null
+  por_que_funciona: >
+    Seis palabras, estructura de trueque (autenticidad ↔ aprobación) que hace el
+    principio memorizable. Minúsculas = tono de nota personal, no de sermón.
+    El molde aserción filosa en registro valores.
+
+- id: 14
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/993212368225124353"
+  capturado: 2026-07-14
+  formato: single
+  tema: "banalidad con convicción total"
+  texto: >
+    naps are awesome
+  metricas:
+    vistas: null
+    likes: 412491
+    rts: 184195
+    respuestas: null
+  por_que_funciona: >
+    412K likes por tres palabras sobre siestas. En medio de semanas polémicas, lo
+    banal dicho en serio fue un respiro — el contexto del feed importa tanto como
+    el texto. Lección para la mezcla de pesos: el ligero-humano existe para que el
+    pesado respire.
+
+- id: 15
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/986759302311395328"
+  capturado: 2026-07-14
+  formato: single
+  tema: "test de carácter universal"
+  texto: >
+    if you wanna see the true character of person watch the way they treat someone
+    who can't do anything for them.
+  metricas:
+    vistas: null
+    likes: 461262
+    rts: 196853
+    respuestas: null
+  por_que_funciona: >
+    Heurística de carácter completa en una oración, formulada como instrucción
+    observable ("watch the way...") y no como juicio abstracto. Lo accionable +
+    lo universal = compartible al máximo.
+
+- id: 16
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/986621133976887296"
+  capturado: 2026-07-14
+  formato: single
+  tema: "consejo práctico en registro crudo"
+  texto: >
+    when you first wake up don't hop right on the phone or the internet or even
+    speak to anyone for even up to an hour if possible. Just be still and enjoy
+    your own imagination. It's better than any movie.
+  metricas:
+    vistas: null
+    likes: 294278
+    rts: 74200
+    respuestas: null
+  por_que_funciona: >
+    Consejo de bienestar sin lenguaje de bienestar: cero "mindfulness", cero rutina
+    de gurú. Instrucción concreta + recompensa inesperada ("better than any movie").
+    Prueba de que el tip serio aguanta el registro casual sin perder autoridad.
+
+- id: 17
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/998641417072271360"
+  capturado: 2026-07-14
+  formato: single
+  tema: "analogía que reencuadra un hábito"
+  texto: >
+    Look at your phone as tool not an obligation.    Would you walk around with a
+    hammer in your pocket?    You would pick up a hammer when you needed it   you
+    would never be addicted or obligated to it.  Use your phone like a hammer only
+    pick it up when you need it.
+  metricas:
+    vistas: null
+    likes: 240546
+    rts: 62665
+    respuestas: null
+  por_que_funciona: >
+    Una analogía física (martillo) sostiene todo el argumento — no hay datos ni
+    estudios, solo una imagen que reencuadra el hábito. Molde: elegir UN objeto
+    cotidiano y dejar que la comparación argumente sola.
+
+- id: 18
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/987049500177920000"
+  capturado: 2026-07-14
+  formato: single
+  tema: "posicionamiento por restricción"
+  texto: >
+    my album is 7 songs
+  metricas:
+    vistas: null
+    likes: 255555
+    rts: 77199
+    respuestas: null
+  por_que_funciona: >
+    Anuncio de producto en cinco palabras donde la restricción ES el pitch: 7
+    canciones = confianza total en la calidad. Mismo principio que "el mejor menú
+    tiene nueve platillos". La brevedad del tweet performa la brevedad del álbum.
+
+- id: 19
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/1017560703891197952"
+  capturado: 2026-07-14
+  formato: single
+  tema: "regla de decisión mínima"
+  texto: >
+    when in doubt... don't
+  metricas:
+    vistas: null
+    likes: 239395
+    rts: 79239
+    respuestas: null
+  por_que_funciona: >
+    Regla de decisión completa en cuatro palabras. Los puntos suspensivos crean la
+    micro-pausa que remata. Límite inferior demostrado de "cuánto texto necesita
+    una idea": a veces, casi nada.
+
+- id: 20
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/1059088750062428160"
+  capturado: 2026-07-14
+  formato: single
+  tema: "anti-flex de estatus"
+  texto: >
+    McDonald's is my favorite restaurant
+  metricas:
+    vistas: null
+    likes: 279224
+    rts: 68850
+    respuestas: null
+  por_que_funciona: >
+    Anti-flex: el multimillonario de la moda declarando amor por McDonald's. Rompe
+    la expectativa de estatus y por eso humaniza. Lección: la cercanía se gana
+    bajando el pedestal uno mismo, no describiéndose como cercano.
+
+- id: 21
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/1034108182090534914"
+  capturado: 2026-07-14
+  formato: single
+  tema: "inversión de una idea común"
+  texto: >
+    Halloween is the only day you’re not in a costume
+  metricas:
+    vistas: null
+    likes: 159929
+    rts: 42592
+    respuestas: null
+  por_que_funciona: >
+    Inversión limpia de un lugar común (disfraz ↔ máscara social) en una sola
+    frase. El molde "X es en realidad lo contrario de lo que crees" comprimido
+    al mínimo — filosofía de bolsillo sin citar filósofos.
+
+- id: 22
+  autor: "@kanyewest"
+  url: "https://x.com/kanyewest/status/1079833477808148480"
+  capturado: 2026-07-14
+  formato: single
+  tema: "autocelebración con juego de palabras"
+  texto: >
+    If I got any cooler I would freeze to death
+  metricas:
+    vistas: null
+    likes: 376378
+    rts: 154981
+    respuestas: null
+  por_que_funciona: >
+    Presunción desactivada por el propio chiste: el juego de palabras (cool/frío)
+    vuelve la arrogancia autoparodia. Patrón: puedes decir cosas grandes de ti
+    mismo si el envoltorio muestra que no te tomas en serio.
