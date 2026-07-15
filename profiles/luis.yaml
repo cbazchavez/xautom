@@ -329,24 +329,29 @@ principios_de_marca:
 # -------------------------------------------------------------
 # TEMAS ACTIVOS  (temporales / campañas con fecha)
 # -------------------------------------------------------------
-temas_activos:
-  - id: gira_asia_seul
-    vigencia: "mientras Luis viaja por Asia / esté en Seúl"
-    nombre: "Reportando desde Asia rumbo a Seúl"
-    angulo: >
-      Observaciones en vivo de cómo Asia (y en especial Corea) usa la tecnología:
-      pagos, hábitos digitales, retail, cultura de producto, arquitectura y
-      gastronomía. Material de primera mano que alimenta el pilar 'lectura del
-      mundo' y activa su lente cultural (sociología + gusto + mercados). Diferencia
-      el perfil de cualquier "AI creator" de escritorio.
-    como_usarlo: >
-      Posts de observación auténtica ("esto vi hoy en [lugar] y lo que significa
-      para builders"). Conecta lo cultural con la implicación práctica. Sin sonar
-      a turista: lee el sistema detrás de lo que ve, no la postal.
-    pilar_asociado: lectura_del_mundo
-    nota: >
-      Oportunidad natural para aterrizar producto cuando el tema sea pagos/retención
-      /loyalty y la audiencia coreana/asiática (ver bloque productos).
+# >>> Sin tema activo por ahora. <<<
+temas_activos: []
+
+# --- INACTIVO desde 2026-07-15 (Luis regresó de Asia) -------------------------
+# Se conserva comentado por si vuelve a viajar; para reactivar, descoméntalo y
+# muévelo de vuelta a la lista de arriba.
+#   - id: gira_asia_seul
+#     vigencia: "mientras Luis viaja por Asia / esté en Seúl"
+#     nombre: "Reportando desde Asia rumbo a Seúl"
+#     angulo: >
+#       Observaciones en vivo de cómo Asia (y en especial Corea) usa la tecnología:
+#       pagos, hábitos digitales, retail, cultura de producto, arquitectura y
+#       gastronomía. Material de primera mano que alimenta el pilar 'lectura del
+#       mundo' y activa su lente cultural (sociología + gusto + mercados). Diferencia
+#       el perfil de cualquier "AI creator" de escritorio.
+#     como_usarlo: >
+#       Posts de observación auténtica ("esto vi hoy en [lugar] y lo que significa
+#       para builders"). Conecta lo cultural con la implicación práctica. Sin sonar
+#       a turista: lee el sistema detrás de lo que ve, no la postal.
+#     pilar_asociado: lectura_del_mundo
+#     nota: >
+#       Oportunidad natural para aterrizar producto cuando el tema sea pagos/retención
+#       /loyalty y la audiencia coreana/asiática (ver bloque productos).
 
 # -------------------------------------------------------------
 # PRODUCTOS  (promoción orgánica — PENDIENTE DE DATOS)

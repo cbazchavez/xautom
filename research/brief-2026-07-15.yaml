@@ -1,0 +1,62 @@
+# Brief de actualidad — investigado por Claude Code el 2026-07-15
+# Formato y reglas: ver research/README.md
+# Tema del día: SIN tema activo (Luis regresó de Asia; gira desactivada en la ficha).
+#   Ángulo general: el boom de capital/IA de 2026 leído "para quien construye".
+# ⚠️ REGLA DURA: solo usar los datos de estos resúmenes; nunca inventar cifras.
+#    Cada borrador que use una noticia reporta su `url` en news_ref.
+fecha: 2026-07-15
+
+noticias:
+  - titulo: "SpaceX compra Cursor (Anysphere) por $60B — la mayor adquisición de una startup respaldada por VC en la historia"
+    fuente: "CNBC / Forbes"
+    url: "https://www.cnbc.com/2026/06/16/spacex-spcx-cursor-acquisition-ipo.html"
+    resumen: >
+      El 16-jun-2026 SpaceX acordó comprar Anysphere (la empresa detrás de Cursor,
+      la herramienta de AI coding) por $60,000M en acciones — descrita como la mayor
+      adquisición de una startup respaldada por capital de riesgo. Ocurrió 4 días
+      después del IPO de SpaceX (12-jun, ~$75,000M levantados, el IPO más grande de
+      la historia). Cursor, fundada en 2022, alcanzó ~$4,000M de ingresos anualizados
+      en menos de 4 años (~$2,600M de clientes B2B enterprise). Cierre previsto Q3
+      2026, sujeto a aprobación regulatoria.
+    por_que_importa: >
+      Luis pilar negocio: no es "wow qué caro". Es que una herramienta de VIBECODING
+      se volvió infraestructura estratégica que una empresa de cohetes paga $60B por
+      tener adentro. Ángulos: (a) el moat de Cursor no era el modelo (usa modelos de
+      otros) sino la distribución y el enterprise; (b) $4B ARR en <4 años = el ritmo,
+      no la idea; (c) qué significa para quien construye con IA hoy que las tools que
+      usas a diario sean el activo más valioso del mercado.
+    pilar_sugerido: modelos_de_negocio
+
+  - titulo: "La inversión global en startups marcó récord: $510B en el primer semestre de 2026 (más que todo 2025)"
+    fuente: "Crunchbase News"
+    url: "https://news.crunchbase.com/venture/global-startup-exits-ipo-ma-soar-ai-q2-h1-2026/"
+    resumen: >
+      La inversión global de venture llegó a un récord de ~$510,000M en el primer
+      semestre de 2026, superando los ~$440,000M de todo 2025 — el mayor semestre
+      registrado. El boom está impulsado por IA y una ola de salidas (IPOs y M&A).
+      Cerca del 88% del financiamiento a startups de IA en 2026 fue a empresas de
+      EE. UU.; los mega-rounds de OpenAI, xAI y Anthropic concentran la atención.
+    por_que_importa: >
+      Lectura del mundo para builders: el dinero nunca ha estado tan concentrado en
+      IA ni tan geográficamente sesgado (88% a EE. UU.). Ángulo honesto: qué hace un
+      builder fuera de ese 88% (LATAM/México) cuando el capital y la atención se
+      apilan en un solo lugar — construir cerca del cliente y del flujo de caja, no
+      del hype. Anticipación con los pies en la tierra.
+    pilar_sugerido: lectura_del_mundo
+
+  - titulo: "Casi 90 nuevos unicornios creados en lo que va de 2026"
+    fuente: "TechCrunch"
+    url: "https://techcrunch.com/2026/07/05/almost-40-new-unicorns-have-been-minted-so-far-this-year-here-they-are/"
+    resumen: >
+      TechCrunch contabiliza casi 90 nuevas empresas que cruzaron la valuación de
+      $1,000M ("unicornios") en lo que va de 2026, la mayoría ligadas a IA
+      (infraestructura de agentes, automatización de seguridad, tooling self-hosted
+      que da más control al desarrollador técnico según las listas de GitHub).
+    por_que_importa: >
+      Ángulo negocio/proceso: la valuación es ruido; la señal es QUÉ tipo de empresa
+      cruza el umbral (infra de agentes, tooling para builders). Sirve para el pilar
+      'modelos_de_negocio' (dónde está el valor real) sin caer en admirar el número.
+    pilar_sugerido: modelos_de_negocio
+
+# feed: (tweets del timeline sobre los que Luis daría su take) — vacío hoy.
+feed: []
