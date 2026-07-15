@@ -1,0 +1,8 @@
+# Normaliza saltos de línea: LF en el repo, siempre.
+# Evita el ruido de CRLF↔LF al editar desde Windows/WSL/Claude Desktop.
+* text=auto eol=lf
+
+# Binarios: nunca tocar.
+*.png binary
+*.jpg binary
+*.pdf binary
